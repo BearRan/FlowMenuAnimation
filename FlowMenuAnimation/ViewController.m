@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FlowMenuView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self createUI];
+}
+
+- (void)createUI
+{
+    FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 100)];
+    [self.view addSubview:flowMenuView];
 }
 
 - (void)didReceiveMemoryWarning {
