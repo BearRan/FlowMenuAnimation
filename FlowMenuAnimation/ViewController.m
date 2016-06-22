@@ -23,8 +23,10 @@
 
 - (void)createUI
 {
-    FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 100)];
+    FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 200)];
     [self.view addSubview:flowMenuView];
+    
+    [flowMenuView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
 }
 
 - (void)didReceiveMemoryWarning {

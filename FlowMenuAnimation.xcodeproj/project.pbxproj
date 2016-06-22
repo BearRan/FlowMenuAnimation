@@ -16,6 +16,7 @@
 		09D2F1CB1D1AD2A100093946 /* FlowMenuAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1CA1D1AD2A100093946 /* FlowMenuAnimationTests.m */; };
 		09D2F1D61D1AD2A100093946 /* FlowMenuAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1D51D1AD2A100093946 /* FlowMenuAnimationUITests.m */; };
 		09D2F1E51D1AD48100093946 /* FlowMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1E41D1AD48100093946 /* FlowMenuView.m */; };
+		09D2F1E91D1B4F3600093946 /* AssignPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1E81D1B4F3600093946 /* AssignPointView.m */; };
 		CD6F8CE1992400463C72CF19 /* libPods-FlowMenuAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8739018F643B93C61A1384 /* libPods-FlowMenuAnimation.a */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		09D2F1E31D1AD48100093946 /* FlowMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowMenuView.h; sourceTree = "<group>"; };
 		09D2F1E41D1AD48100093946 /* FlowMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowMenuView.m; sourceTree = "<group>"; };
 		09D2F1E61D1AD7EC00093946 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		09D2F1E71D1B4F3600093946 /* AssignPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignPointView.h; sourceTree = "<group>"; };
+		09D2F1E81D1B4F3600093946 /* AssignPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignPointView.m; sourceTree = "<group>"; };
 		24F02D14E650899A3C60A5C5 /* Pods-FlowMenuAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowMenuAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowMenuAnimation/Pods-FlowMenuAnimation.release.xcconfig"; sourceTree = "<group>"; };
 		2A8739018F643B93C61A1384 /* libPods-FlowMenuAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlowMenuAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B49DD9F7139ECE57B2A8F6 /* Pods-FlowMenuAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowMenuAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlowMenuAnimation/Pods-FlowMenuAnimation.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				09D2F1B71D1AD2A100093946 /* ViewController.m */,
 				09D2F1E31D1AD48100093946 /* FlowMenuView.h */,
 				09D2F1E41D1AD48100093946 /* FlowMenuView.m */,
+				09D2F1E71D1B4F3600093946 /* AssignPointView.h */,
+				09D2F1E81D1B4F3600093946 /* AssignPointView.m */,
 				09D2F1B91D1AD2A100093946 /* Main.storyboard */,
 				09D2F1BC1D1AD2A100093946 /* Assets.xcassets */,
 				09D2F1BE1D1AD2A100093946 /* LaunchScreen.storyboard */,
@@ -356,6 +361,7 @@
 				09D2F1E51D1AD48100093946 /* FlowMenuView.m in Sources */,
 				09D2F1B51D1AD2A100093946 /* AppDelegate.m in Sources */,
 				09D2F1B21D1AD2A100093946 /* main.m in Sources */,
+				09D2F1E91D1B4F3600093946 /* AssignPointView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
