@@ -11,8 +11,8 @@
 
 @interface ButtonsView ()
 {
-    NSArray *_btnArray;
-    
+    NSArray         *_btnArray;
+    CAShapeLayer    *_pathLayer;
 }
 
 @end
@@ -23,12 +23,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame btnsArray:(NSArray *)btnArray
 {
-    self = [super initWithFrame:CGRectMake(0, -20, frame.size.width, frame.size.height)];
+    self = [super initWithFrame:CGRectMake(0, -frame.size.height, frame.size.width, frame.size.height)];
     
     if (self) {
         self.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.4];
         _btnArray = btnArray;
-        _aniamtionDuring = 1.0;
+        _aniamtionDuring = 2.0;
+        
+        _pathLayer = [CAShapeLayer layer];
     }
     
     return self;
@@ -37,11 +39,34 @@
 
 - (void)showBtnsAnimation
 {
+    [_beizerPath removeAllPoints];
+    [_beizerPath moveToPoint:CGPointMake(10, 10)];
+    [_beizerPath addLineToPoint:CGPointMake(self.width - 10, self.height - 10)];
+    
+    _pathLayer.path = _beizerPath.CGPath;
+    _pathLayer.fillColor = [UIColor clearColor].CGColor;
+    _pathLayer.strokeColor = [UIColor orangeColor].CGColor;
+    _pathLayer.lineWidth = 2.0;
+    [self.layer addSublayer:_pathLayer];
+    
     for (int i = 0; i < [_btnArray count]; i++) {
+        
         SpecialBtn *specialBtn = _btnArray[i];
+        [self addSubview:specialBtn];
+        
         specialBtn.keyFrameAniamtion.keyPath = @"position";
         specialBtn.keyFrameAniamtion.path = _beizerPath.CGPath;
+        specialBtn.keyFrameAniamtion.fillMode = kCAFillModeForwards;
+        specialBtn.keyFrameAniamtion.removedOnCompletion = NO;
+        specialBtn.keyFrameAniamtion.keyTimes = @[
+                                                  [NSNumber numberWithFloat:0.1],
+                                                  [NSNumber numberWithFloat:0.2],
+//                                                  [NSNumber numberWithFloat:0.3],
+                                                  [NSNumber numberWithFloat:0.5]
+                                                  ];
         [specialBtn.keyFrameAniamtion setDuration:_aniamtionDuring];
+        
+        [specialBtn.layer addAnimation:specialBtn.keyFrameAniamtion forKey:specialBtn.keyFrameAniamtion.keyPath];
 //        specialBtn.keyFrameAniamtion.s
     }
 }
