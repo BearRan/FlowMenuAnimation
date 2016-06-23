@@ -9,6 +9,7 @@
 #import "FlowMenuView.h"
 #import "AssignPointView.h"
 #import "ButtonsView.h"
+#import "SpecialBtn.h"
 
 @interface FlowMenuView ()
 {
@@ -125,17 +126,17 @@
     CGFloat btn_width = 40;
     NSMutableArray *btnsArray = [NSMutableArray new];
     
-    UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    SpecialBtn *btn_1 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_1.layer.cornerRadius = btn_1.width / 2.0;
     btn_1.backgroundColor = [UIColor purpleColor];
     [btnsArray addObject:btn_1];
     
-    UIButton *btn_2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    SpecialBtn *btn_2 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_2.layer.cornerRadius = btn_2.width / 2.0;
     btn_2.backgroundColor = [UIColor greenColor];
     [btnsArray addObject:btn_2];
     
-    UIButton *btn_3 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    SpecialBtn *btn_3 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_3.layer.cornerRadius = btn_3.width / 2.0;
     btn_3.backgroundColor = [UIColor grayColor];
     [btnsArray addObject:btn_3];

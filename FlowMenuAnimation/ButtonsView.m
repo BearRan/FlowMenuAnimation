@@ -7,10 +7,12 @@
 //
 
 #import "ButtonsView.h"
+#import "SpecialBtn.h"
 
 @interface ButtonsView ()
 {
     NSArray *_btnArray;
+    
 }
 
 @end
@@ -26,6 +28,7 @@
     if (self) {
         self.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.4];
         _btnArray = btnArray;
+        _aniamtionDuring = 1.0;
     }
     
     return self;
@@ -34,7 +37,13 @@
 
 - (void)showBtnsAnimation
 {
-
+    for (int i = 0; i < [_btnArray count]; i++) {
+        SpecialBtn *specialBtn = _btnArray[i];
+        specialBtn.keyFrameAniamtion.keyPath = @"position";
+        specialBtn.keyFrameAniamtion.path = _beizerPath.CGPath;
+        [specialBtn.keyFrameAniamtion setDuration:_aniamtionDuring];
+//        specialBtn.keyFrameAniamtion.s
+    }
 }
 
 - (void)closeBtnsAniamtion

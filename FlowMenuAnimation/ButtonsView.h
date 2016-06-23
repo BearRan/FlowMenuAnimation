@@ -11,6 +11,7 @@
 @interface ButtonsView : UIView
 
 @property (strong, nonatomic) UIBezierPath  *beizerPath;
+@property (assign, nonatomic) CGFloat       aniamtionDuring;
 
 - (instancetype)initWithFrame:(CGRect)frame btnsArray:(NSArray *)btnArray;
 
