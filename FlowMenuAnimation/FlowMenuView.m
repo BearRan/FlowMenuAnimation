@@ -8,6 +8,7 @@
 
 #import "FlowMenuView.h"
 #import "AssignPointView.h"
+#import "ButtonsView.h"
 
 @interface FlowMenuView ()
 {
@@ -29,6 +30,8 @@
     
     UIButton    *_startBtn;
     BOOL        _showGrooveLayer;
+    
+    ButtonsView *_buttonsView;
 }
 
 @end
@@ -111,6 +114,34 @@
     
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateGrooveBgLayer)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    [self initSetButtonsView];
+}
+
+
+//  初始化设置buttonsView
+- (void)initSetButtonsView
+{
+    CGFloat btn_width = 40;
+    NSMutableArray *btnsArray = [NSMutableArray new];
+    
+    UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    btn_1.layer.cornerRadius = btn_1.width / 2.0;
+    btn_1.backgroundColor = [UIColor purpleColor];
+    [btnsArray addObject:btn_1];
+    
+    UIButton *btn_2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    btn_2.layer.cornerRadius = btn_2.width / 2.0;
+    btn_2.backgroundColor = [UIColor greenColor];
+    [btnsArray addObject:btn_2];
+    
+    UIButton *btn_3 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
+    btn_3.layer.cornerRadius = btn_3.width / 2.0;
+    btn_3.backgroundColor = [UIColor grayColor];
+    [btnsArray addObject:btn_3];
+    
+    _buttonsView = [[ButtonsView alloc] initWithFrame:self.bounds btnsArray:btnsArray];
+    [self addSubview:_buttonsView];
 }
 
 
@@ -123,6 +154,8 @@
     [UIView animateWithDuration:1.0 animations:^{
         _controlPointView_1.center = _controlPoint_1;
         _controlPointView_2.center = _controlPoint_2;
+    }completion:^(BOOL finished) {
+        _buttonsView.beizerPath = _bezierPath_grooveBg;
     }];
 }
 
