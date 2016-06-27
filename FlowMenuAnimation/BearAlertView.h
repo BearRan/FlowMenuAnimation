@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BearAlertBtnsView.h"
+#import "BearAlertContentView.h"
 
 //  动效方式
 typedef enum {
@@ -29,9 +30,9 @@ typedef void (^AnimationClose_FinishBlock)();
 
 @interface BearAlertView : UIView
 
-@property (assign, nonatomic) BOOL tapBgCancel;         //触摸背景，消失Alert
-@property (assign, nonatomic) BOOL layOutAndAutoShow;   //layout后自动显示动画
-@property (copy, nonatomic) AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
+@property (assign, nonatomic)   BOOL tapBgCancel;         //触摸背景，消失Alert
+@property (copy, nonatomic)     AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
+@property (strong, nonatomic)   BearAlertContentView *normalAlertContentView;
 
 /**
  *  设置contentView

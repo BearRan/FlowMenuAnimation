@@ -218,6 +218,11 @@
     }
     
     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
+    
+    UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
+    tempContentView.backgroundColor = [UIColor orangeColor];
+    [bearAlert setContentView:tempContentView];
+    
     [bearAlert alertView_ConfirmClickBlock:^{
         NSLog(@"--confirm");
     } CancelClickBlock:^{
@@ -229,6 +234,8 @@
     };
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
     [myDelegate.window addSubview:bearAlert];
+    
+    
 }
 
 @end

@@ -8,7 +8,6 @@
 
 #import "BearAlertView.h"
 #import <objc/runtime.h>
-#import "BearAlertContentView.h"
 
 static const char *const kAlertViewBlockKey   = "UDAlertViewBlockKey";
 
@@ -42,7 +41,6 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         
         _alertViewAnimation = kAlertViewAnimation_VerticalSpring;
         _tapBgCancel = YES;
-        _layOutAndAutoShow = YES;
         
         [self createUI];
     }
@@ -72,40 +70,37 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     [_bgView addSubview:_alertView];
     
     //  _contentView
-    BearAlertContentView *alertContentView = [[BearAlertContentView alloc] init];
-    alertContentView.titleLabel.text = @"请输入一个标题";
-    alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!";
+    _normalAlertContentView = [[BearAlertContentView alloc] init];
+    _normalAlertContentView.titleLabel.text = @"请输入一个标题";
+    _normalAlertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!";
     
     //  _alertBtnsView
     BearAlertBtnsView *alertBtnsView = [[BearAlertBtnsView alloc] init];
     [alertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
     
     //  设置AlertView组件
-    [self setContentView:alertContentView];
+    [self setContentView:_normalAlertContentView];
     [self setBtnsView:alertBtnsView];
+    
 }
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
+    //  布局_alertContentView
     [_alertContentView layoutSubviews];
     
+    //  布局_alertBtnsView
     _alertBtnsView.frame = CGRectMake(0, _alertContentView.maxY, _alertContentView.width, 35);
     [_alertBtnsView layoutSubviews];
     
+    //  布局_alertView
     _alertView.size = CGSizeMake(_alertContentView.width, _alertBtnsView.maxY);
     [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
     
-    [_alertBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
-    [_alertBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [_alertBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
-    [_alertBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
-    
-    if (_layOutAndAutoShow == YES) {
-        [self animationShow_udAlertView];
-    }
+    //  显示动画
+    [self animationShow_udAlertView];
 }
 
 
@@ -135,6 +130,12 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
     _alertBtnsView = btnsView;
     [_alertView addSubview:_alertBtnsView];
+    
+    //  设置按钮事件
+    [_alertBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_alertBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [_alertBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_alertBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
