@@ -151,6 +151,17 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 }
 
 /**
+ *  点击按钮block
+ *
+ *  @param selectBtn 点击的按钮
+ *  @param block     按钮block
+ */
+- (void)udAlertView_SelectBtn:(UIButton *)selectBtn block:(kUDAlertViewBlock)block
+{
+    objc_setAssociatedObject(selectBtn, kUDAlertViewBlockKey, block, OBJC_ASSOCIATION_RETAIN);
+}
+
+/**
  *  添加按钮点击事件
  */
 - (void)btnEvent:(UIButton *)sender

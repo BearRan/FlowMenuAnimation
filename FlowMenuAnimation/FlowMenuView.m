@@ -218,11 +218,11 @@
     }
     
     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
-    [bearAlert udAlertView_ConfirmClickBlock:^{
-        NSLog(@"--confirm");
-    } CancelClickBlock:^{
-        NSLog(@"--cancel");
-    }];
+//    [bearAlert udAlertView_ConfirmClickBlock:^{
+//        NSLog(@"--confirm");
+//    } CancelClickBlock:^{
+//        NSLog(@"--cancel");
+//    }];
     bearAlert.animationClose_FinishBlock = ^(){
         NSLog(@"--close finish");
         bearAlert = nil;

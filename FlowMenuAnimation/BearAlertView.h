@@ -35,6 +35,7 @@ typedef void (^AnimationClose_FinishBlock)();
 - (void)setContentView:(UIView *)contentView;
 - (void)setBtnsView:(BearAlertBtnsView *)btnsView;
 - (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock;
+- (void)udAlertView_SelectBtn:(UIButton *)selectBtn block:(kUDAlertViewBlock)block;
 - (void)dismiss;
 
 @end
