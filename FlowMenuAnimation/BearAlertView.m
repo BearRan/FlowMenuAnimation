@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "BearAlertContentView.h"
 
-static const char *const kUDAlertViewBlockKey   = "UDAlertViewBlockKey";
+static const char *const kAlertViewBlockKey   = "UDAlertViewBlockKey";
 
 static NSString *kAnimationKey_ShowUDAlertView  = @"AnimationKey_ShowUDAlertView";
 static NSString *kAnimationKey_CloseUDAlertView = @"AnimationKey_CloseUDAlertView";
@@ -22,7 +22,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 @interface BearAlertView () <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIView            *bgView;
-@property (strong, nonatomic) UIView            *udAlertView;
+@property (strong, nonatomic) UIView            *alertView;
 @property (strong, nonatomic) UIView            *alertContentView;
 @property (strong, nonatomic) BearAlertBtnsView *alertBtnsView;
 
@@ -64,11 +64,11 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     [_bgView addGestureRecognizer:tapGesture];
     
     //  AlertView
-    _udAlertView = [[UIView alloc] init];
-    _udAlertView.backgroundColor = [UIColor whiteColor];
-    _udAlertView.layer.cornerRadius = 9.0f;
-    _udAlertView.layer.masksToBounds = YES;
-    [_bgView addSubview:_udAlertView];
+    _alertView = [[UIView alloc] init];
+    _alertView.backgroundColor = [UIColor whiteColor];
+    _alertView.layer.cornerRadius = 9.0f;
+    _alertView.layer.masksToBounds = YES;
+    [_bgView addSubview:_alertView];
     
     //  _contentView
     BearAlertContentView *alertContentView = [[BearAlertContentView alloc] init];
@@ -93,8 +93,8 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     _alertBtnsView.frame = CGRectMake(0, _alertContentView.maxY, _alertContentView.width, 35);
     [_alertBtnsView layoutSubviews];
     
-    _udAlertView.size = CGSizeMake(_alertContentView.width, _alertBtnsView.maxY);
-    [_udAlertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+    _alertView.size = CGSizeMake(_alertContentView.width, _alertBtnsView.maxY);
+    [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
     
     [_alertBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
     [_alertBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
@@ -118,7 +118,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     }
     
     _alertContentView = contentView;
-    [_udAlertView addSubview:_alertContentView];
+    [_alertView addSubview:_alertContentView];
 }
 
 /**
@@ -131,7 +131,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     }
     
     _alertBtnsView = btnsView;
-    [_udAlertView addSubview:_alertBtnsView];
+    [_alertView addSubview:_alertBtnsView];
 }
 
 
@@ -144,10 +144,10 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  *  @param confirmBlock 确认按钮block
  *  @param cancelBlock  取消按钮block
  */
-- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock
+- (void)alertView_ConfirmClickBlock:(kAlertViewBlock)confirmBlock CancelClickBlock:(kAlertViewBlock)cancelBlock
 {
-    objc_setAssociatedObject(_alertBtnsView.confirmBtn, kUDAlertViewBlockKey, confirmBlock, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(_alertBtnsView.cancelBtn, kUDAlertViewBlockKey, cancelBlock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(_alertBtnsView.confirmBtn, kAlertViewBlockKey, confirmBlock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(_alertBtnsView.cancelBtn, kAlertViewBlockKey, cancelBlock, OBJC_ASSOCIATION_RETAIN);
 }
 
 /**
@@ -156,9 +156,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  *  @param selectBtn 点击的按钮
  *  @param block     按钮block
  */
-- (void)udAlertView_SelectBtn:(UIButton *)selectBtn block:(kUDAlertViewBlock)block
+- (void)alertView_SelectBtn:(UIButton *)selectBtn block:(kAlertViewBlock)block
 {
-    objc_setAssociatedObject(selectBtn, kUDAlertViewBlockKey, block, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(selectBtn, kAlertViewBlockKey, block, OBJC_ASSOCIATION_RETAIN);
 }
 
 /**
@@ -168,7 +168,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 {
     [self dismiss];
     
-    kUDAlertViewBlock block = objc_getAssociatedObject(sender, kUDAlertViewBlockKey);
+    kAlertViewBlock block = objc_getAssociatedObject(sender, kAlertViewBlockKey);
     
     self.animationFinishBlock = ^{
         if (block) {
@@ -231,14 +231,14 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         case kAlertViewAnimation_VerticalSpring:
         {
             //  出现路径
-            [_udAlertView setCenter:CGPointMake(_bgView.width/2.0, -_udAlertView.height/2.0)];
+            [_alertView setCenter:CGPointMake(_bgView.width/2.0, -_alertView.height/2.0)];
             [UIView animateWithDuration:animationTime_keyShow
                                   delay:animationTime_bgAlpha
                  usingSpringWithDamping:0.5
                   initialSpringVelocity:0.7
                                 options:UIViewAnimationOptionCurveEaseInOut
                              animations:^{
-                                 [_udAlertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+                                 [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
                              }
                              completion:^(BOOL finished) {
                                  _alertViewAnimationState = kAlertViewAnimationState_Null;
@@ -249,8 +249,8 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         case kAlertViewAnimation_CenterScale:
         {
             //  出现路径
-            _udAlertView.hidden = YES;
-            [_udAlertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+            _alertView.hidden = YES;
+            [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
             
             CAKeyframeAnimation *keyFrameAnimation = [CAKeyframeAnimation animation];
             keyFrameAnimation.delegate = self;
@@ -261,7 +261,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
             keyFrameAnimation.beginTime = CACurrentMediaTime() + animationTime_bgAlpha;
             keyFrameAnimation.removedOnCompletion = NO;
             keyFrameAnimation.fillMode = kCAFillModeForwards;
-            [_udAlertView.layer addAnimation:keyFrameAnimation forKey:kAnimationKey_ShowUDAlertViewScale];
+            [_alertView.layer addAnimation:keyFrameAnimation forKey:kAnimationKey_ShowUDAlertViewScale];
         }
             
         default:
@@ -304,7 +304,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  消失路径
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint:CGPointMake(_bgView.width/2.0, _bgView.height/2.0)];
-    [bezierPath addLineToPoint:CGPointMake(_bgView.width/2.0, _bgView.height + _udAlertView.height)];
+    [bezierPath addLineToPoint:CGPointMake(_bgView.width/2.0, _bgView.height + _alertView.height)];
     
     CAKeyframeAnimation *keyFrameAnimation = [CAKeyframeAnimation animation];
     keyFrameAnimation.delegate = self;
@@ -313,7 +313,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     keyFrameAnimation.path = bezierPath.CGPath;
     keyFrameAnimation.removedOnCompletion = NO;
     keyFrameAnimation.fillMode = kCAFillModeForwards;
-    [_udAlertView.layer addAnimation:keyFrameAnimation forKey:kAnimationKey_CloseUDAlertView];
+    [_alertView.layer addAnimation:keyFrameAnimation forKey:kAnimationKey_CloseUDAlertView];
     
     
     //  背景透明度
@@ -333,19 +333,19 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 //  Animation Delegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
-    if ([anim isEqual:[_udAlertView.layer animationForKey:kAnimationKey_ShowUDAlertView]]) {
+    if ([anim isEqual:[_alertView.layer animationForKey:kAnimationKey_ShowUDAlertView]]) {
         
         _alertViewAnimationState = kAlertViewAnimationState_Null;
         
-        [_udAlertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
-        [_udAlertView.layer removeAnimationForKey:kAnimationKey_ShowUDAlertView];
+        [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+        [_alertView.layer removeAnimationForKey:kAnimationKey_ShowUDAlertView];
     }
     
     
-    else if ([anim isEqual:[_udAlertView.layer animationForKey:kAnimationKey_CloseUDAlertView]]){
+    else if ([anim isEqual:[_alertView.layer animationForKey:kAnimationKey_CloseUDAlertView]]){
         
-        [_udAlertView.layer removeAnimationForKey:kAnimationKey_CloseUDAlertView];
-        [_udAlertView removeFromSuperview];
+        [_alertView.layer removeAnimationForKey:kAnimationKey_CloseUDAlertView];
+        [_alertView removeFromSuperview];
     }
     
     
@@ -354,7 +354,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         [_bgView.layer removeAnimationForKey:kAnimationKey_ShowBgView];
         
         if (_alertViewAnimation == kAlertViewAnimation_CenterScale) {
-            _udAlertView.hidden = NO;
+            _alertView.hidden = NO;
         }
         
     }
@@ -378,11 +378,11 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     }
     
     
-    else if ([anim isEqual:[_udAlertView.layer animationForKey:kAnimationKey_ShowUDAlertViewScale]]){
+    else if ([anim isEqual:[_alertView.layer animationForKey:kAnimationKey_ShowUDAlertViewScale]]){
         
         _alertViewAnimationState = kAlertViewAnimationState_Null;
         
-        [_udAlertView.layer removeAnimationForKey:kAnimationKey_ShowUDAlertViewScale];
+        [_alertView.layer removeAnimationForKey:kAnimationKey_ShowUDAlertViewScale];
     }
     
 }

@@ -22,7 +22,7 @@ typedef enum {
 }AlertViewAnimationState;
 
 
-typedef void (^kUDAlertViewBlock)();
+typedef void (^kAlertViewBlock)();
 typedef void (^AnimationFinishBlock)();
 typedef void (^AnimationClose_FinishBlock)();
 
@@ -32,10 +32,35 @@ typedef void (^AnimationClose_FinishBlock)();
 @property (assign, nonatomic) BOOL tapBgCancel; //触摸背景，消失Alert
 @property (copy, nonatomic) AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
 
+/**
+ *  设置contentView
+ */
 - (void)setContentView:(UIView *)contentView;
+
+/**
+ *  设置btnsView
+ */
 - (void)setBtnsView:(BearAlertBtnsView *)btnsView;
-- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock;
-- (void)udAlertView_SelectBtn:(UIButton *)selectBtn block:(kUDAlertViewBlock)block;
+
+/**
+ *  点击按钮block
+ *
+ *  @param confirmBlock 确认按钮block
+ *  @param cancelBlock  取消按钮block
+ */
+- (void)alertView_ConfirmClickBlock:(kAlertViewBlock)confirmBlock CancelClickBlock:(kAlertViewBlock)cancelBlock;
+
+/**
+ *  点击按钮block
+ *
+ *  @param selectBtn 点击的按钮
+ *  @param block     按钮block
+ */
+- (void)alertView_SelectBtn:(UIButton *)selectBtn block:(kAlertViewBlock)block;
+
+/**
+ *  消失
+ */
 - (void)dismiss;
 
 @end
