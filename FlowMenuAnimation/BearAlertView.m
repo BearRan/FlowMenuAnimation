@@ -11,19 +11,20 @@
 #import "BearAlertBtnsView.h"
 #import "BearAlertContentView.h"
 
-static const char *const kUDAlertViewBlockKey = "UDAlertViewBlockKey";
+static const char *const kUDAlertViewBlockKey   = "UDAlertViewBlockKey";
 
-static NSString *kAnimationKey_ShowUDAlertView = @"AnimationKey_ShowUDAlertView";
+static NSString *kAnimationKey_ShowUDAlertView  = @"AnimationKey_ShowUDAlertView";
 static NSString *kAnimationKey_CloseUDAlertView = @"AnimationKey_CloseUDAlertView";
-static NSString *kAnimationKey_HideBgView = @"AnimationKey_HideBgView";
-static NSString *kAnimationKey_ShowBgView = @"AnimationKey_ShowBgView";
+static NSString *kAnimationKey_HideBgView       = @"AnimationKey_HideBgView";
+static NSString *kAnimationKey_ShowBgView       = @"AnimationKey_ShowBgView";
 static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlertViewScale";
 
 
 @interface BearAlertView () <UIApplicationDelegate>
 {
-    CGFloat _button_height;
+    
 }
+
 @property (strong, nonatomic) UIView        *bgView;
 @property (strong, nonatomic) UIView        *udAlertView;
 
@@ -46,7 +47,6 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         
         _alertViewAnimation = kAlertViewAnimation_VerticalSpring;
         _tapBgCancel = YES;
-        _button_height = 74;
         
         [self createUI];
     }
@@ -77,7 +77,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  _contentView
     _alertContentView = [[BearAlertContentView alloc] init];
     _alertContentView.titleLabel.text = @"请输入一个标题";
-    _alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!";
+    _alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!";
     [_udAlertView addSubview:_alertContentView];
     
     //  _alertBtnsView
@@ -296,7 +296,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 #pragma 按钮处理事件
 
 //  按钮处理事件
-- (void)udAlertView_ConfirmBlock:(kUDAlertViewBlock)confirmBlock cancelBlock:(kUDAlertViewBlock)cancelBlock
+- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock
 {
     objc_setAssociatedObject(_alertBtnsView.confirmBtn, kUDAlertViewBlockKey, confirmBlock, OBJC_ASSOCIATION_RETAIN);
     objc_setAssociatedObject(_alertBtnsView.cancelBtn, kUDAlertViewBlockKey, cancelBlock, OBJC_ASSOCIATION_RETAIN);
@@ -315,16 +315,19 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     };
 }
 
-- (void)dismiss
-{
-    [self animationClose_udAlertView];
-}
-
 - (void)bgTappedDismiss
 {
     if (_tapBgCancel) {
         [self dismiss];
     }
+}
+
+/**
+ *  消失
+ */
+- (void)dismiss
+{
+    [self animationClose_udAlertView];
 }
 
 @end

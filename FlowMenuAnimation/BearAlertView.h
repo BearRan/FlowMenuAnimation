@@ -29,6 +29,11 @@ typedef void (^AnimationFinishBlock)();
 
 @property (assign, nonatomic) BOOL tapBgCancel; //触摸背景，消失Alert
 
-- (void)udAlertView_ConfirmBlock:(kUDAlertViewBlock)confirmBlock cancelBlock:(kUDAlertViewBlock)cancelBlock;
+- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock;
+
+/**
+ *  消失
+ */
+- (void)dismiss;
 
 @end

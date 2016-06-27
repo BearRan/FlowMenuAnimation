@@ -21,6 +21,7 @@
         [self addSubview:_titleLabel];
         
         _contentLabel = [UILabel new];
+        _contentLabel.numberOfLines = 0;
         _contentLabel.font  =[UIFont systemFontOfSize:14];
         [self addSubview:_contentLabel];
     }

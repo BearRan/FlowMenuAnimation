@@ -73,7 +73,7 @@
         _confirmBtn.frame = CGRectMake(btn_width, 0, btn_width, btn_height);
         [_confirmBtn setTitle:_confirmBtnTitle forState:UIControlStateNormal];
         
-        _btns_verticalSepLineV.frame = CGRectMake(0, 0, 1, self.height);
+        _btns_verticalSepLineV.frame = CGRectMake(0, 0, 0.5, self.height);
         [_btns_verticalSepLineV BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
     }
     else if (res_haveConfirmBtn || res_haveCancelBtn){
@@ -91,7 +91,7 @@
         }
     }
     
-    _btns_horizontalSepLineV.frame = CGRectMake(0, 0, self.width, 1);
+    _btns_horizontalSepLineV.frame = CGRectMake(0, 0, self.width, 0.5);
 
 }
 

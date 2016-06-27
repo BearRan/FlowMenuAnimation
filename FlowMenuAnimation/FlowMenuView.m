@@ -218,9 +218,9 @@
     }
     
     BearAlertView *bearAlert = [[BearAlertView alloc] init];
-    [bearAlert udAlertView_ConfirmBlock:^{
+    [bearAlert udAlertView_ConfirmClickBlock:^{
         NSLog(@"--confirm");
-    } cancelBlock:^{
+    } CancelClickBlock:^{
         NSLog(@"--cancel");
     }];
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
