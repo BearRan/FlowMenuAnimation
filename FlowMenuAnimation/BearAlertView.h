@@ -44,7 +44,7 @@ typedef void (^AnimationClose_FinishBlock)();
 /**
  *  设置btnsView
  */
-- (void)setBtnsView:(BearAlertBtnsView *)btnsView;
+- (void)setBtnsView:(UIView *)btnsView;
 
 /**
  *  点击按钮block

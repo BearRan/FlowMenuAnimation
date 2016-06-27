@@ -61,10 +61,11 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  触摸手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgTappedDismiss)];
     tapGesture.numberOfTapsRequired = 1;
-    [_bgView addGestureRecognizer:tapGesture];
+//    [_bgView addGestureRecognizer:tapGesture];
     
     //  AlertView
     _alertView = [[UIView alloc] init];
+    _alertView.userInteractionEnabled = NO;
     _alertView.backgroundColor = [UIColor whiteColor];
     _alertView.layer.cornerRadius = 9.0f;
     _alertView.layer.masksToBounds = YES;
@@ -129,6 +130,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 {
     if (_alertContentView) {
         [_alertContentView removeFromSuperview];
+        _alertBtnsView = nil;
     }
     
     if (contentView) {
@@ -144,20 +146,21 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 {
     if (_alertBtnsView) {
         [_alertBtnsView removeFromSuperview];
+        _alertBtnsView = nil;
     }
     
     if (btnsView) {
         _alertBtnsView = btnsView;
         [_alertView addSubview:_alertBtnsView];
-    }
-    
-    if ([_alertBtnsView isKindOfClass:[BearAlertBtnsView class]]) {
-        BearAlertBtnsView *tempBtnsView = (BearAlertBtnsView *)_alertBtnsView;
-        //  设置按钮事件
-        [tempBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
-        [tempBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
-        [tempBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
-        [tempBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if ([_alertBtnsView isKindOfClass:[BearAlertBtnsView class]]) {
+            BearAlertBtnsView *tempBtnsView = (BearAlertBtnsView *)_alertBtnsView;
+            //  设置按钮事件
+            [tempBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+            [tempBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+            [tempBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+            [tempBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+        }
     }
 }
 
@@ -200,6 +203,8 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  */
 - (void)btnEvent:(UIButton *)sender
 {
+    NSLog(@"---kkk");
+    
     if (_clickBtnCancel) {
         [self animationClose_udAlertView];
     }

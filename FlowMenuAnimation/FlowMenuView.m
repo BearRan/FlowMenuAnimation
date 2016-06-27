@@ -218,6 +218,7 @@
     }
     
     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
+    bearAlert.tapBgCancel = NO;
     
     bearAlert.normalAlertContentView.titleLabel.text = @"分期管家";
     bearAlert.normalAlertContentView.contentLabel.text = @"逾期还款，啥啥啥的。";
@@ -225,27 +226,28 @@
     tempContentView.backgroundColor = [UIColor orangeColor];
     [bearAlert setContentView:tempContentView];
     
-//    UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
-//    CGFloat btn_width = floor(tempBtnsView.width / 3.0);
-//    CGFloat btn_height = tempBtnsView.height;
-//    for (int i = 0; i < 3; i++) {
-//        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
-//        btn.backgroundColor = [UIColor blueColor];
-//        [btn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
-//        [tempBtnsView addSubview:btn];
-//        [btn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
+    CGFloat btn_width = floor(tempBtnsView.width / 3.0);
+    CGFloat btn_height = tempBtnsView.height;
+    for (int i = 0; i < 3; i++) {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
+        btn.backgroundColor = [UIColor blueColor];
+        [btn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+        [tempBtnsView addSubview:btn];
+        [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
+//        [btn addTarget:bearAlert action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
 //        [bearAlert alertView_SelectBtn:btn block:^{
 //            NSLog(@"--%d", i);
 //        }];
-//    }
-//    [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
+    }
+    [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
+    [bearAlert setBtnsView:tempBtnsView];
     
-    
-    [bearAlert alertView_ConfirmClickBlock:^{
-        NSLog(@"--confirm");
-    } CancelClickBlock:^{
-        NSLog(@"--cancel");
-    }];
+//    [bearAlert alertView_ConfirmClickBlock:^{
+//        NSLog(@"--confirm");
+//    } CancelClickBlock:^{
+//        NSLog(@"--cancel");
+//    }];
     bearAlert.animationClose_FinishBlock = ^(){
         NSLog(@"--close finish");
         bearAlert = nil;
@@ -253,7 +255,21 @@
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
     [myDelegate.window addSubview:bearAlert];
     
-    
+    UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    btn_1.backgroundColor = [UIColor redColor];
+    [btn_1 addTarget:self action:@selector(test1) forControlEvents:UIControlEventTouchUpInside];
+    [bearAlert addSubview:btn_1];
+    [btn_1 BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+}
+
+- (void)test
+{
+    NSLog(@"--test");
+}
+
+- (void)test1
+{
+    NSLog(@"--test1");
 }
 
 @end
