@@ -217,7 +217,7 @@
         [self closeGrooveAniamtion];
     }
     
-    BearAlertView *bearAlert = [[BearAlertView alloc] init];
+    __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
     [bearAlert udAlertView_ConfirmClickBlock:^{
         NSLog(@"--confirm");
     } CancelClickBlock:^{
@@ -225,6 +225,7 @@
     }];
     bearAlert.animationClose_FinishBlock = ^(){
         NSLog(@"--close finish");
+        bearAlert = nil;
     };
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
     [myDelegate.window addSubview:bearAlert];

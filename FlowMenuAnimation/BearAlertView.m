@@ -8,7 +8,6 @@
 
 #import "BearAlertView.h"
 #import <objc/runtime.h>
-#import "BearAlertBtnsView.h"
 #import "BearAlertContentView.h"
 
 static const char *const kUDAlertViewBlockKey   = "UDAlertViewBlockKey";

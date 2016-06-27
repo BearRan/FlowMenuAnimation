@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BearAlertBtnsView.h"
 
 //  动效方式
 typedef enum {
@@ -31,16 +32,9 @@ typedef void (^AnimationClose_FinishBlock)();
 @property (assign, nonatomic) BOOL tapBgCancel; //触摸背景，消失Alert
 @property (copy, nonatomic) AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
 
+- (void)setContentView:(UIView *)contentView;
+- (void)setBtnsView:(BearAlertBtnsView *)btnsView;
 - (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock;
-
-/**
- *  消失
- */
 - (void)dismiss;
-
-/**
- *  添加按钮点击事件
- */
-- (void)btnEvent:(UIButton *)sender;
 
 @end
