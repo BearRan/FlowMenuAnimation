@@ -29,7 +29,8 @@ typedef void (^AnimationClose_FinishBlock)();
 
 @interface BearAlertView : UIView
 
-@property (assign, nonatomic) BOOL tapBgCancel; //触摸背景，消失Alert
+@property (assign, nonatomic) BOOL tapBgCancel;         //触摸背景，消失Alert
+@property (assign, nonatomic) BOOL layOutAndAutoShow;   //layout后自动显示动画
 @property (copy, nonatomic) AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
 
 /**
@@ -59,8 +60,13 @@ typedef void (^AnimationClose_FinishBlock)();
 - (void)alertView_SelectBtn:(UIButton *)selectBtn block:(kAlertViewBlock)block;
 
 /**
- *  消失
+ *  Alertview显现动画
  */
-- (void)dismiss;
+- (void)animationShow_udAlertView;
+
+/**
+ *  AlertView消退动画
+ */
+- (void)animationClose_udAlertView;
 
 @end

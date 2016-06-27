@@ -42,6 +42,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         
         _alertViewAnimation = kAlertViewAnimation_VerticalSpring;
         _tapBgCancel = YES;
+        _layOutAndAutoShow = YES;
         
         [self createUI];
     }
@@ -102,7 +103,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     [_alertBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
     [_alertBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self animationShow_udAlertView];
+    if (_layOutAndAutoShow == YES) {
+        [self animationShow_udAlertView];
+    }
 }
 
 
@@ -166,7 +169,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  */
 - (void)btnEvent:(UIButton *)sender
 {
-    [self dismiss];
+    [self animationClose_udAlertView];
     
     kAlertViewBlock block = objc_getAssociatedObject(sender, kAlertViewBlockKey);
     
@@ -183,16 +186,8 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 - (void)bgTappedDismiss
 {
     if (_tapBgCancel) {
-        [self dismiss];
+        [self animationClose_udAlertView];
     }
-}
-
-/**
- *  消失
- */
-- (void)dismiss
-{
-    [self animationClose_udAlertView];
 }
 
 
@@ -271,7 +266,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 }
 
 /**
- *  消退AlertView动画
+ *  AlertView消退动画
  */
 - (void)animationClose_udAlertView
 {
