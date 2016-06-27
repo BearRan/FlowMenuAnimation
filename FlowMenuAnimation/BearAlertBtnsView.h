@@ -15,6 +15,6 @@
 @property (strong, nonatomic) UIButton      *cancelBtn;
 @property (strong, nonatomic) UIButton      *confirmBtn;
 
-- (void)setNormal_ConfirmBtnTitle:(NSString *)confirmBtnTitle CancelBtnTitle:(NSString *)cancelBtnTitle;
+- (void)setNormal_CancelBtnTitle:(NSString *)cancelBtnTitle ConfirmBtnTitle:(NSString *)confirmBtnTitle;
 
 @end

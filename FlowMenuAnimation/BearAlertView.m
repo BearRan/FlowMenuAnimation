@@ -82,7 +82,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
     //  _alertBtnsView
     _alertBtnsView = [[BearAlertBtnsView alloc] init];
-    [_alertBtnsView setNormal_ConfirmBtnTitle:@"取消" CancelBtnTitle:@"确认"];
+    [_alertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
     [_udAlertView addSubview:_alertBtnsView];
 }
 
@@ -97,6 +97,12 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
     _udAlertView.size = CGSizeMake(_alertContentView.width, _alertBtnsView.maxY);
     [_udAlertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+    
+    [_alertBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_alertBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_alertBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+    [_alertBtnsView.confirmBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     [self animationShow_udAlertView];
 }

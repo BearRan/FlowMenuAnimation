@@ -47,10 +47,10 @@
     return self;
 }
 
-- (void)setNormal_ConfirmBtnTitle:(NSString *)confirmBtnTitle CancelBtnTitle:(NSString *)cancelBtnTitle
+- (void)setNormal_CancelBtnTitle:(NSString *)cancelBtnTitle ConfirmBtnTitle:(NSString *)confirmBtnTitle
 {
-    _confirmBtnTitle = confirmBtnTitle;
     _cancelBtnTitle = cancelBtnTitle;
+    _confirmBtnTitle = confirmBtnTitle;
 }
 
 - (void)layoutSubviews
@@ -67,11 +67,11 @@
         
         btn_width = self.width / 2.0;
         
-        _confirmBtn.frame = CGRectMake(0, 0, btn_width, btn_height);
-        [_confirmBtn setTitle:_confirmBtnTitle forState:UIControlStateNormal];
-        
-        _cancelBtn.frame = CGRectMake(btn_width, 0, btn_width, btn_height);
+        _cancelBtn.frame = CGRectMake(0, 0, btn_width, btn_height);
         [_cancelBtn setTitle:_cancelBtnTitle forState:UIControlStateNormal];
+        
+        _confirmBtn.frame = CGRectMake(btn_width, 0, btn_width, btn_height);
+        [_confirmBtn setTitle:_confirmBtnTitle forState:UIControlStateNormal];
         
         _btns_verticalSepLineV.frame = CGRectMake(0, 0, 1, self.height);
         [_btns_verticalSepLineV BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
