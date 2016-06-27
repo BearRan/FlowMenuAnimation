@@ -32,7 +32,8 @@ typedef void (^AnimationClose_FinishBlock)();
 
 @property (assign, nonatomic)   BOOL tapBgCancel;         //触摸背景，消失Alert
 @property (copy, nonatomic)     AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
-@property (strong, nonatomic)   BearAlertContentView *normalAlertContentView;
+@property (strong, nonatomic)   BearAlertContentView    *normalAlertContentView;
+@property (strong, nonatomic)   BearAlertBtnsView       *normalAlertBtnsView;
 
 /**
  *  设置contentView

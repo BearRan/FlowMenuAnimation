@@ -219,9 +219,11 @@
     
     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
     
-    UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
-    tempContentView.backgroundColor = [UIColor orangeColor];
-    [bearAlert setContentView:tempContentView];
+    bearAlert.normalAlertContentView.titleLabel.text = @"分期管家";
+    bearAlert.normalAlertContentView.contentLabel.text = @"逾期还款，啥啥啥的。";
+//    UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
+//    tempContentView.backgroundColor = [UIColor orangeColor];
+//    [bearAlert setContentView:tempContentView];
     
     [bearAlert alertView_ConfirmClickBlock:^{
         NSLog(@"--confirm");
