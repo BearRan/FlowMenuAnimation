@@ -50,6 +50,7 @@ typedef void (^AnimationClose_FinishBlock)();
  *
  *  @param confirmBlock 确认按钮block
  *  @param cancelBlock  取消按钮block
+ *  @notice 只有BearAlertBtnsView类型的btnsView才可使用该方法
  */
 - (void)alertView_ConfirmClickBlock:(kAlertViewBlock)confirmBlock CancelClickBlock:(kAlertViewBlock)cancelBlock;
 
@@ -58,8 +59,15 @@ typedef void (^AnimationClose_FinishBlock)();
  *
  *  @param selectBtn 点击的按钮
  *  @param block     按钮block
+ *  @notice 自定义，非BearAlertBtnsView类型需要单独给按钮调用该方法
  */
 - (void)alertView_SelectBtn:(UIButton *)selectBtn block:(kAlertViewBlock)block;
+
+/**
+ *  添加按钮点击事件
+ *  @notice 自定义，非BearAlertBtnsView类型需要单独给按钮调用该方法
+ */
+- (void)btnEvent:(UIButton *)sender;
 
 /**
  *  Alertview显现动画
