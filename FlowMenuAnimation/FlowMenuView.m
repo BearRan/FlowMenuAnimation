@@ -218,13 +218,13 @@
     }
     
     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
-    bearAlert.tapBgCancel = NO;
+//    bearAlert.tapBgCancel = YES;
     
     bearAlert.normalAlertContentView.titleLabel.text = @"分期管家";
     bearAlert.normalAlertContentView.contentLabel.text = @"逾期还款，啥啥啥的。";
     UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
     tempContentView.backgroundColor = [UIColor orangeColor];
-    [bearAlert setContentView:tempContentView];
+//    [bearAlert setContentView:tempContentView];
     
     UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
     CGFloat btn_width = floor(tempBtnsView.width / 3.0);
@@ -241,13 +241,13 @@
 //        }];
     }
     [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
-    [bearAlert setBtnsView:tempBtnsView];
+//    [bearAlert setBtnsView:tempBtnsView];
     
-//    [bearAlert alertView_ConfirmClickBlock:^{
-//        NSLog(@"--confirm");
-//    } CancelClickBlock:^{
-//        NSLog(@"--cancel");
-//    }];
+    [bearAlert alertView_ConfirmClickBlock:^{
+        NSLog(@"--confirm");
+    } CancelClickBlock:^{
+        NSLog(@"--cancel");
+    }];
     bearAlert.animationClose_FinishBlock = ^(){
         NSLog(@"--close finish");
         bearAlert = nil;
@@ -255,11 +255,11 @@
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
     [myDelegate.window addSubview:bearAlert];
     
-    UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    btn_1.backgroundColor = [UIColor redColor];
-    [btn_1 addTarget:self action:@selector(test1) forControlEvents:UIControlEventTouchUpInside];
-    [bearAlert addSubview:btn_1];
-    [btn_1 BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
+//    UIButton *btn_1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+//    btn_1.backgroundColor = [UIColor redColor];
+//    [btn_1 addTarget:self action:@selector(test1) forControlEvents:UIControlEventTouchUpInside];
+//    [bearAlert addSubview:btn_1];
+//    [btn_1 BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
 }
 
 - (void)test

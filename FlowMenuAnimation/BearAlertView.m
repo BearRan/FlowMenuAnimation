@@ -61,7 +61,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  触摸手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgTappedDismiss)];
     tapGesture.numberOfTapsRequired = 1;
-//    [_bgView addGestureRecognizer:tapGesture];
+    [_bgView addGestureRecognizer:tapGesture];
     
     //  AlertView
     _alertView = [[UIView alloc] init];
@@ -79,6 +79,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  _alertBtnsView
     _normalAlertBtnsView = [[BearAlertBtnsView alloc] init];
     [_normalAlertBtnsView setHeight:35];
+    _normalAlertBtnsView.userInteractionEnabled = YES;
     [_normalAlertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
     
     //  设置AlertView组件
@@ -130,7 +131,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 {
     if (_alertContentView) {
         [_alertContentView removeFromSuperview];
-        _alertBtnsView = nil;
+        _alertContentView = nil;
     }
     
     if (contentView) {
