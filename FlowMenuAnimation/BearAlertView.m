@@ -65,10 +65,10 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
     //  AlertView
     _alertView = [[UIView alloc] init];
-    _alertView.userInteractionEnabled = NO;
-    _alertView.backgroundColor = [UIColor whiteColor];
-    _alertView.layer.cornerRadius = 9.0f;
-    _alertView.layer.masksToBounds = YES;
+    _alertView.userInteractionEnabled   = YES;
+    _alertView.backgroundColor          = [UIColor whiteColor];
+    _alertView.layer.cornerRadius       = 9.0f;
+    _alertView.layer.masksToBounds      = YES;
     [_bgView addSubview:_alertView];
     
     //  _contentView
@@ -157,6 +157,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         if ([_alertBtnsView isKindOfClass:[BearAlertBtnsView class]]) {
             BearAlertBtnsView *tempBtnsView = (BearAlertBtnsView *)_alertBtnsView;
             //  设置按钮事件
+            
+            [_alertView addSubview:tempBtnsView];
+            
             [tempBtnsView.cancelBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
             [tempBtnsView.cancelBtn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
             [tempBtnsView.confirmBtn removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
