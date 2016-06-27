@@ -223,6 +223,9 @@
     } CancelClickBlock:^{
         NSLog(@"--cancel");
     }];
+    bearAlert.animationClose_FinishBlock = ^(){
+        NSLog(@"--close finish");
+    };
     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
     [myDelegate.window addSubview:bearAlert];
 }

@@ -23,11 +23,13 @@ typedef enum {
 
 typedef void (^kUDAlertViewBlock)();
 typedef void (^AnimationFinishBlock)();
+typedef void (^AnimationClose_FinishBlock)();
 
 
 @interface BearAlertView : UIView
 
 @property (assign, nonatomic) BOOL tapBgCancel; //触摸背景，消失Alert
+@property (copy, nonatomic) AnimationClose_FinishBlock  animationClose_FinishBlock; //消退动画完成block
 
 - (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock;
 

@@ -21,9 +21,6 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 
 
 @interface BearAlertView () <UIApplicationDelegate>
-{
-    
-}
 
 @property (strong, nonatomic) UIView            *bgView;
 @property (strong, nonatomic) UIView            *udAlertView;
@@ -193,7 +190,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 #pragma mark - 动画处理
 
 /**
- *  Alertview弹出动画
+ *  Alertview显现动画
  */
 - (void)animationShow_udAlertView
 {
@@ -363,6 +360,10 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         
         if (self.animationFinishBlock) {
             self.animationFinishBlock();
+        }
+        
+        if (self.animationClose_FinishBlock) {
+            self.animationClose_FinishBlock();
         }
     }
     
