@@ -225,6 +225,20 @@
     tempContentView.backgroundColor = [UIColor orangeColor];
     [bearAlert setContentView:tempContentView];
     
+//    UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
+//    CGFloat btn_width = floor(tempBtnsView.width / 3.0);
+//    CGFloat btn_height = tempBtnsView.height;
+//    for (int i = 0; i < 3; i++) {
+//        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
+//        btn.backgroundColor = [UIColor blueColor];
+//        [btn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+//        [tempBtnsView addSubview:btn];
+//        [btn addTarget:self action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+//        [bearAlert alertView_SelectBtn:btn block:^{
+//            NSLog(@"--%d", i);
+//        }];
+//    }
+//    [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
     
     
     [bearAlert alertView_ConfirmClickBlock:^{

@@ -41,6 +41,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         
         _alertViewAnimation = kAlertViewAnimation_VerticalSpring;
         _tapBgCancel = YES;
+        _clickBtnCancel = YES;
         
         [self createUI];
     }
@@ -76,6 +77,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
     //  _alertBtnsView
     _normalAlertBtnsView = [[BearAlertBtnsView alloc] init];
+    [_normalAlertBtnsView setHeight:35];
     [_normalAlertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
     
     //  设置AlertView组件
@@ -88,15 +90,29 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 {
     [super layoutSubviews];
     
+    CGFloat tempY = 0;
+    CGFloat temp_width = 0;
+    
     //  布局_alertContentView
-    [_alertContentView layoutSubviews];
+    if (_alertContentView) {
+        [_alertContentView layoutSubviews];
+        tempY = _alertContentView.maxY;
+        temp_width = _alertContentView.width;
+    }
     
     //  布局_alertBtnsView
-    _alertBtnsView.frame = CGRectMake(0, _alertContentView.maxY, _alertContentView.width, 35);
-    [_alertBtnsView layoutSubviews];
+    if (_alertBtnsView) {
+        [_alertBtnsView setY:tempY];
+        [_alertBtnsView setWidth:_alertContentView.width];
+        [_alertBtnsView layoutSubviews];
+        tempY = _alertBtnsView.maxY;
+        if (temp_width == 0) {
+            temp_width = _alertBtnsView.width;
+        }
+    }
     
     //  布局_alertView
-    _alertView.size = CGSizeMake(_alertContentView.width, _alertBtnsView.maxY);
+    _alertView.size = CGSizeMake(temp_width, tempY);
     [_alertView BearSetCenterToParentViewWithAxis:kAXIS_X_Y];
     
     //  显示动画
@@ -115,21 +131,25 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
         [_alertContentView removeFromSuperview];
     }
     
-    _alertContentView = contentView;
-    [_alertView addSubview:_alertContentView];
+    if (contentView) {
+        _alertContentView = contentView;
+        [_alertView addSubview:_alertContentView];
+    }
 }
 
 /**
  *  设置btnsView
  */
-- (void)setBtnsView:(BearAlertBtnsView *)btnsView
+- (void)setBtnsView:(UIView *)btnsView
 {
     if (_alertBtnsView) {
         [_alertBtnsView removeFromSuperview];
     }
     
-    _alertBtnsView = btnsView;
-    [_alertView addSubview:_alertBtnsView];
+    if (btnsView) {
+        _alertBtnsView = btnsView;
+        [_alertView addSubview:_alertBtnsView];
+    }
     
     if ([_alertBtnsView isKindOfClass:[BearAlertBtnsView class]]) {
         BearAlertBtnsView *tempBtnsView = (BearAlertBtnsView *)_alertBtnsView;
@@ -180,7 +200,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  */
 - (void)btnEvent:(UIButton *)sender
 {
-    [self animationClose_udAlertView];
+    if (_clickBtnCancel) {
+        [self animationClose_udAlertView];
+    }
     
     kAlertViewBlock block = objc_getAssociatedObject(sender, kAlertViewBlockKey);
     
