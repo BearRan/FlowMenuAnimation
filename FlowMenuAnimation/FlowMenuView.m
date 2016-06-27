@@ -11,6 +11,9 @@
 #import "ButtonsView.h"
 #import "SpecialBtn.h"
 
+#import "BearAlertView.h"
+#import "AppDelegate.h"
+
 @interface FlowMenuView ()
 {
     CGPoint _controlPoint_1;
@@ -213,6 +216,15 @@
     }else{
         [self closeGrooveAniamtion];
     }
+    
+    BearAlertView *bearAlert = [[BearAlertView alloc] init];
+    [bearAlert udAlertView_ConfirmBlock:^{
+        NSLog(@"--confirm");
+    } cancelBlock:^{
+        NSLog(@"--cancel");
+    }];
+    AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+    [myDelegate.window addSubview:bearAlert];
 }
 
 @end
