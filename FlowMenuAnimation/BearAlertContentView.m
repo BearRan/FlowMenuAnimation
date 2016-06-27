@@ -17,11 +17,11 @@
     if (self) {
         
         _titleLabel = [UILabel new];
-        _titleLabel.font = [UIFont systemFontOfSize:14];
+        _titleLabel.font = [UIFont systemFontOfSize:16];
         [self addSubview:_titleLabel];
         
         _contentLabel = [UILabel new];
-        _contentLabel.font  =[UIFont systemFontOfSize:12];
+        _contentLabel.font  =[UIFont systemFontOfSize:14];
         [self addSubview:_contentLabel];
     }
     
@@ -52,7 +52,7 @@
         [self setWidth:WIDTH / 2];
     }
     
-    [_titleLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:nil parentRelation:YES distance:10 center:YES];
+    [_titleLabel BearSetRelativeLayoutWithDirection:kDIR_UP destinationView:nil parentRelation:YES distance:15 center:YES];
     [_contentLabel BearSetRelativeLayoutWithDirection:kDIR_DOWN destinationView:_titleLabel parentRelation:NO distance:20 center:YES];
     [self setHeight:_contentLabel.maxY + 20];
 }

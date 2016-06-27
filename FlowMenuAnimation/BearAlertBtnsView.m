@@ -26,17 +26,21 @@
         
         //  取消按钮
         _cancelBtn = [[UIButton alloc] init];
+        [_cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:_cancelBtn];
         
         //  确定按钮
         _confirmBtn = [[UIButton alloc] init];
+        [_confirmBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [self addSubview:_confirmBtn];
         
         //  分割线
         _btns_horizontalSepLineV = [[UIView alloc] init];
+        _btns_horizontalSepLineV.backgroundColor = [UIColor blackColor];
         [self addSubview:_btns_horizontalSepLineV];
         
         _btns_verticalSepLineV = [[UIView alloc] init];
+        _btns_verticalSepLineV.backgroundColor = [UIColor blackColor];
         [self addSubview:_btns_verticalSepLineV];
     }
     
@@ -53,8 +57,8 @@
 {
     [super layoutSubviews];
     
-    BOOL res_haveConfirmBtn = NO;
-    BOOL res_haveCancelBtn = NO;
+    BOOL res_haveConfirmBtn = [_confirmBtnTitle length] > 0;
+    BOOL res_haveCancelBtn = [_cancelBtnTitle length] > 0;
     
     CGFloat btn_width = self.width;
     CGFloat btn_height = self.height;
@@ -88,7 +92,6 @@
     }
     
     _btns_horizontalSepLineV.frame = CGRectMake(0, 0, self.width, 1);
-    _btns_horizontalSepLineV.backgroundColor = [UIColor blackColor];
 
 }
 

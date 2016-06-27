@@ -142,12 +142,7 @@
 				09D2F1EE1D1B676200093946 /* SpecialBtn.m */,
 				09D2F1E71D1B4F3600093946 /* AssignPointView.h */,
 				09D2F1E81D1B4F3600093946 /* AssignPointView.m */,
-				09312FB81D20ACD500AACE69 /* BearAlertBtnsView.h */,
-				09312FB91D20ACD500AACE69 /* BearAlertBtnsView.m */,
-				09312FBA1D20ACD500AACE69 /* BearAlertContentView.h */,
-				09312FBB1D20ACD500AACE69 /* BearAlertContentView.m */,
-				09312FBC1D20ACD500AACE69 /* BearAlertView.h */,
-				09312FBD1D20ACD500AACE69 /* BearAlertView.m */,
+				18969F411D20B9C600CD39F0 /* BearAlertView */,
 				09D2F1B91D1AD2A100093946 /* Main.storyboard */,
 				09D2F1BC1D1AD2A100093946 /* Assets.xcassets */,
 				09D2F1BE1D1AD2A100093946 /* LaunchScreen.storyboard */,
@@ -191,6 +186,19 @@
 				24F02D14E650899A3C60A5C5 /* Pods-FlowMenuAnimation.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		18969F411D20B9C600CD39F0 /* BearAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				09312FBC1D20ACD500AACE69 /* BearAlertView.h */,
+				09312FBD1D20ACD500AACE69 /* BearAlertView.m */,
+				09312FBA1D20ACD500AACE69 /* BearAlertContentView.h */,
+				09312FBB1D20ACD500AACE69 /* BearAlertContentView.m */,
+				09312FB81D20ACD500AACE69 /* BearAlertBtnsView.h */,
+				09312FB91D20ACD500AACE69 /* BearAlertBtnsView.m */,
+			);
+			name = BearAlertView;
 			sourceTree = "<group>";
 		};
 		F64B418A3286B43C674CBD74 /* Frameworks */ = {

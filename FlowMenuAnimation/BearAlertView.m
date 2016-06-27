@@ -77,7 +77,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     //  _contentView
     _alertContentView = [[BearAlertContentView alloc] init];
     _alertContentView.titleLabel.text = @"请输入一个标题";
-    _alertContentView.contentLabel.text = @"请输入正文内容!!!";
+    _alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!";
     [_udAlertView addSubview:_alertContentView];
     
     //  _alertBtnsView
