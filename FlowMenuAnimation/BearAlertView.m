@@ -25,10 +25,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
 }
 
-@property (strong, nonatomic) UIView        *bgView;
-@property (strong, nonatomic) UIView        *udAlertView;
-
-@property (strong, nonatomic) BearAlertContentView *alertContentView;
+@property (strong, nonatomic) UIView            *bgView;
+@property (strong, nonatomic) UIView            *udAlertView;
+@property (strong, nonatomic) UIView            *alertContentView;
 @property (strong, nonatomic) BearAlertBtnsView *alertBtnsView;
 
 @property (assign, nonatomic) AlertViewAnimation    alertViewAnimation;
@@ -63,6 +62,7 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     _bgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
     [self addSubview:_bgView];
     
+    //  触摸手势
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bgTappedDismiss)];
     tapGesture.numberOfTapsRequired = 1;
     [_bgView addGestureRecognizer:tapGesture];
@@ -75,15 +75,17 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     [_bgView addSubview:_udAlertView];
     
     //  _contentView
-    _alertContentView = [[BearAlertContentView alloc] init];
-    _alertContentView.titleLabel.text = @"请输入一个标题";
-    _alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!";
-    [_udAlertView addSubview:_alertContentView];
+    BearAlertContentView *alertContentView = [[BearAlertContentView alloc] init];
+    alertContentView.titleLabel.text = @"请输入一个标题";
+    alertContentView.contentLabel.text = @"请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!请输入正文内容!!!";
     
     //  _alertBtnsView
-    _alertBtnsView = [[BearAlertBtnsView alloc] init];
-    [_alertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
-    [_udAlertView addSubview:_alertBtnsView];
+    BearAlertBtnsView *alertBtnsView = [[BearAlertBtnsView alloc] init];
+    [alertBtnsView setNormal_CancelBtnTitle:@"取消" ConfirmBtnTitle:@"确认" ];
+    
+    //  设置AlertView组件
+    [self setContentView:alertContentView];
+    [self setBtnsView:alertBtnsView];
 }
 
 - (void)layoutSubviews
@@ -108,10 +110,91 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 }
 
 
+#pragma mark - 设置AlertView组件
+
+/**
+ *  设置contentView
+ */
+- (void)setContentView:(UIView *)contentView
+{
+    if (_alertContentView) {
+        [_alertContentView removeFromSuperview];
+    }
+    
+    _alertContentView = contentView;
+    [_udAlertView addSubview:_alertContentView];
+}
+
+/**
+ *  设置btnsView
+ */
+- (void)setBtnsView:(BearAlertBtnsView *)btnsView
+{
+    if (_alertBtnsView) {
+        [_alertBtnsView removeFromSuperview];
+    }
+    
+    _alertBtnsView = btnsView;
+    [_udAlertView addSubview:_alertBtnsView];
+}
 
 
-#pragma mark 动画处理
 
+#pragma mark - 按钮处理事件
+
+/**
+ *  点击按钮block
+ *
+ *  @param confirmBlock 确认按钮block
+ *  @param cancelBlock  取消按钮block
+ */
+- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock
+{
+    objc_setAssociatedObject(_alertBtnsView.confirmBtn, kUDAlertViewBlockKey, confirmBlock, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(_alertBtnsView.cancelBtn, kUDAlertViewBlockKey, cancelBlock, OBJC_ASSOCIATION_RETAIN);
+}
+
+/**
+ *  添加按钮点击事件
+ */
+- (void)btnEvent:(UIButton *)sender
+{
+    [self dismiss];
+    
+    kUDAlertViewBlock block = objc_getAssociatedObject(sender, kUDAlertViewBlockKey);
+    
+    self.animationFinishBlock = ^{
+        if (block) {
+            block();
+        }
+    };
+}
+
+/**
+ *  触摸消失
+ */
+- (void)bgTappedDismiss
+{
+    if (_tapBgCancel) {
+        [self dismiss];
+    }
+}
+
+/**
+ *  消失
+ */
+- (void)dismiss
+{
+    [self animationClose_udAlertView];
+}
+
+
+
+#pragma mark - 动画处理
+
+/**
+ *  Alertview弹出动画
+ */
 - (void)animationShow_udAlertView
 {
     
@@ -180,6 +263,9 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
     
 }
 
+/**
+ *  消退AlertView动画
+ */
 - (void)animationClose_udAlertView
 {
     if (_alertViewAnimationState == kAlertViewAnimationState_Process) {
@@ -291,43 +377,5 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
 }
 
 
-
-
-#pragma 按钮处理事件
-
-//  按钮处理事件
-- (void)udAlertView_ConfirmClickBlock:(kUDAlertViewBlock)confirmBlock CancelClickBlock:(kUDAlertViewBlock)cancelBlock
-{
-    objc_setAssociatedObject(_alertBtnsView.confirmBtn, kUDAlertViewBlockKey, confirmBlock, OBJC_ASSOCIATION_RETAIN);
-    objc_setAssociatedObject(_alertBtnsView.cancelBtn, kUDAlertViewBlockKey, cancelBlock, OBJC_ASSOCIATION_RETAIN);
-}
-
-- (void)btnEvent:(UIButton *)sender
-{
-    [self dismiss];
-    
-    kUDAlertViewBlock block = objc_getAssociatedObject(sender, kUDAlertViewBlockKey);
-    
-    self.animationFinishBlock = ^{
-        if (block) {
-            block();
-        }
-    };
-}
-
-- (void)bgTappedDismiss
-{
-    if (_tapBgCancel) {
-        [self dismiss];
-    }
-}
-
-/**
- *  消失
- */
-- (void)dismiss
-{
-    [self animationClose_udAlertView];
-}
 
 @end

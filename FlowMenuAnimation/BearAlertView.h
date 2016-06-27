@@ -36,4 +36,9 @@ typedef void (^AnimationFinishBlock)();
  */
 - (void)dismiss;
 
+/**
+ *  添加按钮点击事件
+ */
+- (void)btnEvent:(UIButton *)sender;
+
 @end
