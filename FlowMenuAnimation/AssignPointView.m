@@ -40,8 +40,21 @@
     assignPointView.finalPoint = finalPoint;
     
     [inView addSubview:assignPointView];
+    assignPointView.center = assignPointView.startPoint;
     
+    return assignPointView;
+}
+
+//  只有一个点，不会变，左上角和右上角的点
++ (AssignPointView *)normalPointView_inView:(UIView *)inView onlyPoint:(CGPoint)onlyPoint
+{
+    AssignPointView *assignPointView = [[AssignPointView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    assignPointView.backgroundColor = [UIColor blackColor];
+    assignPointView.layer.cornerRadius = assignPointView.width / 2.0;
+    assignPointView.layer.masksToBounds = YES;
+    assignPointView.startPoint = onlyPoint;
     
+    [inView addSubview:assignPointView];
     assignPointView.center = assignPointView.startPoint;
     
     return assignPointView;
@@ -74,6 +87,20 @@
     _finalPoint = finalPoint;
     
     _startPoint = CGPointMake(finalPoint.x, 0);
+}
+
+@synthesize presentationLayer = _presentationLayer;
+- (CAShapeLayer *)presentationLayer
+{
+    _presentationLayer = self.layer.presentationLayer;
+    return _presentationLayer;
+}
+
+@synthesize prePosition = _prePosition;
+- (CGPoint)prePosition
+{
+    _prePosition = self.presentationLayer.position;
+    return _prePosition;
 }
 
 /*

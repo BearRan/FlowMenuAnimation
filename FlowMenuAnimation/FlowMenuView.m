@@ -87,32 +87,10 @@ static CGFloat tempOff_y = 100;
     _assignPointModel._controlPointView_D2 = [AssignPointView normalPointView_inView:myView finalPoint:_point_D2];
     _assignPointModel._controlPointView_D3 = [AssignPointView normalPointView_inView:myView finalPoint:_point_D3];
     
+    _assignPointModel._controlPointView_LeftUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(0, 0)];
+    _assignPointModel._controlPointView_RightUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(self.width, 0)];
     
-//    //  沟槽的四个Bezier控制点
-//    
-//    startPoint = CGPointMake(100.0 / 372 * self.width, 0 + tempOff_y);
-//    _controlPointView_start = [AssignPointView normalPointView];
-//    _controlPointView_start.center = startPoint;
-//    [_grooveBgView addSubview:_controlPointView_start];
-//    
-//    endPoint = CGPointMake(self.width * 1.4, 0 + tempOff_y);
-//    _controlPointView_end = [AssignPointView normalPointView];
-//    _controlPointView_end.center = endPoint;
-//    [_grooveBgView addSubview:_controlPointView_end];
-//    
-//    CGFloat controlPointView_1_x = 291.0 / 372 * self.width;
-//    CGFloat controlPointView_1_y = 10 + tempOff_y;
-//    _controlPoint_1 = CGPointMake(controlPointView_1_x, controlPointView_1_y);
-//    _controlPointView_1 = [AssignPointView normalPointView];
-//    _controlPointView_1.center = _controlPoint_1;
-//    [_grooveBgView addSubview:_controlPointView_1];
-//    
-//    CGFloat controlPointView_2_x = 184.0 / 372 * self.width;
-//    CGFloat controlPointView_2_y = 274 + tempOff_y;
-//    _controlPoint_2 = CGPointMake(controlPointView_2_x, controlPointView_2_y);
-//    _controlPointView_2 = [AssignPointView normalPointView];
-//    _controlPointView_2.center = _controlPoint_2;
-//    [_grooveBgView addSubview:_controlPointView_2];
+
     
     
     
@@ -291,19 +269,41 @@ static CGFloat tempOff_y = 100;
 
 - (void)updateGrooveBgLayer
 {
-    CALayer *presentLayer_1 = _controlPointView_1.layer.presentationLayer;
-    CALayer *presentLayer_2 = _controlPointView_2.layer.presentationLayer;
-    
-    
     [_bezierPath_downGroove removeAllPoints];
-    [_bezierPath_downGroove moveToPoint:CGPointMake(0, 0 + tempOff_y)];
-    [_bezierPath_downGroove addLineToPoint:startPoint];
-    [_bezierPath_downGroove addCurveToPoint:endPoint controlPoint1:presentLayer_1.position controlPoint2:presentLayer_2.position];
     
-    [_bezierPath_grooveBg removeAllPoints];
-    [_bezierPath_grooveBg appendPath:_bezierPath_downGroove];
-    [_bezierPath_grooveBg addLineToPoint:CGPointMake(0, 0 + tempOff_y)];
-    [_bezierPath_grooveBg closePath];
+    _bezierPath_downGroove = UIBezierPath.bezierPath;
+    [_bezierPath_downGroove moveToPoint: CGPointMake(0, 0)];
+    [_bezierPath_downGroove addLineToPoint: _assignPointModel._controlPointView_A.prePosition];
+    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_B1.prePosition
+                              controlPoint1: _assignPointModel._controlPointView_B2.prePosition
+                              controlPoint2: _assignPointModel._controlPointView_B3.prePosition];
+    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_C1.prePosition
+                              controlPoint1: _assignPointModel._controlPointView_C2.prePosition
+                              controlPoint2: _assignPointModel._controlPointView_C3.prePosition];
+    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_D1.prePosition
+                              controlPoint1: _assignPointModel._controlPointView_D2.prePosition
+                              controlPoint2: _assignPointModel._controlPointView_D3.prePosition];
+    
+    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
+    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
+    [_bezierPath_downGroove closePath];
+    
+    
+    
+    
+//    CALayer *presentLayer_1 = _controlPointView_1.layer.presentationLayer;
+//    CALayer *presentLayer_2 = _controlPointView_2.layer.presentationLayer;
+//    
+//    
+//    [_bezierPath_downGroove removeAllPoints];
+//    [_bezierPath_downGroove moveToPoint:CGPointMake(0, 0 + tempOff_y)];
+//    [_bezierPath_downGroove addLineToPoint:startPoint];
+//    [_bezierPath_downGroove addCurveToPoint:endPoint controlPoint1:presentLayer_1.position controlPoint2:presentLayer_2.position];
+//    
+//    [_bezierPath_grooveBg removeAllPoints];
+//    [_bezierPath_grooveBg appendPath:_bezierPath_downGroove];
+//    [_bezierPath_grooveBg addLineToPoint:CGPointMake(0, 0 + tempOff_y)];
+//    [_bezierPath_grooveBg closePath];
     
     _grooveBgLayer.path = _bezierPath_grooveBg.CGPath;
     [self.layer addSublayer:_grooveBgLayer];

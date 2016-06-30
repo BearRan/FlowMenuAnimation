@@ -22,4 +22,7 @@
 @property (strong, nonatomic) AssignPointView *_controlPointView_D2;
 @property (strong, nonatomic) AssignPointView *_controlPointView_D3;
 
+@property (strong, nonatomic) AssignPointView *_controlPointView_LeftUp;
+@property (strong, nonatomic) AssignPointView *_controlPointView_RightUp;
+
 @end
