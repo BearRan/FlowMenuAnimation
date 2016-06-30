@@ -46,18 +46,6 @@
 {
     [_animator removeAllBehaviors];
     
-//    [_beizerPath removeAllPoints];
-//    [_beizerPath moveToPoint:CGPointMake(10, 10)];
-//    [_beizerPath addLineToPoint:CGPointMake(self.width - 10, self.height - 10)];
-//
-    
-    //  temppath
-    UIBezierPath *tempPath = [[UIBezierPath alloc] init];
-    [tempPath moveToPoint:CGPointMake(0, 100)];
-    [tempPath addQuadCurveToPoint:CGPointMake(self.width, 100) controlPoint:CGPointMake(self.width / 2.0, self.height)];
-    _beizerPath = tempPath;
-    
-    
     _pathLayer.path = _beizerPath.CGPath;
     _pathLayer.fillColor = [UIColor clearColor].CGColor;
     _pathLayer.strokeColor = [UIColor orangeColor].CGColor;
@@ -86,46 +74,43 @@
 //    }
     
     
-    [self tempBehavior];
+//    [self tempBehavior];
+    [self tempBehavior_1];
     
-    return;
-    
-    
+}
+
+- (void)tempBehavior_1
+{
     UIButton *tempBtn = _btnArray[0];
     [self addSubview:tempBtn];
     
-    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] init];
+    [tempBtn setX:170];
+    
+    [_beizerPath addLineToPoint:CGPointMake(WIDTH, 0)];
+    [_beizerPath addLineToPoint:CGPointMake(0, 0)];
+    [_beizerPath closePath];
+    
+    CAShapeLayer *_pathLayer1 = [CAShapeLayer layer];
+    _pathLayer1.path = _beizerPath.CGPath;
+    _pathLayer1.fillColor = [UIColor clearColor].CGColor;
+    _pathLayer1.strokeColor = [UIColor greenColor].CGColor;
+    _pathLayer1.lineWidth = 2.0;
+    [self.layer addSublayer:_pathLayer1];
+    
+    UIGravityBehavior * gravityBehavior = [[UIGravityBehavior alloc] init];
     [gravityBehavior addItem:tempBtn];
-    
-    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:tempBtn attachedToAnchor:CGPointMake(self.width / 2.0, 10)];
-    
     UIDynamicItemBehavior * itemBehavior = [[UIDynamicItemBehavior alloc] init];
     itemBehavior.resistance = 0.2;
+    UICollisionBehavior * collisitionBehavior = [[UICollisionBehavior alloc] init];
+    [collisitionBehavior addItem:tempBtn];
+//    collisitionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+    [collisitionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
     
-//    UIDynamicItemBehavior *dynamicItemBehavior = [[UIDynamicItemBehavior alloc] init];
-//    dynamicItemBehavior.density = 100;
-//    dynamicItemBehavior.resistance = 10;
-//    
-//    CGPoint currentVelocity = [dynamicItemBehavior linearVelocityForItem:self.item];
-//    CGPoint velocityDelta = CGPointMake(velocity.x - currentVelocity.x, velocity.y - currentVelocity.y);
-//    [self.itemBehavior addLinearVelocity:velocityDelta forItem:self.item];
-//
-//    
-//    [dynamicItemBehavior addLinearVelocity:CGPointMake(tempBtn.x + 100, tempBtn.y) forItem:tempBtn];
-    
-    UICollisionBehavior *collosionBehavior = [[UICollisionBehavior alloc] init];
-    [collosionBehavior addItem:tempBtn];
-    collosionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    [collosionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
-
-    
-    
-    [_animator addBehavior:gravityBehavior];
-    [_animator addBehavior:attachmentBehavior];
+    [_animator addBehavior:collisitionBehavior];
     [_animator addBehavior:itemBehavior];
-//    [_animator addBehavior:dynamicItemBehavior];
-    [_animator addBehavior:collosionBehavior];
+    [_animator addBehavior:gravityBehavior];
 }
+
 
 - (void)tempBehavior
 {
