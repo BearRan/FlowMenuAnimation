@@ -10,8 +10,16 @@
 
 @interface AssignPointView : UIView
 
+@property (assign, nonatomic) CGPoint   startPoint;
+@property (assign, nonatomic) CGPoint   finalPoint;
+
 + (AssignPointView *)normalPointView_width:(CGFloat)width fillColor:(UIColor *)fillColor;
 
 + (AssignPointView *)normalPointView;
+
++ (AssignPointView *)normalPointView_inView:(UIView *)inView finalPoint:(CGPoint)finalPoint;
+
+- (void)setCenter_start;
+- (void)setCenter_final;
 
 @end
