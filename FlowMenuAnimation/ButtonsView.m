@@ -44,6 +44,8 @@
 
 - (void)showBtnsAnimation
 {
+    [_animator removeAllBehaviors];
+    
 //    [_beizerPath removeAllPoints];
 //    [_beizerPath moveToPoint:CGPointMake(10, 10)];
 //    [_beizerPath addLineToPoint:CGPointMake(self.width - 10, self.height - 10)];
@@ -115,6 +117,8 @@
     [collosionBehavior addItem:tempBtn];
     collosionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     [collosionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
+
+    
     
     [_animator addBehavior:gravityBehavior];
     [_animator addBehavior:attachmentBehavior];
@@ -128,6 +132,23 @@
     UIButton *tempBtn = _btnArray[0];
     [self addSubview:tempBtn];
     
+    [tempBtn setX:100];
+    
+    UIBezierPath *tempPath = [UIBezierPath bezierPath];
+    [tempPath moveToPoint:CGPointMake(0, 100)];
+    [tempPath addLineToPoint:CGPointMake(300, 200)];
+    [tempPath addLineToPoint:CGPointMake(WIDTH, 200)];
+    [tempPath addLineToPoint:CGPointMake(WIDTH, 0)];
+    [tempPath addLineToPoint:CGPointMake(0, 0)];
+    [tempPath closePath];
+    
+    CAShapeLayer *_pathLayer1 = [CAShapeLayer layer];
+    _pathLayer1.path = tempPath.CGPath;
+    _pathLayer1.fillColor = [UIColor clearColor].CGColor;
+    _pathLayer1.strokeColor = [UIColor greenColor].CGColor;
+    _pathLayer1.lineWidth = 2.0;
+    [self.layer addSublayer:_pathLayer1];
+    
     UIGravityBehavior * gravityBehavior = [[UIGravityBehavior alloc] init];
     [gravityBehavior addItem:tempBtn];
     UIDynamicItemBehavior * itemBehavior = [[UIDynamicItemBehavior alloc] init];
@@ -135,14 +156,8 @@
     UICollisionBehavior * collisitionBehavior = [[UICollisionBehavior alloc] init];
     [collisitionBehavior addItem:tempBtn];
     collisitionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-//    [collisitionBehavior addBoundaryWithIdentifier:@"Button" forPath:[UIBezierPath bezierPathWithRect:self.snapBUtton.frame]];
-//    [collisitionBehavior addBoundaryWithIdentifier:@"path" fromPoint:CGPointMake(0, 100) toPoint:CGPointMake(200, 200)];
-    
-    UIBezierPath *tempPath = [UIBezierPath bezierPath];
-    [tempPath moveToPoint:CGPointMake(0, 50)];
-    [tempPath addLineToPoint:CGPointMake(200, 150)];
     [collisitionBehavior addBoundaryWithIdentifier:@"path" forPath:tempPath];
-    
+
     [_animator addBehavior:collisitionBehavior];
     [_animator addBehavior:itemBehavior];
     [_animator addBehavior:gravityBehavior];
