@@ -1,1 +1,1 @@
-../../../BearSkill/Pod/Classes/BearConstants.h
+../../../BearSkill/Pod/Classes/Constants/BearConstants.h

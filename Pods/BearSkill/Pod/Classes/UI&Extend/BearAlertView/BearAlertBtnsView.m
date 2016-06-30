@@ -7,6 +7,7 @@
 //
 
 #import "BearAlertBtnsView.h"
+#import "UIView+BearSet.h"
 
 @interface BearAlertBtnsView ()
 {

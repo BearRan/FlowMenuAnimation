@@ -49,6 +49,9 @@ Introduction
 
 
 ## UI&Extend / UI和扩展
+* BearAlertView
+  * 自定义弹框，支持自定义contentView，自定义BtnsView，支持简单的动画样式
+
 * BearCutOutView
   * 对UIView挖空特定的形状
 
@@ -70,3 +73,5 @@ Introduction
   1. 新增BearCutOutView挖空UIView的方法
   2. 将原先UITextField+BearSet方法整理更名为UITextField+BearLimitLength，并保留原来名称兼容此前版本
   3. 整理项目结构并进行分类
+* 0.1.1
+  1. 增加BearAlertView自定义弹框方法

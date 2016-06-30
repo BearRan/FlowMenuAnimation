@@ -80,6 +80,7 @@ typedef void (^AnimationClose_FinishBlock)();
  */
 - (void)animationClose_udAlertView;
 
+@end
 
 
 /**
@@ -90,73 +91,73 @@ typedef void (^AnimationClose_FinishBlock)();
  
  - (void)testNormal
  {
-    __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
+ __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
  
-    bearAlert.normalAlertContentView.titleLabel.text = @"温馨提示";
-    bearAlert.normalAlertContentView.contentLabel.text = @"My name is Bear. Github ID is BearRan. \nThank you!";
+ bearAlert.normalAlertContentView.titleLabel.text = @"温馨提示";
+ bearAlert.normalAlertContentView.contentLabel.text = @"My name is Bear. Github ID is BearRan. \nThank you!";
  
-     [bearAlert alertView_ConfirmClickBlock:^{
-     NSLog(@"--confirm");
-     } CancelClickBlock:^{
-     NSLog(@"--cancel");
-     }];
-     bearAlert.animationClose_FinishBlock = ^(){
-     NSLog(@"--closeAniamtion finish");
-     bearAlert = nil;
-     };
-     
-     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
-     [myDelegate.window addSubview:bearAlert];
+ [bearAlert alertView_ConfirmClickBlock:^{
+ NSLog(@"--confirm");
+ } CancelClickBlock:^{
+ NSLog(@"--cancel");
+ }];
+ bearAlert.animationClose_FinishBlock = ^(){
+ NSLog(@"--closeAniamtion finish");
+ bearAlert = nil;
+ };
+ 
+ AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+ [myDelegate.window addSubview:bearAlert];
  }
-
+ 
  */
 
 
 
- /**
-  *  How to use?
-  *
-  *  UserDefine Demo/自定义demo
-  *
-  
+/**
+ *  How to use?
+ *
+ *  UserDefine Demo/自定义demo
+ *
+ 
  - (void)testUserDefine
  {
  
-     __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
-     
-     //  自定义ContentView
-     UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
-     tempContentView.backgroundColor = [UIColor orangeColor];
-     [bearAlert setContentView:tempContentView];
-     
-     //  自定义BtnsView
-     UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
-     CGFloat btn_width = floor(tempBtnsView.width / 3.0);
-     CGFloat btn_height = tempBtnsView.height;
-     for (int i = 0; i < 3; i++) {
-     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
-     btn.backgroundColor = [UIColor blueColor];
-     [btn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
-     [tempBtnsView addSubview:btn];
-     [btn addTarget:bearAlert action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
-     
-     //  按钮点击回调
-     [bearAlert alertView_SelectBtn:btn block:^{
-     NSLog(@"--clickBtn:%d", i);
-     }];
-     }
-     [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
-     [bearAlert setBtnsView:tempBtnsView];
-     
-     bearAlert.animationClose_FinishBlock = ^(){
-     NSLog(@"--closeAniamtion finish");
-     bearAlert = nil;
-     };
-     
-     AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
-     [myDelegate.window addSubview:bearAlert];
+ __block BearAlertView *bearAlert = [[BearAlertView alloc] init];
+ 
+ //  自定义ContentView
+ UIView *tempContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH - 50, 200)];
+ tempContentView.backgroundColor = [UIColor orangeColor];
+ [bearAlert setContentView:tempContentView];
+ 
+ //  自定义BtnsView
+ UIView *tempBtnsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tempContentView.width, 40)];
+ CGFloat btn_width = floor(tempBtnsView.width / 3.0);
+ CGFloat btn_height = tempBtnsView.height;
+ for (int i = 0; i < 3; i++) {
+ UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_height)];
+ btn.backgroundColor = [UIColor blueColor];
+ [btn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+ [tempBtnsView addSubview:btn];
+ [btn addTarget:bearAlert action:@selector(btnEvent:) forControlEvents:UIControlEventTouchUpInside];
+ 
+ //  按钮点击回调
+ [bearAlert alertView_SelectBtn:btn block:^{
+ NSLog(@"--clickBtn:%d", i);
+ }];
  }
-  
+ [UIView BearAutoLayViewArray:(NSMutableArray *)tempBtnsView.subviews layoutAxis:kLAYOUT_AXIS_X center:YES];
+ [bearAlert setBtnsView:tempBtnsView];
+ 
+ bearAlert.animationClose_FinishBlock = ^(){
+ NSLog(@"--closeAniamtion finish");
+ bearAlert = nil;
+ };
+ 
+ AppDelegate *myDelegate = [[UIApplication sharedApplication] delegate];
+ [myDelegate.window addSubview:bearAlert];
+ }
+ 
  **/
 
-@end
+

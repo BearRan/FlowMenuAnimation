@@ -1,1 +1,1 @@
-../../../BearSkill/Pod/Classes/NSMutableAttributedString+BearSet.h
+../../../BearSkill/Pod/Classes/AttributeString/NSMutableAttributedString+BearSet.h

@@ -8,6 +8,8 @@
 
 #import "BearAlertView.h"
 #import <objc/runtime.h>
+#import "BearConstants.h"
+#import "UIView+BearSet.h"
 
 static const char *const kAlertViewBlockKey   = "UDAlertViewBlockKey";
 
@@ -207,8 +209,6 @@ static NSString *kAnimationKey_ShowUDAlertViewScale = @"AnimationKey_ShowUDAlert
  */
 - (void)btnEvent:(UIButton *)sender
 {
-    NSLog(@"---kkk");
-    
     if (_clickBtnCancel) {
         [self animationClose_udAlertView];
     }

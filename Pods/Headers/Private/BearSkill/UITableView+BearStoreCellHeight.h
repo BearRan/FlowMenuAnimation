@@ -1,1 +1,1 @@
-../../../BearSkill/Pod/Classes/UITableView+BearStoreCellHeight.h
+../../../BearSkill/Pod/Classes/Layout/UITableView+BearStoreCellHeight.h

@@ -5,7 +5,7 @@
 
 target 'FlowMenuAnimation' do
 
-pod	'BearSkill'
+pod	'BearSkill', '0.1.1'
 
 end
 
