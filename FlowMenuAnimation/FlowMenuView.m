@@ -19,13 +19,7 @@
     CGPoint startPoint;
     CGPoint endPoint;
     
-    AssignPointView *_controlPointView_1;
-    AssignPointView *_controlPointView_2;
-    AssignPointView *_controlPointView_start;
-    AssignPointView *_controlPointView_end;
-    
     UIBezierPath    *_bezierPath_downGroove;
-    UIBezierPath    *_bezierPath_grooveBg;
     CAShapeLayer    *_grooveBgLayer;
     UIView          *_grooveBgView;
     
@@ -40,7 +34,6 @@
 
 @end
 
-static CGFloat tempOff_y = 100;
 
 @implementation FlowMenuView
 
@@ -61,7 +54,11 @@ static CGFloat tempOff_y = 100;
 - (void)createUI
 {
     _grooveBgView = [[UIView alloc] initWithFrame:self.bounds];
+//    _grooveBgView.backgroundColor = [UIColor redColor];
     [self addSubview:_grooveBgView];
+    
+    
+    //  初始化控制点
     
     UIView *myView = self;
     CGPoint _point_A    = [self setPoint:201.77 y:0];
@@ -91,20 +88,7 @@ static CGFloat tempOff_y = 100;
     _assignPointModel._controlPointView_RightUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(self.width, 0)];
     
 
-    
-    
-    
-    //  初始化沟槽的Bezier曲线
-    
-//    _bezierPath_downGroove = [UIBezierPath bezierPath];
-//    [_bezierPath_downGroove moveToPoint:CGPointMake(0, 0 + tempOff_y)];
-//    [_bezierPath_downGroove addLineToPoint:startPoint];
-//    [_bezierPath_downGroove addCurveToPoint:endPoint controlPoint1:_controlPointView_1.layer.position controlPoint2:_controlPointView_2.layer.position];
-//    
-//    _bezierPath_grooveBg = [UIBezierPath bezierPath];
-//    [_bezierPath_grooveBg appendPath:_bezierPath_downGroove];
-//    [_bezierPath_grooveBg addLineToPoint:CGPointMake(0, 0 + tempOff_y)];
-//    [_bezierPath_grooveBg closePath];
+    //  初始化贝塞尔曲线
     
     _bezierPath_downGroove = UIBezierPath.bezierPath;
     [_bezierPath_downGroove moveToPoint: CGPointMake(0, 0)];
@@ -119,14 +103,21 @@ static CGFloat tempOff_y = 100;
                               controlPoint1: _assignPointModel._controlPointView_D2.startPoint
                               controlPoint2: _assignPointModel._controlPointView_D3.startPoint];
     
+    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
+    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
+    [_bezierPath_downGroove closePath];
+    
     _grooveBgLayer = [CAShapeLayer layer];
-    _grooveBgLayer.path = _bezierPath_grooveBg.CGPath;
-    _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
+    _grooveBgLayer.path = _bezierPath_downGroove.CGPath;
+    BOOL showFillColor = NO;
+    if (showFillColor) {
+        _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
+    }else{
+        _grooveBgLayer.fillColor = [UIColor clearColor].CGColor;
+        _grooveBgLayer.strokeColor = [UIColor greenColor].CGColor;
+        _grooveBgLayer.lineWidth = 2.0;
+    }
     [_grooveBgView.layer addSublayer:_grooveBgLayer];
-    
-    
-    [_grooveBgView bringSubviewToFront:_controlPointView_1];
-    [_grooveBgView bringSubviewToFront:_controlPointView_2];
     
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateGrooveBgLayer)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
@@ -150,41 +141,6 @@ static CGFloat tempOff_y = 100;
     
     CGPoint returnPoint = CGPointMake(1.0 * x / reffer_width * self.width, 1.0 * y / reffer_height * self.height);
     return returnPoint;
-}
-
-- (void)createPath
-{
-    CGPoint _point_A    = [self setPoint:201.77 y:0];
-    CGPoint _point_B1   = [self setPoint:379.3 y:63.23];
-    CGPoint _point_B2   = [self setPoint:201.77 y:0];
-    CGPoint _point_B3   = [self setPoint:283.29 y:-7.89];
-    CGPoint _point_C1   = [self setPoint:658.03 y:386.82];
-    CGPoint _point_C2   = [self setPoint:469.15 y:129.79];
-    CGPoint _point_C3   = [self setPoint:529.51 y:342.64];
-    CGPoint _point_D1   = [self setPoint:894.83 y:323.41];
-    CGPoint _point_D2   = [self setPoint:786.55 y:431];
-    CGPoint _point_D3   = [self setPoint:894.83 y:323.41];
-    
-    //// Path-1 Drawing
-    UIBezierPath* path1Path = UIBezierPath.bezierPath;
-    [path1Path moveToPoint: CGPointMake(0, 0)];
-    [path1Path addLineToPoint: _point_A];
-    [path1Path addCurveToPoint: _point_B1 controlPoint1: _point_B2 controlPoint2: _point_B3];
-    [path1Path addCurveToPoint: _point_C1 controlPoint1: _point_C2 controlPoint2: _point_C3];
-    [path1Path addCurveToPoint: _point_D1 controlPoint1: _point_D2 controlPoint2: _point_D3];
-    path1Path.miterLimit = 4;
-    
-    
-    
-//    //// Path-1 Drawing
-//    UIBezierPath* path1Path = UIBezierPath.bezierPath;
-//    [path1Path moveToPoint: CGPointMake(0.09, 0.02)];
-//    [path1Path addLineToPoint: CGPointMake(201.77, 0.02)];
-//    [path1Path addCurveToPoint: CGPointMake(379.3, 63.23) controlPoint1: CGPointMake(201.77, 0.02) controlPoint2: CGPointMake(283.29, -7.89)];
-//    [path1Path addCurveToPoint: CGPointMake(658.03, 386.82) controlPoint1: CGPointMake(469.15, 129.79) controlPoint2: CGPointMake(529.51, 342.64)];
-//    [path1Path addCurveToPoint: CGPointMake(894.83, 323.41) controlPoint1: CGPointMake(786.55, 431) controlPoint2: CGPointMake(894.83, 323.41)];
-//    path1Path.miterLimit = 4;
-
 }
 
 
@@ -218,9 +174,6 @@ static CGFloat tempOff_y = 100;
 
 - (void)showGrooveAniamtion
 {
-    
-//    _controlPointView_1.center = CGPointMake(_controlPoint_1.x, 0 + tempOff_y);
-//    _controlPointView_2.center = CGPointMake(_controlPoint_2.x, 0 + tempOff_y);
     [UIView animateWithDuration:1.0 animations:^{
         
         [_assignPointModel._controlPointView_A setCenter_final];
@@ -234,8 +187,6 @@ static CGFloat tempOff_y = 100;
         [_assignPointModel._controlPointView_D2 setCenter_final];
         [_assignPointModel._controlPointView_D3 setCenter_final];
         
-//        _controlPointView_1.center = _controlPoint_1;
-//        _controlPointView_2.center = _controlPoint_2;
     }completion:^(BOOL finished) {
         _buttonsView.beizerPath = _bezierPath_downGroove;
         [_buttonsView showBtnsAnimation];
@@ -244,8 +195,6 @@ static CGFloat tempOff_y = 100;
 
 - (void)closeGrooveAniamtion
 {
-//    _controlPointView_1.center = _controlPoint_1;
-//    _controlPointView_2.center = _controlPoint_2;
     [UIView animateWithDuration:1.0 animations:^{
         
         [_assignPointModel._controlPointView_A setCenter_start];
@@ -258,9 +207,7 @@ static CGFloat tempOff_y = 100;
         [_assignPointModel._controlPointView_D1 setCenter_start];
         [_assignPointModel._controlPointView_D2 setCenter_start];
         [_assignPointModel._controlPointView_D3 setCenter_start];
-        
-//        _controlPointView_1.center = CGPointMake(_controlPoint_1.x, 0 + tempOff_y);
-//        _controlPointView_2.center = CGPointMake(_controlPoint_2.x, 0 + tempOff_y);
+
     }];
 }
 
@@ -287,29 +234,10 @@ static CGFloat tempOff_y = 100;
     [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
     [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
     [_bezierPath_downGroove closePath];
+
     
-    
-    
-    
-//    CALayer *presentLayer_1 = _controlPointView_1.layer.presentationLayer;
-//    CALayer *presentLayer_2 = _controlPointView_2.layer.presentationLayer;
-//    
-//    
-//    [_bezierPath_downGroove removeAllPoints];
-//    [_bezierPath_downGroove moveToPoint:CGPointMake(0, 0 + tempOff_y)];
-//    [_bezierPath_downGroove addLineToPoint:startPoint];
-//    [_bezierPath_downGroove addCurveToPoint:endPoint controlPoint1:presentLayer_1.position controlPoint2:presentLayer_2.position];
-//    
-//    [_bezierPath_grooveBg removeAllPoints];
-//    [_bezierPath_grooveBg appendPath:_bezierPath_downGroove];
-//    [_bezierPath_grooveBg addLineToPoint:CGPointMake(0, 0 + tempOff_y)];
-//    [_bezierPath_grooveBg closePath];
-    
-    _grooveBgLayer.path = _bezierPath_grooveBg.CGPath;
+    _grooveBgLayer.path = _bezierPath_downGroove.CGPath;
     [self.layer addSublayer:_grooveBgLayer];
-    
-    [self bringSubviewToFront:_controlPointView_1];
-    [self bringSubviewToFront:_controlPointView_2];
 }
 
 

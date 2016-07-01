@@ -39,6 +39,8 @@
     assignPointView.layer.masksToBounds = YES;
     assignPointView.finalPoint = finalPoint;
     
+    [assignPointView setStartY];
+    
     [inView addSubview:assignPointView];
     assignPointView.center = assignPointView.startPoint;
     
@@ -54,10 +56,18 @@
     assignPointView.layer.masksToBounds = YES;
     assignPointView.startPoint = onlyPoint;
     
+    [assignPointView setStartY];
+    
     [inView addSubview:assignPointView];
     assignPointView.center = assignPointView.startPoint;
     
+    
     return assignPointView;
+}
+
+- (void)setStartY
+{
+    self.startPoint = CGPointMake(self.startPoint.x, - 50);
 }
 
 - (void)setCenter_start

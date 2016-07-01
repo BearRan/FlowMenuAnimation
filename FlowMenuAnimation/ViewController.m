@@ -29,6 +29,7 @@
     [self.view addSubview:flowMenuView];
     
     [flowMenuView BearSetCenterToParentViewWithAxis:kAXIS_Y];
+    [flowMenuView setY:flowMenuView.y + 200];
 }
 
 - (void)didReceiveMemoryWarning {
