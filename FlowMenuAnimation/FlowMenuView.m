@@ -54,7 +54,6 @@
 - (void)createUI
 {
     _grooveBgView = [[UIView alloc] initWithFrame:self.bounds];
-//    _grooveBgView.backgroundColor = [UIColor redColor];
     [self addSubview:_grooveBgView];
     
     
@@ -89,37 +88,9 @@
     
 
     //  初始化贝塞尔曲线
+    [self updateGrooveLayer];
     
-    _bezierPath_downGroove = UIBezierPath.bezierPath;
-    [_bezierPath_downGroove moveToPoint: CGPointMake(0, 0)];
-    [_bezierPath_downGroove addLineToPoint: _assignPointModel._controlPointView_A.startPoint];
-    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_B1.startPoint
-                              controlPoint1: _assignPointModel._controlPointView_B2.startPoint
-                              controlPoint2: _assignPointModel._controlPointView_B3.startPoint];
-    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_C1.startPoint
-                              controlPoint1: _assignPointModel._controlPointView_C2.startPoint
-                              controlPoint2: _assignPointModel._controlPointView_C3.startPoint];
-    [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_D1.startPoint
-                              controlPoint1: _assignPointModel._controlPointView_D2.startPoint
-                              controlPoint2: _assignPointModel._controlPointView_D3.startPoint];
-    
-    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
-    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
-    [_bezierPath_downGroove closePath];
-    
-    _grooveBgLayer = [CAShapeLayer layer];
-    _grooveBgLayer.path = _bezierPath_downGroove.CGPath;
-    BOOL showFillColor = NO;
-    if (showFillColor) {
-        _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
-    }else{
-        _grooveBgLayer.fillColor = [UIColor clearColor].CGColor;
-        _grooveBgLayer.strokeColor = [UIColor greenColor].CGColor;
-        _grooveBgLayer.lineWidth = 2.0;
-    }
-    [_grooveBgView.layer addSublayer:_grooveBgLayer];
-    
-    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateGrooveBgLayer)];
+    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateGrooveLayer)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     [self initSetButtonsView];
@@ -214,12 +185,28 @@
 
 #pragma mark - 更新沟槽图层
 
-- (void)updateGrooveBgLayer
+- (void)updateGrooveLayer
 {
-    [_bezierPath_downGroove removeAllPoints];
+    if (!_bezierPath_downGroove) {
+        _bezierPath_downGroove = [UIBezierPath bezierPath];
+    }
     
+    if (!_grooveBgLayer) {
+        _grooveBgLayer = [CAShapeLayer layer];
+        BOOL showFillColor = YES;
+        if (showFillColor) {
+            _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
+        }else{
+            _grooveBgLayer.fillColor = [UIColor clearColor].CGColor;
+            _grooveBgLayer.strokeColor = [UIColor greenColor].CGColor;
+            _grooveBgLayer.lineWidth = 2.0;
+        }
+    }
+    
+    
+    [_bezierPath_downGroove removeAllPoints];
     _bezierPath_downGroove = UIBezierPath.bezierPath;
-    [_bezierPath_downGroove moveToPoint: CGPointMake(0, 0)];
+    [_bezierPath_downGroove moveToPoint: _assignPointModel._controlPointView_LeftUp.prePosition];
     [_bezierPath_downGroove addLineToPoint: _assignPointModel._controlPointView_A.prePosition];
     [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_B1.prePosition
                               controlPoint1: _assignPointModel._controlPointView_B2.prePosition
@@ -232,7 +219,6 @@
                               controlPoint2: _assignPointModel._controlPointView_D3.prePosition];
     
     [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
-    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
     [_bezierPath_downGroove closePath];
 
     
