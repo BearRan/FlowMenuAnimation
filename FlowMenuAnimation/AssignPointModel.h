@@ -11,6 +11,7 @@
 
 @interface AssignPointModel : NSObject
 
+@property (strong, nonatomic) AssignPointView *_controlPointView_0;
 @property (strong, nonatomic) AssignPointView *_controlPointView_A;
 @property (strong, nonatomic) AssignPointView *_controlPointView_B1;
 @property (strong, nonatomic) AssignPointView *_controlPointView_B2;

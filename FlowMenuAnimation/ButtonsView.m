@@ -117,7 +117,7 @@
     UIButton *tempBtn = _btnArray[0];
     [self addSubview:tempBtn];
     
-    [tempBtn setX:100];
+//    [tempBtn setX:100];
     
     UIBezierPath *tempPath = [UIBezierPath bezierPath];
     [tempPath moveToPoint:CGPointMake(0, 100)];

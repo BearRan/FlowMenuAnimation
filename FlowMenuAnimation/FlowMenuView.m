@@ -60,6 +60,7 @@
     //  初始化控制点
     
     UIView *myView = self;
+    CGPoint _point_0    = [self setPoint:0 y:0];
     CGPoint _point_A    = [self setPoint:201.77 y:0];
     CGPoint _point_B1   = [self setPoint:379.3 y:63.23];
     CGPoint _point_B2   = [self setPoint:201.77 y:0];
@@ -72,6 +73,7 @@
     CGPoint _point_D3   = [self setPoint:894.83 y:323.41];
     
     _assignPointModel = [AssignPointModel new];
+    _assignPointModel._controlPointView_0 = [AssignPointView normalPointView_inView:myView finalPoint:_point_0];
     _assignPointModel._controlPointView_A = [AssignPointView normalPointView_inView:myView finalPoint:_point_A];
     _assignPointModel._controlPointView_B1 = [AssignPointView normalPointView_inView:myView finalPoint:_point_B1];
     _assignPointModel._controlPointView_B2 = [AssignPointView normalPointView_inView:myView finalPoint:_point_B2];
@@ -147,6 +149,7 @@
 {
     [UIView animateWithDuration:1.0 animations:^{
         
+        [_assignPointModel._controlPointView_0 setCenter_final];
         [_assignPointModel._controlPointView_A setCenter_final];
         [_assignPointModel._controlPointView_B1 setCenter_final];
         [_assignPointModel._controlPointView_B2 setCenter_final];
@@ -168,6 +171,7 @@
 {
     [UIView animateWithDuration:1.0 animations:^{
         
+        [_assignPointModel._controlPointView_0 setCenter_start];
         [_assignPointModel._controlPointView_A setCenter_start];
         [_assignPointModel._controlPointView_B1 setCenter_start];
         [_assignPointModel._controlPointView_B2 setCenter_start];
@@ -206,7 +210,7 @@
     
     [_bezierPath_downGroove removeAllPoints];
     _bezierPath_downGroove = UIBezierPath.bezierPath;
-    [_bezierPath_downGroove moveToPoint: _assignPointModel._controlPointView_LeftUp.prePosition];
+    [_bezierPath_downGroove moveToPoint: _assignPointModel._controlPointView_0.prePosition];
     [_bezierPath_downGroove addLineToPoint: _assignPointModel._controlPointView_A.prePosition];
     [_bezierPath_downGroove addCurveToPoint: _assignPointModel._controlPointView_B1.prePosition
                               controlPoint1: _assignPointModel._controlPointView_B2.prePosition
@@ -219,6 +223,7 @@
                               controlPoint2: _assignPointModel._controlPointView_D3.prePosition];
     
     [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_RightUp.prePosition];
+    [_bezierPath_downGroove addLineToPoint:_assignPointModel._controlPointView_LeftUp.prePosition];
     [_bezierPath_downGroove closePath];
 
     
