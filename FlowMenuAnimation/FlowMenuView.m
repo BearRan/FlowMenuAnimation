@@ -14,11 +14,6 @@
 
 @interface FlowMenuView ()
 {
-    CGPoint _controlPoint_1;
-    CGPoint _controlPoint_2;
-    CGPoint startPoint;
-    CGPoint endPoint;
-    
     UIBezierPath    *_bezierPath_downGroove;
     CAShapeLayer    *_grooveBgLayer;
     UIView          *_grooveBgView;

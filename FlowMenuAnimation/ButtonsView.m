@@ -84,11 +84,8 @@
     UIButton *tempBtn = _btnArray[0];
     [self addSubview:tempBtn];
     
-    [tempBtn setX:170];
-    
-    [_beizerPath addLineToPoint:CGPointMake(WIDTH, 0)];
-    [_beizerPath addLineToPoint:CGPointMake(0, 0)];
-    [_beizerPath closePath];
+//    [tempBtn setX:170];
+    [tempBtn setY:-tempBtn.height];
     
     CAShapeLayer *_pathLayer1 = [CAShapeLayer layer];
     _pathLayer1.path = _beizerPath.CGPath;
