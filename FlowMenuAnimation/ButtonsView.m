@@ -98,14 +98,20 @@
     [gravityBehavior addItem:tempBtn];
     UIDynamicItemBehavior * itemBehavior = [[UIDynamicItemBehavior alloc] init];
     itemBehavior.resistance = 0.2;
+    
     UICollisionBehavior * collisitionBehavior = [[UICollisionBehavior alloc] init];
     [collisitionBehavior addItem:tempBtn];
 //    collisitionBehavior.translatesReferenceBoundsIntoBoundary = YES;
     [collisitionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
     
+    UIPushBehavior * push = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
+    push.pushDirection = CGVectorMake(20, tempBtn.centerY);
+    push.magnitude = 0.5;
+    
     [_animator addBehavior:collisitionBehavior];
     [_animator addBehavior:itemBehavior];
     [_animator addBehavior:gravityBehavior];
+    [_animator addBehavior:push];
 }
 
 
