@@ -52,26 +52,15 @@
     _pathLayer.lineWidth = 2.0;
     [self.layer addSublayer:_pathLayer];
     
-//    for (int i = 0; i < [_btnArray count]; i++) {
-//        
-//        SpecialBtn *specialBtn = _btnArray[i];
-//        [self addSubview:specialBtn];
-//        
-//        specialBtn.keyFrameAniamtion.keyPath = @"position";
-//        specialBtn.keyFrameAniamtion.path = _beizerPath.CGPath;
-//        specialBtn.keyFrameAniamtion.fillMode = kCAFillModeForwards;
-//        specialBtn.keyFrameAniamtion.removedOnCompletion = NO;
-//        specialBtn.keyFrameAniamtion.keyTimes = @[
-//                                                  [NSNumber numberWithFloat:0.1],
-//                                                  [NSNumber numberWithFloat:0.2],
-////                                                  [NSNumber numberWithFloat:0.3],
-//                                                  [NSNumber numberWithFloat:0.5]
-//                                                  ];
-//        [specialBtn.keyFrameAniamtion setDuration:_aniamtionDuring];
-//        
-//        [specialBtn.layer addAnimation:specialBtn.keyFrameAniamtion forKey:specialBtn.keyFrameAniamtion.keyPath];
-////        specialBtn.keyFrameAniamtion.s
-//    }
+    CGFloat btn_gap = 10;
+    for (int i = 0; i < [_btnArray count]; i++) {
+        
+        SpecialBtn *specialBtn = _btnArray[i];
+        [self addSubview:specialBtn];
+        
+        [specialBtn setX:(specialBtn.width + btn_gap) * ([_btnArray count] - 1 - i) + btn_gap];
+        [specialBtn setY:-specialBtn.height];
+    }
     
     
 //    [self tempBehavior];
@@ -82,10 +71,6 @@
 - (void)tempBehavior_1
 {
     UIButton *tempBtn = _btnArray[0];
-    [self addSubview:tempBtn];
-    
-//    [tempBtn setX:170];
-    [tempBtn setY:-tempBtn.height];
     
     CAShapeLayer *_pathLayer1 = [CAShapeLayer layer];
     _pathLayer1.path = _beizerPath.CGPath;
@@ -105,7 +90,7 @@
     [collisitionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
     
     UIPushBehavior * push = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
-    push.pushDirection = CGVectorMake(20, tempBtn.centerY);
+    push.pushDirection = CGVectorMake(10, tempBtn.centerY);
     push.magnitude = 0.5;
     
     [_animator addBehavior:collisitionBehavior];
@@ -118,9 +103,6 @@
 - (void)tempBehavior
 {
     UIButton *tempBtn = _btnArray[0];
-    [self addSubview:tempBtn];
-    
-//    [tempBtn setX:100];
     
     UIBezierPath *tempPath = [UIBezierPath bezierPath];
     [tempPath moveToPoint:CGPointMake(0, 100)];
