@@ -206,7 +206,6 @@
 
 - (void)updateGrooveLayer
 {
-    NSLog(@"--update");
     if (!_bezierPath_downGroove) {
         _bezierPath_downGroove = [UIBezierPath bezierPath];
     }

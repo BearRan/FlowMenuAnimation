@@ -131,31 +131,8 @@
         
         //  最后一个球处理
         if (i == [_btnArray count] - 1) {
+            [self dealLastBtnGravityBehavior:gravityBehavior tempBtn:tempBtn];
             
-            __block CGPoint positionLast = CGPointMake(0, 0);
-            __block BOOL needSnap = NO;
-            
-            [gravityBehavior setAction:^{
-                
-                if (needSnap == NO) {
-                    CGPoint positionNow = tempBtn.layer.position;
-                    
-                    //  right
-                    if (positionNow.x - positionLast.x >= 0) {
-                        nil;
-                    }
-                    //  left
-                    else{
-                        
-                        needSnap = YES;
-                        UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:tempBtn snapToPoint:CGPointMake(162, 81)];
-                        snapBehavior.damping = 1.0;
-                        [_animator addBehavior:snapBehavior];
-                    }
-                    
-                    positionLast = positionNow;
-                }
-            }];
         }
 
         //  碰撞行为
@@ -184,6 +161,45 @@
     
     [self pushBehavior];
     
+}
+
+
+//  对最后一个球回滚时的立即响应
+- (void)dealLastBtnGravityBehavior:(UIGravityBehavior *)gravityBehavior tempBtn:(SpecialBtn *)tempBtn
+{
+    __block CGPoint positionLast = CGPointMake(0, 0);
+    __block BOOL needSnap = NO;
+    
+    [gravityBehavior setAction:^{
+        
+        if (needSnap == NO) {
+            CGPoint positionNow = tempBtn.layer.position;
+            
+            //  right
+            if (positionNow.x - positionLast.x >= 0) {
+                nil;
+            }
+            //  left
+            else{
+                
+                needSnap = YES;
+                UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:tempBtn snapToPoint:CGPointMake(162, 81)];
+                snapBehavior.damping = 1.0;
+                [_animator addBehavior:snapBehavior];
+                
+                //  移除原先的附着行为
+                for (UIDynamicBehavior *behavior in _animator.behaviors) {
+                    if ([behavior isKindOfClass:[UIAttachmentBehavior class]]) {
+                        [_animator removeBehavior:behavior];
+                    }
+                }
+                
+                
+            }
+            
+            positionLast = positionNow;
+        }
+    }];
 }
 
 - (void)pushBehavior
