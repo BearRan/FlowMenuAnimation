@@ -125,7 +125,7 @@
     btn_1.layer.cornerRadius = btn_1.width / 2.0;
     btn_1.layer.masksToBounds = YES;
     btn_1.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
-    [btn_1 setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    [btn_1 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
     btn_1.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_1];
     
@@ -141,7 +141,7 @@
     btn_3.layer.cornerRadius = btn_3.width / 2.0;
     btn_3.layer.masksToBounds = YES;
     btn_3.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
-    [btn_3 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
+    [btn_3 setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
     btn_3.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_3];
     
