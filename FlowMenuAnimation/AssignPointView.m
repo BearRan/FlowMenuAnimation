@@ -23,8 +23,12 @@
 
 + (AssignPointView *)normalPointView
 {
-    AssignPointView *assignPointView = [[AssignPointView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    assignPointView.backgroundColor = [UIColor blackColor];
+    AssignPointView *assignPointView = [[AssignPointView alloc] initWithFrame:CGRectMake(0, 0, poindWidth, poindWidth)];
+    if (showAssistantPoint == YES) {
+        assignPointView.backgroundColor = [UIColor blackColor];
+    }else{
+        assignPointView.backgroundColor = [UIColor clearColor];
+    }
     assignPointView.layer.cornerRadius = assignPointView.width / 2.0;
     assignPointView.layer.masksToBounds = YES;
     
@@ -34,7 +38,11 @@
 + (AssignPointView *)normalPointView_inView:(UIView *)inView finalPoint:(CGPoint)finalPoint
 {
     AssignPointView *assignPointView = [[AssignPointView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    assignPointView.backgroundColor = [UIColor blackColor];
+    if (showAssistantPoint == YES) {
+        assignPointView.backgroundColor = [UIColor blackColor];
+    }else{
+        assignPointView.backgroundColor = [UIColor clearColor];
+    }
     assignPointView.layer.cornerRadius = assignPointView.width / 2.0;
     assignPointView.layer.masksToBounds = YES;
     assignPointView.finalPoint = finalPoint;
@@ -51,7 +59,11 @@
 + (AssignPointView *)normalPointView_inView:(UIView *)inView onlyPoint:(CGPoint)onlyPoint
 {
     AssignPointView *assignPointView = [[AssignPointView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    assignPointView.backgroundColor = [UIColor blackColor];
+    if (showAssistantPoint == YES) {
+        assignPointView.backgroundColor = [UIColor blackColor];
+    }else{
+        assignPointView.backgroundColor = [UIColor clearColor];
+    }
     assignPointView.layer.cornerRadius = assignPointView.width / 2.0;
     assignPointView.layer.masksToBounds = YES;
     assignPointView.startPoint = onlyPoint;

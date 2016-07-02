@@ -199,9 +199,9 @@
     
     if (!_grooveBgLayer) {
         _grooveBgLayer = [CAShapeLayer layer];
-        BOOL showFillColor = NO;
+        BOOL showFillColor = YES;
         if (showFillColor) {
-            _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
+            _grooveBgLayer.fillColor = red.CGColor;
         }else{
             _grooveBgLayer.fillColor = [UIColor clearColor].CGColor;
             _grooveBgLayer.strokeColor = [UIColor greenColor].CGColor;

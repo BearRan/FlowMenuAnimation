@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static CGFloat poindWidth = 20;
+
 @interface AssignPointView : UIView
 
 @property (assign, nonatomic) CGPoint       startPoint;

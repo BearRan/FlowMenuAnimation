@@ -12,6 +12,8 @@
 #define red         UIColorFromHEX(0xd45d6e)
 #define redLight    UIColorFromHEX(0xd7637e)
 
+static BOOL showAssistantPoint = NO;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
