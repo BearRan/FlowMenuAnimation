@@ -9,7 +9,13 @@
 
 #import "SpecialBtn.h"
 
+@interface SpecialBtn ()
+
+@end
+
 @implementation SpecialBtn
+
+@synthesize collisionBoundsType;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

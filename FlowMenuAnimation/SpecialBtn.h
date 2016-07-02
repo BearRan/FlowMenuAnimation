@@ -10,6 +10,7 @@
 
 @interface SpecialBtn : UIButton
 
+@property (nonatomic) UIDynamicItemCollisionBoundsType collisionBoundsType NS_AVAILABLE_IOS(9_0);
 @property (strong, nonatomic) CAKeyframeAnimation   *keyFrameAniamtion;
 
 @end
