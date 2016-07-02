@@ -126,7 +126,8 @@
     btn_1.layer.masksToBounds = YES;
     btn_1.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_1 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
-    btn_1.backgroundColor = [UIColor purpleColor];
+//    btn_1.backgroundColor = [UIColor purpleColor];
+    btn_1.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_1];
     
     SpecialBtn *btn_2 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
@@ -134,7 +135,8 @@
     btn_2.layer.masksToBounds = YES;
     btn_2.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_2 setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
-    btn_2.backgroundColor = [UIColor grayColor];
+//    btn_2.backgroundColor = [UIColor grayColor];
+    btn_2.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_2];
     
     SpecialBtn *btn_3 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
@@ -142,7 +144,8 @@
     btn_3.layer.masksToBounds = YES;
     btn_3.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_3 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
-    btn_3.backgroundColor = [UIColor greenColor];
+//    btn_3.backgroundColor = [UIColor greenColor];
+    btn_3.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_3];
     
     _buttonsView = [[ButtonsView alloc] initWithFrame:self.bounds btnsArray:btnsArray];
