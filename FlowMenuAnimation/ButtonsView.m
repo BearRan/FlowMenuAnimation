@@ -72,11 +72,11 @@
         
         //  添加球与球之间的附着行为
         if (i > 0) {
-//            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
-//            [attachmentBehavior setLength:tempBtn.width + btn_gap];
-//            [attachmentBehavior setDamping:0.9];
-//            [attachmentBehavior setFrequency:1];
-//            [_animator addBehavior:attachmentBehavior];
+            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
+            [attachmentBehavior setLength:tempBtn.width + btn_gap];
+            [attachmentBehavior setDamping:0.9];
+            [attachmentBehavior setFrequency:1];
+            [_animator addBehavior:attachmentBehavior];
             
         }
         
@@ -100,8 +100,8 @@
         UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[tempBtn]];
         itemBehavior.resistance = 0.2;
         itemBehavior.allowsRotation = YES;
-        itemBehavior.angularResistance = 0;
-        itemBehavior.friction = 0.5;
+        itemBehavior.angularResistance = 5.0;
+        itemBehavior.friction = 0.8;
         
         
         [_animator addBehavior:gravityBehavior];

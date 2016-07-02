@@ -119,7 +119,6 @@
     SpecialBtn *btn_1 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_1.layer.cornerRadius = btn_1.width / 2.0;
     btn_1.layer.masksToBounds = YES;
-    btn_1.clipsToBounds = YES;
     btn_1.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_1 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
     btn_1.backgroundColor = [UIColor purpleColor];
@@ -127,12 +126,16 @@
     
     SpecialBtn *btn_2 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_2.layer.cornerRadius = btn_2.width / 2.0;
+    btn_2.layer.masksToBounds = YES;
+    btn_2.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_2 setImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
     btn_2.backgroundColor = [UIColor grayColor];
     [btnsArray addObject:btn_2];
     
     SpecialBtn *btn_3 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
     btn_3.layer.cornerRadius = btn_3.width / 2.0;
+    btn_3.layer.masksToBounds = YES;
+    btn_3.collisionBoundsType = UIDynamicItemCollisionBoundsTypeEllipse;
     [btn_3 setImage:[UIImage imageNamed:@"share"] forState:UIControlStateNormal];
     btn_3.backgroundColor = [UIColor greenColor];
     [btnsArray addObject:btn_3];
