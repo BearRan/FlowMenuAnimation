@@ -55,11 +55,36 @@
     CGFloat btn_gap = 10;
     for (int i = 0; i < [_btnArray count]; i++) {
         
-        SpecialBtn *specialBtn = _btnArray[i];
-        [self addSubview:specialBtn];
+        SpecialBtn *tempBtn = _btnArray[i];
+        [self addSubview:tempBtn];
         
-        [specialBtn setX:(specialBtn.width + btn_gap) * ([_btnArray count] - 1 - i) + btn_gap];
-        [specialBtn setY:-specialBtn.height];
+        //  设定初始位置
+        [tempBtn setX:(tempBtn.width + btn_gap) * ([_btnArray count] - 1 - i) + btn_gap];
+        [tempBtn setY:-tempBtn.height];
+        
+        //  添加球与球之间的附着行为
+        if (i > 0) {
+            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
+            [_animator addBehavior:attachmentBehavior];
+        }
+        
+        //  重力行为
+        UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] init];
+        [gravityBehavior addItem:tempBtn];
+
+        //  碰撞行为
+        UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] init];
+        //    collisitionBehavior.translatesReferenceBoundsIntoBoundary = YES;
+        [collisionBehavior addItem:tempBtn];
+        [collisionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
+        
+        //  动力元素行为
+        UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] init];
+        itemBehavior.resistance = 0.2;
+        
+        [_animator addBehavior:gravityBehavior];
+        [_animator addBehavior:collisionBehavior];
+        [_animator addBehavior:itemBehavior];
     }
     
     
@@ -79,23 +104,10 @@
     _pathLayer1.lineWidth = 2.0;
     [self.layer addSublayer:_pathLayer1];
     
-    UIGravityBehavior * gravityBehavior = [[UIGravityBehavior alloc] init];
-    [gravityBehavior addItem:tempBtn];
-    UIDynamicItemBehavior * itemBehavior = [[UIDynamicItemBehavior alloc] init];
-    itemBehavior.resistance = 0.2;
-    
-    UICollisionBehavior * collisitionBehavior = [[UICollisionBehavior alloc] init];
-    [collisitionBehavior addItem:tempBtn];
-//    collisitionBehavior.translatesReferenceBoundsIntoBoundary = YES;
-    [collisitionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
-    
     UIPushBehavior * push = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
-    push.pushDirection = CGVectorMake(10, tempBtn.centerY);
+    push.pushDirection = CGVectorMake(20, tempBtn.centerY);
     push.magnitude = 0.5;
     
-    [_animator addBehavior:collisitionBehavior];
-    [_animator addBehavior:itemBehavior];
-    [_animator addBehavior:gravityBehavior];
     [_animator addBehavior:push];
 }
 
