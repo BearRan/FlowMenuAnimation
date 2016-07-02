@@ -15,7 +15,6 @@
     CAShapeLayer    *_pathLayer;
     UIDynamicAnimator *_animator;
     UIAttachmentBehavior    *_firstBtnDragBehavior;
-    CADisplayLink   *_displayLink;
     
     UITapGestureRecognizer  *_tapGesture;
     UIPanGestureRecognizer  *_panGesture;
@@ -55,10 +54,6 @@
         
         _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
         [self addGestureRecognizer:_panGesture];
-        
-//        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(checkIntersects)];
-//        [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-//        _displayLink.paused = YES;
     }
     
     return self;
@@ -93,7 +88,6 @@
 
 - (void)showBtnsAnimation
 {
-    _displayLink.paused = NO;
     [_animator removeAllBehaviors];
     
     if (showPath) {
@@ -153,12 +147,6 @@
         [_animator addBehavior:itemBehavior];
     }
     
-    //  碰撞行为
-//    UICollisionBehavior *collisionBehavior1 = [[UICollisionBehavior alloc] initWithItems:@[_btnArray[0]]];
-    UICollisionBehavior *collisionBehavior1 = [[UICollisionBehavior alloc] initWithItems:_btnArray];
-    collisionBehavior1.collisionDelegate = self;
-//    [_animator addBehavior:collisionBehavior1];
-    
     [self pushBehavior];
     
 }
@@ -168,11 +156,11 @@
 - (void)dealLastBtnGravityBehavior:(UIGravityBehavior *)gravityBehavior tempBtn:(SpecialBtn *)tempBtn
 {
     __block CGPoint positionLast = CGPointMake(0, 0);
-    __block BOOL needSnap = NO;
+    __block BOOL pushLeft = NO;
     
     [gravityBehavior setAction:^{
         
-        if (needSnap == NO) {
+        if (pushLeft == NO) {
             CGPoint positionNow = tempBtn.layer.position;
             
             //  right
@@ -182,10 +170,7 @@
             //  left
             else{
                 
-                needSnap = YES;
-                UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:tempBtn snapToPoint:CGPointMake(162, 81)];
-                snapBehavior.damping = 1.0;
-                [_animator addBehavior:snapBehavior];
+                pushLeft = YES;
                 
                 //  移除原先的附着行为
                 for (UIDynamicBehavior *behavior in _animator.behaviors) {
@@ -194,7 +179,21 @@
                     }
                 }
                 
+                //  重新添加球与球之间的附着行为
+                for (int i = 0; i < [_btnArray count]; i++) {
+                    if (i > 0) {
+                        UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
+                        [attachmentBehavior setLength:tempBtn.width + 10];
+                        [_animator addBehavior:attachmentBehavior];
+                        
+                    }
+                }
                 
+                //  最后一个球向左push
+                UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeContinuous];
+                pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
+                pushBehavior.magnitude = 2.9;
+                [_animator addBehavior:pushBehavior];
             }
             
             positionLast = positionNow;
@@ -207,11 +206,11 @@
     
     UIButton *tempBtn = _btnArray[0];
     
-    UIPushBehavior * push = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
-    push.pushDirection = CGVectorMake(200, tempBtn.centerY);
-    push.magnitude = 0.1;
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
+    pushBehavior.pushDirection = CGVectorMake(1, 0);
+    pushBehavior.magnitude = 0.1;
     
-    [_animator addBehavior:push];
+    [_animator addBehavior:pushBehavior];
 }
 
 - (void)closeBtnsAniamtion
@@ -231,23 +230,6 @@
     return sqrt(pow((anchor.x - ballView.center.x), 2.0) + pow((anchor.y - ballView.center.y), 2.0));
 }
 
-
-#pragma mark - 检测1，2按钮重叠
-- (void)checkIntersects
-{
-    SpecialBtn *item1_btn = (SpecialBtn *)_btnArray[0];
-    SpecialBtn *item2_btn = (SpecialBtn *)_btnArray[1];
-    
-    BOOL haveIntersects = CGRectIntersectsRect(item1_btn.frame, item2_btn.frame);
-    CGRect intersectRect = CGRectIntersection(item1_btn.frame, item2_btn.frame);
-    
-    if (haveIntersects == YES) {
-        NSLog(@"--  haveIntersects intersectRect:%@", NSStringFromCGRect(intersectRect));
-    }else{
-        NSLog(@"--noIntersects intersectRect:%@", NSStringFromCGRect(intersectRect));
-    }
-}
-
 #pragma mark - UIDynamicAnimatorDelegate
 
 - (void)dynamicAnimatorWillResume:(UIDynamicAnimator *)animator
@@ -258,48 +240,7 @@
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {
     NSLog(@"--dynamicAnimatorDidPause");
-    _displayLink.paused = YES;
 }
-
-
-#pragma mark - UICollisionBehaviorDelegate
-
-//  物体和物体的碰撞代理
-- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p
-{
-    SpecialBtn *item1_btn = (SpecialBtn *)item1;
-    SpecialBtn *item2_btn = (SpecialBtn *)item2;
-    
-    NSLog(@"--1 began item1:%ld item1:%ld point:%@", (long)item1_btn.tag, (long)item2_btn.tag, NSStringFromCGPoint(p));
-    
-//    NSLog(@"--1 collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2 atPoint:(CGPoint)p");
-}
-
-- (void)collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2
-{
-    SpecialBtn *item1_btn = (SpecialBtn *)item1;
-    SpecialBtn *item2_btn = (SpecialBtn *)item2;
-    
-    NSLog(@"--1 end item1:%ld item1:%ld", (long)item1_btn.tag, (long)item2_btn.tag);
-    
-//    NSLog(@"--2 collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item1 withItem:(id<UIDynamicItem>)item2");
-}
-
-//  物体和边界的碰撞代理
-- (void)collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p
-{
-    NSLog(@"--3 beganContact Item:%@ point:%@", item, NSStringFromCGPoint(p));
-    
-//    NSLog(@"--3 collisionBehavior:(UICollisionBehavior *)behavior beganContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier atPoint:(CGPoint)p");
-}
-
-- (void)collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier
-{
-    NSLog(@"--4 endedContact Item:%@", item);
-    
-//    NSLog(@"--4 collisionBehavior:(UICollisionBehavior *)behavior endedContactForItem:(id<UIDynamicItem>)item withBoundaryIdentifier:(id<NSCopying>)identifier");
-}
-
 
 
 @end
