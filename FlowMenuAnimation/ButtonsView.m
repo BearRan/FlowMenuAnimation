@@ -14,6 +14,10 @@
     NSArray         *_btnArray;
     CAShapeLayer    *_pathLayer;
     UIDynamicAnimator *_animator;
+    UIAttachmentBehavior    *_firstBtnDragBehavior;
+    
+    UITapGestureRecognizer  *_tapGesture;
+    UIPanGestureRecognizer  *_panGesture;
 }
 
 @end
@@ -42,9 +46,44 @@
         if (!_animator) {
             _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
         }
+        
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+        _tapGesture.numberOfTapsRequired = 1;
+        [self addGestureRecognizer:_tapGesture];
+        
+        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+        [self addGestureRecognizer:_panGesture];
     }
     
     return self;
+}
+
+- (void)gestureEvent:(UIGestureRecognizer *)gesture
+{
+    CGPoint touchPoint = [gesture locationInView:self];
+    NSLog(@"tapPoint :%@", NSStringFromCGPoint(touchPoint));
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self initDragBehaviourWithAnchorPosition:touchPoint];
+        [_animator addBehavior:_firstBtnDragBehavior];
+    } else if (gesture.state == UIGestureRecognizerStateChanged) {
+        [_firstBtnDragBehavior setAnchorPoint:touchPoint];
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [_animator removeBehavior:_firstBtnDragBehavior];
+    }
+    
+    
+//    if ([gesture isEqual:_tapGesture]) {
+//        
+//        CGPoint tapPoint = [_tapGesture locationInView:self];
+//        NSLog(@"tapPoint :%@", NSStringFromCGPoint(tapPoint));
+//    }
+//    else if ([gesture isEqual:_panGesture]){
+//    
+//        CGPoint panPoint = [_panGesture translationInView:self];
+//        NSLog(@"panPoint :%@", NSStringFromCGPoint(panPoint));
+//    }
+    
 }
 
 - (CGFloat)setXX:(CGFloat)xx
@@ -201,6 +240,18 @@
 - (void)closeBtnsAniamtion
 {
 
+}
+
+
+- (void)initDragBehaviourWithAnchorPosition:(CGPoint)anchorPosition {
+    UIView *ballView = _btnArray[0];
+    _firstBtnDragBehavior = [[UIAttachmentBehavior alloc] initWithItem:ballView attachedToAnchor:anchorPosition];
+    double length = [self getDistanceBetweenAnchor:anchorPosition andBallView:ballView];
+    [_firstBtnDragBehavior setLength:((CGFloat) length  < 20) ? (CGFloat) length : 20];
+}
+
+- (double)getDistanceBetweenAnchor:(CGPoint)anchor andBallView:(UIView *)ballView {
+    return sqrt(pow((anchor.x - ballView.center.x), 2.0) + pow((anchor.y - ballView.center.y), 2.0));
 }
 
 /*
