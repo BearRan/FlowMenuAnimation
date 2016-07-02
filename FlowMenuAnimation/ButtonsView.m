@@ -24,10 +24,16 @@
 
 - (instancetype)initWithFrame:(CGRect)frame btnsArray:(NSArray *)btnArray
 {
-    self = [super initWithFrame:CGRectMake(0, -frame.size.height, frame.size.width, frame.size.height)];
+    self = [super initWithFrame:CGRectMake(0, -20, frame.size.width, frame.size.height)];
     
     if (self) {
-        self.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.4];
+        
+        if (showPathBgViewColor == YES) {
+            self.backgroundColor = [[UIColor brownColor] colorWithAlphaComponent:0.4];
+        }else{
+            self.backgroundColor = [UIColor clearColor];
+        }
+        
         _btnArray = btnArray;
         _aniamtionDuring = 2.0;
         
@@ -54,11 +60,13 @@
 {
     [_animator removeAllBehaviors];
     
-    _pathLayer.path = _beizerPath.CGPath;
-    _pathLayer.fillColor = [UIColor clearColor].CGColor;
-    _pathLayer.strokeColor = [UIColor orangeColor].CGColor;
-    _pathLayer.lineWidth = 2.0;
-    [self.layer addSublayer:_pathLayer];
+    if (showPath) {
+        _pathLayer.path = _beizerPath.CGPath;
+        _pathLayer.fillColor = [UIColor clearColor].CGColor;
+        _pathLayer.strokeColor = [UIColor orangeColor].CGColor;
+        _pathLayer.lineWidth = 2.0;
+        [self.layer addSublayer:_pathLayer];
+    }
     
     CGFloat btn_gap = [self setXX:16];
     for (int i = 0; i < [_btnArray count]; i++) {

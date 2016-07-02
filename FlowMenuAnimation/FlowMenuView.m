@@ -38,7 +38,11 @@
     
     if (self) {
         
-        self.backgroundColor = [UIColor blueColor];
+        if (flowViewClipBounds) {
+            self.clipsToBounds = YES;
+        }
+        
+        self.backgroundColor = redLight;
         _showGrooveLayer = NO;
         [self createUI];
     }
@@ -88,6 +92,7 @@
     
     _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateGrooveLayer)];
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    _displayLink.paused = YES;
     
     [self initSetButtonsView];
     
@@ -149,6 +154,7 @@
 
 - (void)showGrooveAniamtion
 {
+    _displayLink.paused = NO;
     [UIView animateWithDuration:1.0 animations:^{
         
         [_assignPointModel._controlPointView_0 setCenter_final];
@@ -164,6 +170,10 @@
         [_assignPointModel._controlPointView_D3 setCenter_final];
         
     }completion:^(BOOL finished) {
+        
+        _displayLink.paused = YES;
+        
+        [self bringSubviewToFront:_buttonsView];
         _buttonsView.beizerPath = _bezierPath_downGroove;
         [_buttonsView showBtnsAnimation];
     }];
@@ -171,6 +181,7 @@
 
 - (void)closeGrooveAniamtion
 {
+    _displayLink.paused = NO;
     [UIView animateWithDuration:1.0 animations:^{
         
         [_assignPointModel._controlPointView_0 setCenter_start];
@@ -185,6 +196,8 @@
         [_assignPointModel._controlPointView_D2 setCenter_start];
         [_assignPointModel._controlPointView_D3 setCenter_start];
 
+    }completion:^(BOOL finished) {
+        _displayLink.paused = YES;
     }];
 }
 
@@ -193,6 +206,7 @@
 
 - (void)updateGrooveLayer
 {
+    NSLog(@"--update");
     if (!_bezierPath_downGroove) {
         _bezierPath_downGroove = [UIBezierPath bezierPath];
     }
