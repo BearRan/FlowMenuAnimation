@@ -130,12 +130,11 @@
         [gravityBehavior addItem:tempBtn];
         
         //  最后一个球处理
-        static CGPoint positionLast;
-        positionLast = CGPointMake(0, 0);
-        static BOOL needSnap;
-        needSnap = NO;
-        
         if (i == [_btnArray count] - 1) {
+            
+            __block CGPoint positionLast = CGPointMake(0, 0);
+            __block BOOL needSnap = NO;
+            
             [gravityBehavior setAction:^{
                 
                 if (needSnap == NO) {
@@ -143,23 +142,24 @@
                     
                     //  right
                     if (positionNow.x - positionLast.x >= 0) {
-                        NSLog(@"--right");
+                        nil;
                     }
                     //  left
                     else{
-                        NSLog(@"--left");
+                        
                         needSnap = YES;
+                        UISnapBehavior *snapBehavior = [[UISnapBehavior alloc] initWithItem:tempBtn snapToPoint:CGPointMake(162, 81)];
+                        snapBehavior.damping = 1.0;
+                        [_animator addBehavior:snapBehavior];
                     }
                     
                     positionLast = positionNow;
-                    //                NSLog(@"firstBtn position:%@", NSStringFromCGPoint(tempBtn.layer.position));
                 }
             }];
         }
 
         //  碰撞行为
         UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] init];
-//        collisionBehavior.collisionDelegate = self;
         [collisionBehavior addItem:tempBtn];
         [collisionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
         
@@ -205,7 +205,7 @@
 
 
 - (void)initDragBehaviourWithAnchorPosition:(CGPoint)anchorPosition {
-    UIView *ballView = _btnArray[0];
+    UIView *ballView = [_btnArray lastObject];
     _firstBtnDragBehavior = [[UIAttachmentBehavior alloc] initWithItem:ballView attachedToAnchor:anchorPosition];
     double length = [self getDistanceBetweenAnchor:anchorPosition andBallView:ballView];
     [_firstBtnDragBehavior setLength:((CGFloat) length  < 20) ? (CGFloat) length : 20];

@@ -118,7 +118,7 @@
 //  初始化设置buttonsView
 - (void)initSetButtonsView
 {
-    CGFloat btn_width = 40;
+    CGFloat btn_width = 46;
     NSMutableArray *btnsArray = [NSMutableArray new];
     
     SpecialBtn *btn_1 = [[SpecialBtn alloc] initWithFrame:CGRectMake(0, 0, btn_width, btn_width)];
