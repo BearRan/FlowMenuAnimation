@@ -56,16 +56,16 @@
     
     UIView *myView = self;
     CGPoint _point_0    = [self setPoint:0 y:0];
-    CGPoint _point_A    = [self setPoint:201.77 y:0];
-    CGPoint _point_B1   = [self setPoint:379.3 y:63.23];
-    CGPoint _point_B2   = [self setPoint:201.77 y:0];
-    CGPoint _point_B3   = [self setPoint:283.29 y:-7.89];
-    CGPoint _point_C1   = [self setPoint:658.03 y:386.82];
-    CGPoint _point_C2   = [self setPoint:469.15 y:129.79];
-    CGPoint _point_C3   = [self setPoint:529.51 y:342.64];
-    CGPoint _point_D1   = [self setPoint:894.83 y:323.41];
-    CGPoint _point_D2   = [self setPoint:786.55 y:431];
-    CGPoint _point_D3   = [self setPoint:894.83 y:323.41];
+    CGPoint _point_A    = [self setPoint:201.77 y:1.02];
+    CGPoint _point_B1   = [self setPoint:379.3 y:64.23];
+    CGPoint _point_B2   = [self setPoint:201.77 y:1.02];
+    CGPoint _point_B3   = [self setPoint:279.69 y:-6.26];
+    CGPoint _point_C1   = [self setPoint:658.03 y:387.82];
+    CGPoint _point_C2   = [self setPoint:481.08 y:136.27];
+    CGPoint _point_C3   = [self setPoint:530.1 y:350.79];
+    CGPoint _point_D1   = [self setPoint:1068.9 y:29.54];
+    CGPoint _point_D2   = [self setPoint:931.82 y:467.08];
+    CGPoint _point_D3   = [self setPoint:1068.9 y:29.54];
     
     _assignPointModel = [AssignPointModel new];
     _assignPointModel._controlPointView_0 = [AssignPointView normalPointView_inView:myView finalPoint:_point_0];
@@ -192,7 +192,7 @@
     
     if (!_grooveBgLayer) {
         _grooveBgLayer = [CAShapeLayer layer];
-        BOOL showFillColor = YES;
+        BOOL showFillColor = NO;
         if (showFillColor) {
             _grooveBgLayer.fillColor = UIColorFromHEX(0xe6425f).CGColor;
         }else{
