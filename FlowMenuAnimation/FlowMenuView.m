@@ -57,8 +57,9 @@
     
     //  初始化控制点
     
+    CGFloat offScreen_x = 100;  //超屏距离
     UIView *myView = self;
-    CGPoint _point_0    = [self setPoint:0 y:0];
+    CGPoint _point_0    = [self setPoint:-offScreen_x y:0];
     CGPoint _point_A    = [self setPoint:201.77 y:1.02];
     CGPoint _point_B1   = [self setPoint:379.3 y:64.23];
     CGPoint _point_B2   = [self setPoint:201.77 y:1.02];
@@ -83,8 +84,8 @@
     _assignPointModel._controlPointView_D2 = [AssignPointView normalPointView_inView:myView finalPoint:_point_D2];
     _assignPointModel._controlPointView_D3 = [AssignPointView normalPointView_inView:myView finalPoint:_point_D3];
     
-    _assignPointModel._controlPointView_LeftUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(0, 0)];
-    _assignPointModel._controlPointView_RightUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(self.width, 0)];
+    _assignPointModel._controlPointView_LeftUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(-offScreen_x, 0)];
+    _assignPointModel._controlPointView_RightUp = [AssignPointView normalPointView_inView:myView onlyPoint:CGPointMake(self.width + offScreen_x, 0)];
     
 
     //  初始化贝塞尔曲线
