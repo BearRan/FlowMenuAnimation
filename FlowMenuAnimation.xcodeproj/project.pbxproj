@@ -134,6 +134,19 @@
 			name = StartBtn;
 			sourceTree = "<group>";
 		};
+		09B3C22D1D29650000BA0211 /* InfoView */ = {
+			isa = PBXGroup;
+			children = (
+				09B3C21E1D29374900BA0211 /* MainInfoView.h */,
+				09B3C21F1D29374900BA0211 /* MainInfoView.m */,
+				09B3C2211D29375400BA0211 /* AssignInfoView.h */,
+				09B3C2221D29375400BA0211 /* AssignInfoView.m */,
+				09B3C2241D293DF300BA0211 /* AssignInfoSingleCellView.h */,
+				09B3C2251D293DF300BA0211 /* AssignInfoSingleCellView.m */,
+			);
+			name = InfoView;
+			sourceTree = "<group>";
+		};
 		09D2F1A41D1AD2A100093946 = {
 			isa = PBXGroup;
 			children = (
@@ -169,12 +182,7 @@
 				09B3C2281D2950D600BA0211 /* FlowMenuViewCell.m */,
 				09D2F1E31D1AD48100093946 /* FlowMenuView.h */,
 				09D2F1E41D1AD48100093946 /* FlowMenuView.m */,
-				09B3C21E1D29374900BA0211 /* MainInfoView.h */,
-				09B3C21F1D29374900BA0211 /* MainInfoView.m */,
-				09B3C2211D29375400BA0211 /* AssignInfoView.h */,
-				09B3C2221D29375400BA0211 /* AssignInfoView.m */,
-				09B3C2241D293DF300BA0211 /* AssignInfoSingleCellView.h */,
-				09B3C2251D293DF300BA0211 /* AssignInfoSingleCellView.m */,
+				09B3C22D1D29650000BA0211 /* InfoView */,
 				09B3C21D1D292D7900BA0211 /* StartBtn */,
 				09B3C2111D256A7200BA0211 /* AssignPointModel.h */,
 				09B3C2121D256A7200BA0211 /* AssignPointModel.m */,

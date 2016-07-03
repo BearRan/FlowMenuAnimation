@@ -106,7 +106,6 @@ typedef enum {
         if (i == [_btnArray count] - 1) {
             //  最后一个球处理重力行为
             [self dealLastBtnGravityBehavior:gravityBehavior tempBtn:tempBtn];
-            
         }
 
         //  碰撞行为
@@ -143,7 +142,10 @@ typedef enum {
     for (int i = 0; i < [_btnArray count]; i++) {
         
         //  重力行为
-        [self addGravityBehavior:_btnArray[i]];
+        UIGravityBehavior *gravityBehavior = [self addGravityBehavior:_btnArray[i]];
+        if (i == 0) {
+            [self dealFirstDisappearBtnGravityBehavior:gravityBehavior tempBtn:_btnArray[i]];
+        }
         
         //  碰撞行为
         [self addCollisionBehavior:_btnArray[i]];
@@ -284,6 +286,29 @@ typedef enum {
     }];
 }
 
+#pragma mark  消退动画时，对一个球消失时的立即响应
+- (void)dealFirstDisappearBtnGravityBehavior:(UIGravityBehavior *)gravityBehavior tempBtn:(SpecialBtn *)tempBtn
+{
+    __block BOOL disAppear = NO;
+    
+    [gravityBehavior setAction:^{
+        
+        if (disAppear == NO) {
+
+            if (tempBtn.maxY < 20) {
+                
+                disAppear = YES;
+                if (_animatorStatus == kAnimatorStatus_close) {
+                    if (self.dynamicAnimaionCloseFinsh) {
+                        self.dynamicAnimaionCloseFinsh();
+                    }
+                }
+            }
+        }
+        
+    }];
+}
+
 
 #pragma mark - 拖动手势
 
@@ -325,12 +350,6 @@ typedef enum {
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {
     NSLog(@"--dynamicAnimatorDidPause");
-    
-    if (_animatorStatus == kAnimatorStatus_close) {
-        if (self.dynamicAnimaionCloseFinsh) {
-            self.dynamicAnimaionCloseFinsh();
-        }
-    }
 }
 
 

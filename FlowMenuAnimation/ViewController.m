@@ -35,6 +35,7 @@
     _mainTableView.dataSource = self;
     _mainTableView.tableFooterView = [UIView new];
     _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _mainTableView.backgroundColor = UIColorFromHEX(0x61cab4);
     [self.view addSubview:_mainTableView];
 }
 
