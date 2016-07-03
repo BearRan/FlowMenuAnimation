@@ -50,36 +50,49 @@
     [self addModel_FoodFestivals];
 }
 
+#define redDark     UIColorFromHEX(0xcb5558)
+#define red         UIColorFromHEX(0xd45d6e)
+#define redLight    UIColorFromHEX(0xd7637e)
+
 - (void)addModel_NightLife
 {
     CellDataModel *tempModel = [CellDataModel new];
-    tempModel.nameStr = @"Night life";
-    tempModel.imageNameStr = @"wine";
-    tempModel.followersNum = @"517";
-    tempModel.favoritesNum = @"315";
-    tempModel.viewsNum = @"7815";
+    tempModel.nameStr           = @"Night life";
+    tempModel.imageNameStr      = @"wine";
+    tempModel.followersNum      = @"517";
+    tempModel.favoritesNum      = @"315";
+    tempModel.viewsNum          = @"7815";
+    tempModel.myColor_dark      = UIColorFromHEX(0xcb5558);
+    tempModel.myColor_normal    = UIColorFromHEX(0xd45d6e);
+    tempModel.myColor_light     = UIColorFromHEX(0xd7637e);
     [_dataModelArray addObject:tempModel];
 }
 
 - (void)addModel_ArtCulture
 {
     CellDataModel *tempModel = [CellDataModel new];
-    tempModel.nameStr = @"Art & Culture";
-    tempModel.imageNameStr = @"art";
-    tempModel.followersNum = @"437";
-    tempModel.favoritesNum = @"526";
-    tempModel.viewsNum = @"8361";
+    tempModel.nameStr           = @"Art & Culture";
+    tempModel.imageNameStr      = @"art";
+    tempModel.followersNum      = @"437";
+    tempModel.favoritesNum      = @"526";
+    tempModel.viewsNum          = @"8361";
+    tempModel.myColor_dark      = UIColorFromHEX(0x5abca7);
+    tempModel.myColor_normal    = UIColorFromHEX(0x61cab4);
+    tempModel.myColor_light     = UIColorFromHEX(0x66d3bc);
     [_dataModelArray addObject:tempModel];
 }
 
 - (void)addModel_FoodFestivals
 {
     CellDataModel *tempModel = [CellDataModel new];
-    tempModel.nameStr = @"Foot festivals";
-    tempModel.imageNameStr = @"food";
-    tempModel.followersNum = @"472";
-    tempModel.favoritesNum = @"214";
-    tempModel.viewsNum = @"2741";
+    tempModel.nameStr           = @"Foot festivals";
+    tempModel.imageNameStr      = @"food";
+    tempModel.followersNum      = @"472";
+    tempModel.favoritesNum      = @"214";
+    tempModel.viewsNum          = @"2741";
+    tempModel.myColor_dark      = UIColorFromHEX(0xb752eb);
+    tempModel.myColor_normal    = UIColorFromHEX(0xc165f0);
+    tempModel.myColor_light     = UIColorFromHEX(0xc873f4);
     [_dataModelArray addObject:tempModel];
 }
 

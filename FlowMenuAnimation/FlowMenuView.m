@@ -47,7 +47,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
             self.clipsToBounds = YES;
         }
         
-        self.backgroundColor = redLight;
+        self.backgroundColor = dataModel.myColor_light;
         _showGrooveLayer = NO;
         _dataModel = dataModel;
         
@@ -117,7 +117,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
     
     //  开始按钮
     CGFloat btn_width = [self setXX:172];
-    _startBtn = [[StartBtn alloc] initWithFrame:CGRectMake(self.width - btn_width, 0, btn_width, btn_width)];
+    _startBtn = [[StartBtn alloc] initWithFrame:CGRectMake(self.width - btn_width, 0, btn_width, btn_width) withDataModel:_dataModel];
     [_startBtn addTarget:self action:@selector(startBtn_Event) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_startBtn];
 }
@@ -283,7 +283,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
         _grooveBgLayer = [CAShapeLayer layer];
         BOOL showFillColor = YES;
         if (showFillColor) {
-            _grooveBgLayer.fillColor = red.CGColor;
+            _grooveBgLayer.fillColor = _dataModel.myColor_normal.CGColor;
         }else{
             _grooveBgLayer.fillColor = [UIColor clearColor].CGColor;
             _grooveBgLayer.strokeColor = [UIColor greenColor].CGColor;

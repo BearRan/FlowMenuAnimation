@@ -22,13 +22,13 @@
 
 @implementation StartBtn
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame withDataModel:(CellDataModel *)dataModel
 {
     self = [super initWithFrame:frame];
     
     if (self) {
         
-        self.backgroundColor = redDark;
+        self.backgroundColor = dataModel.myColor_dark;
         
         _bgBezierPath = [UIBezierPath bezierPath];
         [_bgBezierPath moveToPoint:CGPointMake(0, 0)];
@@ -37,7 +37,7 @@
         [_bgBezierPath closePath];
         
         _bgShapeLayer = [CAShapeLayer layer];
-        _bgShapeLayer.fillColor = redDark.CGColor;
+        _bgShapeLayer.fillColor = dataModel.myColor_dark.CGColor;
         _bgShapeLayer.path = _bgBezierPath.CGPath;
         self.layer.mask = _bgShapeLayer;
         

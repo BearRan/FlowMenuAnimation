@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define redDark     UIColorFromHEX(0xcb5558)
-#define red         UIColorFromHEX(0xd45d6e)
-#define redLight    UIColorFromHEX(0xd7637e)
-
 static BOOL showAssistantPoint  = NO;   //显示辅助点
 static BOOL showPath            = NO;   //显示路径
 static BOOL showPathBgViewColor = NO;   //显示路径层的背景色

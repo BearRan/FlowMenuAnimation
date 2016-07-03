@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CellDataModel.h"
 
 @interface StartBtn : UIButton
+
+- (instancetype)initWithFrame:(CGRect)frame withDataModel:(CellDataModel *)dataModel;
 
 @end
