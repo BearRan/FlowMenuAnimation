@@ -14,6 +14,7 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     UITableView     *_mainTableView;
+    FlowMenuView    *_flowMenuView;
     NSMutableArray  *_dataModelArray;
 }
 
@@ -30,13 +31,37 @@
 
 - (void)createUI
 {
-    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
-    _mainTableView.delegate = self;
-    _mainTableView.dataSource = self;
-    _mainTableView.tableFooterView = [UIView new];
-    _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _mainTableView.backgroundColor = UIColorFromHEX(0x61cab4);
-    [self.view addSubview:_mainTableView];
+    if (showSingleFlowDemo == NO) {
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+        _mainTableView.delegate = self;
+        _mainTableView.dataSource = self;
+        _mainTableView.tableFooterView = [UIView new];
+        _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _mainTableView.backgroundColor = UIColorFromHEX(0x61cab4);
+        [self.view addSubview:_mainTableView];
+    }
+    
+    else{
+        CGFloat width = WIDTH;
+        CGFloat height = 220.0 / 372 * width;
+        
+        CellDataModel *dataModel =_dataModelArray[0];
+        _flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 200, width, height) withDataModel:dataModel];
+        [self loadData:dataModel];
+        [self.view addSubview:_flowMenuView];
+    }
+}
+
+- (void)loadData:(CellDataModel *)dataModel
+{
+    _flowMenuView.mainInfoView.label.text = dataModel.nameStr;
+    _flowMenuView.mainInfoView.imageView.image = [UIImage imageNamed:dataModel.imageNameStr];
+    _flowMenuView.assignInfoView.assignCellView_1.numLabel.text = dataModel.followersNum;
+    _flowMenuView.assignInfoView.assignCellView_2.numLabel.text = dataModel.favoritesNum;
+    _flowMenuView.assignInfoView.assignCellView_3.numLabel.text = dataModel.viewsNum;
+    _flowMenuView.assignInfoView.assignCellView_1.titleLabel.text = @"FOLLOWERS";
+    _flowMenuView.assignInfoView.assignCellView_2.titleLabel.text = @"FAVORITES";
+    _flowMenuView.assignInfoView.assignCellView_3.titleLabel.text = @"VIEWS";
 }
 
 - (void)initSetDataArray
