@@ -15,6 +15,7 @@
 #import "StartBtn.h"
 
 static CGFloat moveInfoView_AnimationDuring = 0.3;
+static CGFloat grooveLayer_AnimationDuring = 0.5;
 
 @interface FlowMenuView ()
 {
@@ -217,7 +218,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
 - (void)showGrooveAniamtion
 {
     _displayLink.paused = NO;
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:grooveLayer_AnimationDuring animations:^{
         
         [_assignPointModel._controlPointView_0 setCenter_final];
         [_assignPointModel._controlPointView_A setCenter_final];
@@ -247,7 +248,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
 - (void)closeGrooveAniamtion
 {
     _displayLink.paused = NO;
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:grooveLayer_AnimationDuring animations:^{
         
         [_assignPointModel._controlPointView_0 setCenter_start];
         [_assignPointModel._controlPointView_A setCenter_start];

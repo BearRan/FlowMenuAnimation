@@ -160,7 +160,7 @@ typedef enum {
     //  最后一个球向左push
     UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[lastBtn] mode:UIPushBehaviorModeContinuous];
     pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
-    pushBehavior.magnitude = 8.0;
+    pushBehavior.magnitude = 10.0;
     [_animator addBehavior:pushBehavior];
 }
 
