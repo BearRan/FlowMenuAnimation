@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^DynamicAnimationPaused)();
+typedef void(^DynamicAnimationCloseFinish)();
+typedef void(^DynamicAnimationShowFinish)();
 
 @interface ButtonsView : UIView
 
-@property (strong, nonatomic)   UIBezierPath            *beizerPath;
-@property (copy, nonatomic)     DynamicAnimationPaused  dynamicAnimaionFinsh;
+@property (strong, nonatomic)   UIBezierPath                    *beizerPath;
+@property (copy, nonatomic)     DynamicAnimationCloseFinish     dynamicAnimaionCloseFinsh;
+@property (copy, nonatomic)     DynamicAnimationShowFinish      dynamicAnimaionShowFinsh;
 
 - (instancetype)initWithFrame:(CGRect)frame btnsArray:(NSArray *)btnArray;
 

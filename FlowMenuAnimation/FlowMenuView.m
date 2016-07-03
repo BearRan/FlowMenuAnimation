@@ -19,13 +19,13 @@
     UIView          *_grooveBgView;
     
     CADisplayLink *_displayLink;
-    
-    UIButton    *_startBtn;
     BOOL        _showGrooveLayer;
     
     ButtonsView *_buttonsView;
     AssignPointModel *_assignPointModel;
 }
+
+@property (strong, nonatomic) UIButton    *startBtn;
 
 @end
 
@@ -146,9 +146,12 @@
     __weak __typeof__(self) weakSelf = self;
     _buttonsView = [[ButtonsView alloc] initWithFrame:self.bounds btnsArray:btnsArray];
     _buttonsView.hidden = YES;
-    _buttonsView.dynamicAnimaionFinsh = ^(){
-        NSLog(@"--_buttonsView.dynamicAnimaionFinsh");
+    _buttonsView.dynamicAnimaionCloseFinsh = ^(){
+        NSLog(@"--_buttonsView.dynamicAnimaionCloseFinsh");
         [weakSelf closeGrooveAniamtion];
+    };
+    _buttonsView.dynamicAnimaionShowFinsh = ^(){
+        weakSelf.startBtn.enabled = YES;
     };
     [self addSubview:_buttonsView];
 }
@@ -208,6 +211,7 @@
         _buttonsView.hidden = YES;
         [_buttonsView removeFromSuperview];
         _buttonsView = nil;
+        _startBtn.enabled = YES;
     }];
 }
 
@@ -262,10 +266,12 @@
 - (void)startBtn_Event
 {
     _showGrooveLayer = !_showGrooveLayer;
+    _startBtn.enabled = NO;
     
     if (_showGrooveLayer) {
         NSLog(@"--1");
         [self showGrooveAniamtion];
+        
     }else{
         NSLog(@"--2");
         [_buttonsView closeBtnsAniamtion];

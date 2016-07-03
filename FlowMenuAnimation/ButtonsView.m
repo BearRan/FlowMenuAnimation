@@ -326,9 +326,15 @@ typedef enum {
 {
     NSLog(@"--dynamicAnimatorDidPause");
     
+    if (_animatorStatus == kAnimatorStatus_open) {
+        if (self.dynamicAnimaionShowFinsh) {
+            self.dynamicAnimaionShowFinsh();
+        }
+    }
+    
     if (_animatorStatus == kAnimatorStatus_close) {
-        if (self.dynamicAnimaionFinsh) {
-            self.dynamicAnimaionFinsh();
+        if (self.dynamicAnimaionCloseFinsh) {
+            self.dynamicAnimaionCloseFinsh();
         }
     }
 }
