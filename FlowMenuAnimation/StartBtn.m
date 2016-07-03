@@ -41,10 +41,10 @@
         _bgShapeLayer.path = _bgBezierPath.CGPath;
         self.layer.mask = _bgShapeLayer;
         
-        CGFloat _arrow_width = 30;
-        CGFloat _arrow_height = 15;
-        _arrowAnimationView = [[ArrowAnimationView alloc] initWithFrame:CGRectMake(self.width - _arrow_width - 15, 20, _arrow_width, _arrow_height)];
-        _arrowAnimationView.backgroundColor = [UIColor blueColor];
+        CGFloat _arrow_width = 18;
+        CGFloat _arrow_height = 9;
+        _arrowAnimationView = [[ArrowAnimationView alloc] initWithFrame:CGRectMake(self.width - _arrow_width - 18, 23, _arrow_width, _arrow_height)];
+        _arrowAnimationView.backgroundColor = [UIColor clearColor];
         [self addSubview:_arrowAnimationView];
     }
     

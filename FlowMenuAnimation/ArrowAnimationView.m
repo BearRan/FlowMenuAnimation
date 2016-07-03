@@ -68,7 +68,9 @@ static CGFloat animationDuring = 0.5;
     _shapeLayer = [CAShapeLayer layer];
     _shapeLayer.fillColor = [UIColor clearColor].CGColor;
     _shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
-    _shapeLayer.lineWidth = 2.0;
+    _shapeLayer.lineWidth = 3.0;
+    _shapeLayer.lineCap = kCALineCapRound;
+    _shapeLayer.lineJoin = kCALineJoinRound;
     [self.layer addSublayer:_shapeLayer];
     [self updateLayer];
     
@@ -81,7 +83,7 @@ static CGFloat animationDuring = 0.5;
 {
     UIView *tempPointV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 5)];
     tempPointV.center = center;
-    tempPointV.backgroundColor = [UIColor whiteColor];
+    tempPointV.backgroundColor = [UIColor clearColor];
     [self addSubview:tempPointV];
     
     return tempPointV;
