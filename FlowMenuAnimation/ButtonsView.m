@@ -92,6 +92,10 @@ typedef enum {
 }
 
 
+
+#pragma mark - 显现／消退动画
+
+#pragma mark 显现动画
 - (void)showBtnsAnimation
 {
     _animatorStatus = kAnimatorStatus_open;
@@ -137,8 +141,49 @@ typedef enum {
         
     }
     
-    [self pushBehavior];
+    //  第一个球向右的推力
+    [self addPushBehavior_inFirstBtn];
 }
+
+#pragma mark 消退动画
+- (void)closeBtnsAniamtion
+{
+    NSLog(@"-- closeBtnsAniamtion");
+    
+    _animatorStatus = kAnimatorStatus_close;
+    SpecialBtn *lastBtn = (SpecialBtn *)[_btnArray lastObject];
+    
+    //  移除所有的行为
+    [_animator removeAllBehaviors];
+    
+    for (int i = 0; i < [_btnArray count]; i++) {
+        
+        //  重新添加球与球之间的附着行为
+        if (i > 0) {
+            
+            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
+            [attachmentBehavior setLength:lastBtn.width + 10];
+            [_animator addBehavior:attachmentBehavior];
+        }
+        
+        //  重力行为
+        [self addGravityBehavior:_btnArray[i]];
+        
+        //  碰撞行为
+        [self addCollisionBehavior:_btnArray[i]];
+        
+        //  动力元素行为
+        [self addDynamicItemBehavior:_btnArray[i]];
+    }
+    
+    //  最后一个球向左push
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[lastBtn] mode:UIPushBehaviorModeContinuous];
+    pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
+    pushBehavior.magnitude = 4.9;
+    [_animator addBehavior:pushBehavior];
+}
+
+
 
 #pragma mark - 添加各种行为
 
@@ -190,9 +235,21 @@ typedef enum {
     return itemBehavior;
 }
 
+#pragma mark  显现动画，第一个球向右的推力
+- (UIPushBehavior *)addPushBehavior_inFirstBtn
+{
+    UIButton *tempBtn = _btnArray[0];
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
+    pushBehavior.pushDirection = CGVectorMake(1, 0);
+    pushBehavior.magnitude = 0.1;
+    [_animator addBehavior:pushBehavior];
+    
+    return pushBehavior;
+}
 
 
-//  对最后一个球回滚时的立即响应
+
+#pragma mark  显现动画时，对最后一个球回滚时的立即响应
 - (void)dealLastBtnGravityBehavior:(UIGravityBehavior *)gravityBehavior tempBtn:(SpecialBtn *)tempBtn
 {
     __block CGPoint positionLast = CGPointMake(0, 0);
@@ -244,55 +301,6 @@ typedef enum {
             positionLast = positionNow;
         }
     }];
-}
-
-- (void)pushBehavior
-{
-    
-    UIButton *tempBtn = _btnArray[0];
-    
-    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
-    pushBehavior.pushDirection = CGVectorMake(1, 0);
-    pushBehavior.magnitude = 0.1;
-    
-    [_animator addBehavior:pushBehavior];
-}
-
-- (void)closeBtnsAniamtion
-{
-    NSLog(@"-- closeBtnsAniamtion");
-    
-    _animatorStatus = kAnimatorStatus_close;
-    SpecialBtn *lastBtn = (SpecialBtn *)[_btnArray lastObject];
-    
-    //  移除所有的行为
-    [_animator removeAllBehaviors];
-    
-    for (int i = 0; i < [_btnArray count]; i++) {
-        
-        //  重新添加球与球之间的附着行为
-        if (i > 0) {
-            
-            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
-            [attachmentBehavior setLength:lastBtn.width + 10];
-            [_animator addBehavior:attachmentBehavior];
-        }
-        
-        //  重力行为
-        [self addGravityBehavior:_btnArray[i]];
-        
-        //  碰撞行为
-        [self addCollisionBehavior:_btnArray[i]];
-        
-        //  动力元素行为
-        [self addDynamicItemBehavior:_btnArray[i]];
-    }
-    
-    //  最后一个球向左push
-    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[lastBtn] mode:UIPushBehaviorModeContinuous];
-    pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
-    pushBehavior.magnitude = 4.9;
-    [_animator addBehavior:pushBehavior];
 }
 
 
