@@ -116,9 +116,8 @@
         
         //  重力行为
         UIGravityBehavior *gravityBehavior = [self addGravityBehavior:tempBtn];
-        
-        //  最后一个球处理重力行为
         if (i == [_btnArray count] - 1) {
+            //  最后一个球处理重力行为
             [self dealLastBtnGravityBehavior:gravityBehavior tempBtn:tempBtn];
             
         }
@@ -206,21 +205,26 @@
                 
                 pushLeft = YES;
                 
-                //  移除原先的附着行为
-                for (UIDynamicBehavior *behavior in _animator.behaviors) {
-                    if ([behavior isKindOfClass:[UIAttachmentBehavior class]]) {
-                        [_animator removeBehavior:behavior];
-                    }
-                }
+                //  移除所有的行为
+                [_animator removeAllBehaviors];
                 
-                //  重新添加球与球之间的附着行为
                 for (int i = 0; i < [_btnArray count]; i++) {
+                    
+                    //  重新添加球与球之间的附着行为
                     if (i > 0) {
                         UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
                         [attachmentBehavior setLength:tempBtn.width + 10];
                         [_animator addBehavior:attachmentBehavior];
-                        
                     }
+                    
+                    //  重力行为
+                    [self addGravityBehavior:_btnArray[i]];
+                    
+                    //  碰撞行为
+                    [self addCollisionBehavior:_btnArray[i]];
+                    
+                    //  动力元素行为
+                    [self addDynamicItemBehavior:_btnArray[i]];
                 }
                 
                 //  最后一个球向左push
