@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainInfoView.h"
+#import "AssignInfoView.h"
 
 @interface FlowMenuView : UIView
+
+@property (strong, nonatomic) MainInfoView      *mainInfoView;
+@property (strong, nonatomic) AssignInfoView    *assignInfoView;
 
 @end

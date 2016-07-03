@@ -20,11 +20,11 @@
     CAShapeLayer    *_grooveBgLayer;
     UIView          *_grooveBgView;
     
-    CADisplayLink *_displayLink;
-    BOOL        _showGrooveLayer;
+    CADisplayLink   *_displayLink;
+    BOOL            _showGrooveLayer;
     
-    ButtonsView *_buttonsView;
-    AssignPointModel *_assignPointModel;
+    ButtonsView         *_buttonsView;
+    AssignPointModel    *_assignPointModel;
 }
 
 @property (strong, nonatomic) StartBtn    *startBtn;
@@ -46,10 +46,27 @@
         
         self.backgroundColor = redLight;
         _showGrooveLayer = NO;
+        
+        [self createInfoView];
         [self createUI];
     }
     
     return self;
+}
+
+- (void)createInfoView
+{
+    NSMutableArray *subViewArray = [NSMutableArray new];
+    
+    _mainInfoView = [[MainInfoView alloc] initWithFrame:CGRectMake(0, self.height * 0.35, self.width, 40)];
+    _mainInfoView.backgroundColor = [UIColor blueColor];
+    [self addSubview:_mainInfoView];
+    [subViewArray addObject:_mainInfoView];
+    
+    _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.15, self.width, 40)];
+    _assignInfoView.backgroundColor = [UIColor orangeColor];
+    [self addSubview:_assignInfoView];
+    [subViewArray addObject:_assignInfoView];
 }
 
 - (void)createUI

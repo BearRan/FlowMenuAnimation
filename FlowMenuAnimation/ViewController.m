@@ -26,6 +26,8 @@
     CGFloat width = WIDTH;
     CGFloat height = 198.0 / 372 * width;
     FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    flowMenuView.mainInfoView.label.text = @"Night life";
+    flowMenuView.mainInfoView.imageView.image = [UIImage imageNamed:@"wine"];
     [self.view addSubview:flowMenuView];
     
     [flowMenuView BearSetCenterToParentViewWithAxis:kAXIS_Y];
