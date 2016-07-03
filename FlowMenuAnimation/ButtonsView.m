@@ -8,6 +8,7 @@
 
 #import "ButtonsView.h"
 #import "SpecialBtn.h"
+#import "UIView+SetSize.h"
 
 typedef enum {
     kAnimatorStatus_null,
@@ -65,14 +66,6 @@ typedef enum {
     }
     
     return self;
-}
-
-- (CGFloat)setXX:(CGFloat)xx
-{
-    CGFloat reffer_width = 896;
-    CGFloat returnXX = 1.0 * xx / reffer_width * self.width;
-    
-    return returnXX;
 }
 
 
@@ -209,9 +202,9 @@ typedef enum {
 - (UIDynamicItemBehavior *)addDynamicItemBehavior:(id <UIDynamicItem>)item
 {
     UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[item]];
-    itemBehavior.resistance = 0.2;
+    itemBehavior.resistance = 0;
     itemBehavior.allowsRotation = YES;
-    itemBehavior.angularResistance = 5.0;
+    itemBehavior.angularResistance = 3.0;
     itemBehavior.friction = 0.8;
     [_animator addBehavior:itemBehavior];
     

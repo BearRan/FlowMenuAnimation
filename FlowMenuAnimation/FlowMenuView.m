@@ -11,6 +11,7 @@
 #import "ButtonsView.h"
 #import "SpecialBtn.h"
 #import "AssignPointModel.h"
+#import "UIView+SetSize.h"
 
 @interface FlowMenuView ()
 {
@@ -102,15 +103,6 @@
     _startBtn.backgroundColor = [UIColor orangeColor];
     [_startBtn addTarget:self action:@selector(startBtn_Event) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_startBtn];
-}
-
-- (CGPoint)setPoint:(CGFloat)x y:(CGFloat)y
-{
-    CGFloat reffer_width = 896;
-    CGFloat reffer_height = 483;
-    
-    CGPoint returnPoint = CGPointMake(1.0 * x / reffer_width * self.width, 1.0 * y / reffer_height * self.height);
-    return returnPoint;
 }
 
 //  初始化设置buttonsView
