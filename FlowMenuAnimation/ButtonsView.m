@@ -277,6 +277,13 @@ typedef enum {
                 pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
                 pushBehavior.magnitude = 2.3;
                 [_animator addBehavior:pushBehavior];
+                
+                //  允许点击按钮
+                if (_animatorStatus == kAnimatorStatus_open) {
+                    if (self.dynamicAnimaionShowFinsh) {
+                        self.dynamicAnimaionShowFinsh();
+                    }
+                }
             }
             
             positionLast = positionNow;
@@ -325,12 +332,6 @@ typedef enum {
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {
     NSLog(@"--dynamicAnimatorDidPause");
-    
-    if (_animatorStatus == kAnimatorStatus_open) {
-        if (self.dynamicAnimaionShowFinsh) {
-            self.dynamicAnimaionShowFinsh();
-        }
-    }
     
     if (_animatorStatus == kAnimatorStatus_close) {
         if (self.dynamicAnimaionCloseFinsh) {
