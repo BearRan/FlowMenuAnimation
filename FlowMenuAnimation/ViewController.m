@@ -24,7 +24,7 @@
 - (void)createUI
 {
     CGFloat width = WIDTH;
-    CGFloat height = 198.0 / 372 * width;
+    CGFloat height = 220.0 / 372 * width;
     
     FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     

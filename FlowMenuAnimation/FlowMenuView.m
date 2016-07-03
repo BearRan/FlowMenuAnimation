@@ -14,6 +14,8 @@
 #import "UIView+SetSize.h"
 #import "StartBtn.h"
 
+static CGFloat moveInfoView_AnimationDuring = 0.3;
+
 @interface FlowMenuView ()
 {
     UIBezierPath    *_bezierPath_downGroove;
@@ -57,11 +59,11 @@
 - (void)createInfoView
 {
     _mainInfoView = [[MainInfoView alloc] initWithFrame:CGRectMake(0, self.height * 0.32, self.width, 40)];
-    _mainInfoView.backgroundColor = [UIColor blueColor];
+    _mainInfoView.backgroundColor = [UIColor clearColor];
     [self addSubview:_mainInfoView];
     
     _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.05, self.width, 50)];
-    _assignInfoView.backgroundColor = [UIColor orangeColor];
+    _assignInfoView.backgroundColor = [UIColor clearColor];
     [self addSubview:_assignInfoView];
 }
 
@@ -154,6 +156,7 @@
     _buttonsView.dynamicAnimaionCloseFinsh = ^(){
         NSLog(@"--_buttonsView.dynamicAnimaionCloseFinsh");
         [weakSelf closeGrooveAniamtion];
+        [weakSelf moveCenterInfoViewAniamtion];
     };
     _buttonsView.dynamicAnimaionShowFinsh = ^(){
         weakSelf.startBtn.enabled = YES;
@@ -161,6 +164,51 @@
     [self addSubview:_buttonsView];
 }
 
+#pragma mark - 左移／复位InfoView
+
+- (void)moveLeftInfoViewAniamtion
+{
+    [UIView animateWithDuration:moveInfoView_AnimationDuring
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.mainInfoView setCenterX:0];
+                     } completion:^(BOOL finished) {
+                         nil;
+                     }];
+    
+    [UIView animateWithDuration:moveInfoView_AnimationDuring
+                          delay:0
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         [self.assignInfoView setCenterX:0];
+                     } completion:^(BOOL finished) {
+                         nil;
+                     }];
+}
+
+- (void)moveCenterInfoViewAniamtion
+{
+    CGFloat delayTime = 0.3;
+    
+    [UIView animateWithDuration:moveInfoView_AnimationDuring
+                          delay:delayTime
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.mainInfoView BearSetCenterToParentViewWithAxis:kAXIS_X];
+                     } completion:^(BOOL finished) {
+                         nil;
+                     }];
+    
+    [UIView animateWithDuration:moveInfoView_AnimationDuring
+                          delay:delayTime
+                        options:UIViewAnimationOptionCurveLinear
+                     animations:^{
+                         [self.assignInfoView BearSetCenterToParentViewWithAxis:kAXIS_X];
+                     } completion:^(BOOL finished) {
+                         nil;
+                     }];
+}
 
 #pragma mark - 显示／关闭沟槽动画
 
@@ -277,6 +325,7 @@
     if (_showGrooveLayer) {
         NSLog(@"--1");
         [self showGrooveAniamtion];
+        [self moveLeftInfoViewAniamtion];
         
     }else{
         NSLog(@"--2");
