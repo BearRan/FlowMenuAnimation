@@ -12,6 +12,7 @@
 #import "SpecialBtn.h"
 #import "AssignPointModel.h"
 #import "UIView+SetSize.h"
+#import "StartBtn.h"
 
 @interface FlowMenuView ()
 {
@@ -26,7 +27,7 @@
     AssignPointModel *_assignPointModel;
 }
 
-@property (strong, nonatomic) UIButton    *startBtn;
+@property (strong, nonatomic) StartBtn    *startBtn;
 
 @end
 
@@ -98,9 +99,8 @@
     
     
     //  开始按钮
-    _startBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height - 50, 50, 50)];
-    [_startBtn setTitle:@"click" forState:UIControlStateNormal];
-    _startBtn.backgroundColor = [UIColor orangeColor];
+    CGFloat btn_width = [self setXX:172];
+    _startBtn = [[StartBtn alloc] initWithFrame:CGRectMake(self.width - btn_width, 0, btn_width, btn_width)];
     [_startBtn addTarget:self action:@selector(startBtn_Event) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_startBtn];
 }
@@ -249,7 +249,7 @@
 
     
     _grooveBgLayer.path = _bezierPath_downGroove.CGPath;
-    [self.layer addSublayer:_grooveBgLayer];
+    [_grooveBgView.layer addSublayer:_grooveBgLayer];
 }
 
 
