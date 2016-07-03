@@ -56,17 +56,13 @@
 
 - (void)createInfoView
 {
-    NSMutableArray *subViewArray = [NSMutableArray new];
-    
-    _mainInfoView = [[MainInfoView alloc] initWithFrame:CGRectMake(0, self.height * 0.35, self.width, 40)];
+    _mainInfoView = [[MainInfoView alloc] initWithFrame:CGRectMake(0, self.height * 0.32, self.width, 40)];
     _mainInfoView.backgroundColor = [UIColor blueColor];
     [self addSubview:_mainInfoView];
-    [subViewArray addObject:_mainInfoView];
     
-    _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.15, self.width, 50)];
+    _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.05, self.width, 50)];
     _assignInfoView.backgroundColor = [UIColor orangeColor];
     [self addSubview:_assignInfoView];
-    [subViewArray addObject:_assignInfoView];
 }
 
 - (void)createUI

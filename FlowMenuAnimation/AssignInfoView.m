@@ -36,7 +36,7 @@
 {
     [super layoutSubviews];
     
-    [UIView BearAutoLayViewArray:(NSMutableArray *)self.subviews layoutAxis:kLAYOUT_AXIS_X center:YES gapDistance:20];
+    [UIView BearAutoLayViewArray:(NSMutableArray *)self.subviews layoutAxis:kLAYOUT_AXIS_X center:YES gapDistance:30];
 }
 
 @end

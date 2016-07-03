@@ -20,7 +20,7 @@
         [self addSubview:_imageView];
         
         _label = [UILabel new];
-        _label.font = [UIFont systemFontOfSize:20];
+        _label.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:20];
         _label.textColor = [UIColor whiteColor];
         [self addSubview:_label];
     }
