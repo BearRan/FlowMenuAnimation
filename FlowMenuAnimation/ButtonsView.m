@@ -132,14 +132,17 @@ typedef enum {
     _animatorStatus = kAnimatorStatus_close;
     SpecialBtn *lastBtn = (SpecialBtn *)[_btnArray lastObject];
     
-    //  移除 除了附着行为外的所有的行为
-    for (UIDynamicBehavior *tempBehavior in _animator.behaviors) {
-        if (![tempBehavior isKindOfClass:[UIAttachmentBehavior class]]) {
-            [_animator removeBehavior:tempBehavior];
-        }
-    }
+    [_animator removeAllBehaviors];
     
     for (int i = 0; i < [_btnArray count]; i++) {
+        
+        //  添加球与球之间的附着行为
+        if (i > 0) {
+            
+            UIAttachmentBehavior *attachmentBehavior = [self addAttachmentBehavior_item:_btnArray[i] attachToItem:_btnArray[i - 1]];
+            [attachmentBehavior setFrequency:5];
+            [attachmentBehavior setLength:lastBtn.width + 5];
+        }
         
         //  重力行为
         UIGravityBehavior *gravityBehavior = [self addGravityBehavior:_btnArray[i]];
@@ -206,7 +209,7 @@ typedef enum {
     UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[item]];
     itemBehavior.resistance = 0;
     itemBehavior.allowsRotation = YES;
-    itemBehavior.angularResistance = 3.0;
+    itemBehavior.angularResistance = 4.0;
     itemBehavior.friction = 0.8;
     [_animator addBehavior:itemBehavior];
     
@@ -219,7 +222,7 @@ typedef enum {
     UIButton *tempBtn = _btnArray[0];
     UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
     pushBehavior.pushDirection = CGVectorMake(1, 0.3);
-    pushBehavior.magnitude = 1.4;
+    pushBehavior.magnitude = 1.6;
     [_animator addBehavior:pushBehavior];
     
     return pushBehavior;
@@ -247,17 +250,17 @@ typedef enum {
                 
                 pushLeft = YES;
                 
-                //  移除 除了附着行为外的所有的行为
-                for (UIDynamicBehavior *tempBehavior in _animator.behaviors) {
-                    if (![tempBehavior isKindOfClass:[UIAttachmentBehavior class]]) {
-                        [_animator removeBehavior:tempBehavior];
-                    }else{
-                        UIAttachmentBehavior *attachmentBehavior = (UIAttachmentBehavior *)tempBehavior;
-                        [attachmentBehavior setFrequency:5];
-                    }
-                }
+                [_animator removeAllBehaviors];
                 
                 for (int i = 0; i < [_btnArray count]; i++) {
+                    
+                    //  添加球与球之间的附着行为
+                    if (i > 0) {
+                        
+                        UIAttachmentBehavior *attachmentBehavior = [self addAttachmentBehavior_item:_btnArray[i] attachToItem:_btnArray[i - 1]];
+                        [attachmentBehavior setFrequency:5];
+                        [attachmentBehavior setLength:tempBtn.width + 5];
+                    }
                     
                     //  重力行为
                     [self addGravityBehavior:_btnArray[i]];
