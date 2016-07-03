@@ -13,6 +13,7 @@
 		09B3C21C1D2929EF00BA0211 /* ArrowAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3C21B1D2929EF00BA0211 /* ArrowAnimationView.m */; };
 		09B3C2201D29374900BA0211 /* MainInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3C21F1D29374900BA0211 /* MainInfoView.m */; };
 		09B3C2231D29375400BA0211 /* AssignInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3C2221D29375400BA0211 /* AssignInfoView.m */; };
+		09B3C2261D293DF300BA0211 /* AssignInfoSingleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B3C2251D293DF300BA0211 /* AssignInfoSingleCellView.m */; };
 		09D2F1B21D1AD2A100093946 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1B11D1AD2A100093946 /* main.m */; };
 		09D2F1B51D1AD2A100093946 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1B41D1AD2A100093946 /* AppDelegate.m */; };
 		09D2F1B81D1AD2A100093946 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D2F1B71D1AD2A100093946 /* ViewController.m */; };
@@ -58,6 +59,8 @@
 		09B3C21F1D29374900BA0211 /* MainInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainInfoView.m; sourceTree = "<group>"; };
 		09B3C2211D29375400BA0211 /* AssignInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignInfoView.h; sourceTree = "<group>"; };
 		09B3C2221D29375400BA0211 /* AssignInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignInfoView.m; sourceTree = "<group>"; };
+		09B3C2241D293DF300BA0211 /* AssignInfoSingleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignInfoSingleCellView.h; sourceTree = "<group>"; };
+		09B3C2251D293DF300BA0211 /* AssignInfoSingleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignInfoSingleCellView.m; sourceTree = "<group>"; };
 		09D2F1AD1D1AD2A100093946 /* FlowMenuAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowMenuAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D2F1B11D1AD2A100093946 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09D2F1B31D1AD2A100093946 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				09B3C21F1D29374900BA0211 /* MainInfoView.m */,
 				09B3C2211D29375400BA0211 /* AssignInfoView.h */,
 				09B3C2221D29375400BA0211 /* AssignInfoView.m */,
+				09B3C2241D293DF300BA0211 /* AssignInfoSingleCellView.h */,
+				09B3C2251D293DF300BA0211 /* AssignInfoSingleCellView.m */,
 				09B3C21D1D292D7900BA0211 /* StartBtn */,
 				09B3C2111D256A7200BA0211 /* AssignPointModel.h */,
 				09B3C2121D256A7200BA0211 /* AssignPointModel.m */,
@@ -419,6 +424,7 @@
 				09B3C2131D256A7200BA0211 /* AssignPointModel.m in Sources */,
 				09D2F1B21D1AD2A100093946 /* main.m in Sources */,
 				09D2F1E91D1B4F3600093946 /* AssignPointView.m in Sources */,
+				09B3C2261D293DF300BA0211 /* AssignInfoSingleCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

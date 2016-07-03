@@ -63,7 +63,7 @@
     [self addSubview:_mainInfoView];
     [subViewArray addObject:_mainInfoView];
     
-    _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.15, self.width, 40)];
+    _assignInfoView = [[AssignInfoView alloc] initWithFrame:CGRectMake(0, _mainInfoView.maxY + self.height * 0.15, self.width, 50)];
     _assignInfoView.backgroundColor = [UIColor orangeColor];
     [self addSubview:_assignInfoView];
     [subViewArray addObject:_assignInfoView];
