@@ -120,7 +120,11 @@ typedef enum {
         [self addCollisionBehavior:tempBtn];
         
         //  动力元素行为
-        [self addDynamicItemBehavior:tempBtn];
+        UIDynamicItemBehavior *itemBehavior = [self addDynamicItemBehavior:tempBtn];
+        if (i == [_btnArray count] - 1) {
+            //  最后一个球增加密度,以防止出现的时候，由于惯性的原因导致飞起来
+            itemBehavior.density = 1.8;
+        }
         
     }
     
@@ -162,7 +166,7 @@ typedef enum {
     //  最后一个球向左push
     UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[lastBtn] mode:UIPushBehaviorModeContinuous];
     pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
-    pushBehavior.magnitude = 4.9;
+    pushBehavior.magnitude = 14.0;
     [_animator addBehavior:pushBehavior];
 }
 
@@ -186,9 +190,9 @@ typedef enum {
     SpecialBtn *tempBtn = (SpecialBtn *)item;
     
     UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:item attachedToItem:attachToItem];
-    [attachmentBehavior setLength:tempBtn.width + 10];
-    [attachmentBehavior setDamping:10.01];
-    [attachmentBehavior setFrequency:1];
+    [attachmentBehavior setLength:tempBtn.width + 20];
+//    [attachmentBehavior setDamping:10.01];
+//    [attachmentBehavior setFrequency:1];
     [_animator addBehavior:attachmentBehavior];
     
     return attachmentBehavior;
@@ -223,8 +227,8 @@ typedef enum {
 {
     UIButton *tempBtn = _btnArray[0];
     UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeInstantaneous];
-    pushBehavior.pushDirection = CGVectorMake(1, 0);
-    pushBehavior.magnitude = 0.1;
+    pushBehavior.pushDirection = CGVectorMake(1, 0.3);
+    pushBehavior.magnitude = 1.4;
     [_animator addBehavior:pushBehavior];
     
     return pushBehavior;
@@ -252,17 +256,14 @@ typedef enum {
                 
                 pushLeft = YES;
                 
-                //  移除所有的行为
-                [_animator removeAllBehaviors];
+                //  移除除了附着行为外的所有的行为
+                for (UIDynamicBehavior *tempBehavior in _animator.behaviors) {
+                    if (![tempBehavior isKindOfClass:[UIAttachmentBehavior class]]) {
+                        [_animator removeBehavior:tempBehavior];
+                    }
+                }
                 
                 for (int i = 0; i < [_btnArray count]; i++) {
-                    
-                    //  重新添加球与球之间的附着行为
-                    if (i > 0) {
-                        UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
-                        [attachmentBehavior setLength:tempBtn.width + 10];
-                        [_animator addBehavior:attachmentBehavior];
-                    }
                     
                     //  重力行为
                     [self addGravityBehavior:_btnArray[i]];
@@ -271,13 +272,14 @@ typedef enum {
                     [self addCollisionBehavior:_btnArray[i]];
                     
                     //  动力元素行为
-                    [self addDynamicItemBehavior:_btnArray[i]];
+                    UIDynamicItemBehavior *itemBehavior = [self addDynamicItemBehavior:_btnArray[i]];
+                    itemBehavior.angularResistance = 15.0;
                 }
                 
                 //  最后一个球向左push
                 UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[tempBtn] mode:UIPushBehaviorModeContinuous];
                 pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
-                pushBehavior.magnitude = 2.9;
+                pushBehavior.magnitude = 2.3;
                 [_animator addBehavior:pushBehavior];
             }
             

@@ -95,8 +95,6 @@
     [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     _displayLink.paused = YES;
     
-    [self initSetButtonsView];
-    
     
     //  开始按钮
     _startBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height - 50, 50, 50)];
@@ -179,6 +177,7 @@
         
         _displayLink.paused = YES;
         
+        [self initSetButtonsView];
         [self bringSubviewToFront:_buttonsView];
         [self bringSubviewToFront:_startBtn];
         _buttonsView.hidden = NO;
@@ -207,6 +206,8 @@
     }completion:^(BOOL finished) {
         _displayLink.paused = YES;
         _buttonsView.hidden = YES;
+        [_buttonsView removeFromSuperview];
+        _buttonsView = nil;
     }];
 }
 
