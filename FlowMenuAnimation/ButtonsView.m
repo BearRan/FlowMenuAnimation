@@ -54,33 +54,17 @@ typedef enum {
             _animator.delegate = self;
         }
         
-//        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
-//        _tapGesture.numberOfTapsRequired = 1;
-//        [self addGestureRecognizer:_tapGesture];
-//        
-//        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
-//        [self addGestureRecognizer:_panGesture];
+        if (needDragGesture) {
+            _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+            _tapGesture.numberOfTapsRequired = 1;
+            [self addGestureRecognizer:_tapGesture];
+            
+            _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+            [self addGestureRecognizer:_panGesture];
+        }
     }
     
     return self;
-}
-
-
-- (void)gestureEvent:(UIGestureRecognizer *)gesture
-{
-    CGPoint touchPoint = [gesture locationInView:self];
-    NSLog(@"tapPoint :%@", NSStringFromCGPoint(touchPoint));
-    
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        [self initDragBehaviourWithAnchorPosition:touchPoint];
-        [_animator addBehavior:_firstBtnDragBehavior];
-    }
-    else if (gesture.state == UIGestureRecognizerStateChanged) {
-        [_firstBtnDragBehavior setAnchorPoint:touchPoint];
-    }
-    else if (gesture.state == UIGestureRecognizerStateEnded) {
-        [_animator removeBehavior:_firstBtnDragBehavior];
-    }
 }
 
 - (CGFloat)setXX:(CGFloat)xx
@@ -90,7 +74,6 @@ typedef enum {
     
     return returnXX;
 }
-
 
 
 #pragma mark - 显现／消退动画
@@ -303,6 +286,25 @@ typedef enum {
     }];
 }
 
+
+#pragma mark - 拖动手势
+
+- (void)gestureEvent:(UIGestureRecognizer *)gesture
+{
+    CGPoint touchPoint = [gesture locationInView:self];
+    NSLog(@"tapPoint :%@", NSStringFromCGPoint(touchPoint));
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self initDragBehaviourWithAnchorPosition:touchPoint];
+        [_animator addBehavior:_firstBtnDragBehavior];
+    }
+    else if (gesture.state == UIGestureRecognizerStateChanged) {
+        [_firstBtnDragBehavior setAnchorPoint:touchPoint];
+    }
+    else if (gesture.state == UIGestureRecognizerStateEnded) {
+        [_animator removeBehavior:_firstBtnDragBehavior];
+    }
+}
 
 - (void)initDragBehaviourWithAnchorPosition:(CGPoint)anchorPosition {
     UIView *ballView = [_btnArray lastObject];
