@@ -182,8 +182,8 @@ typedef enum {
     
     UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:item attachedToItem:attachToItem];
     [attachmentBehavior setLength:tempBtn.width + 20];
-//    [attachmentBehavior setDamping:10.01];
-//    [attachmentBehavior setFrequency:1];
+    [attachmentBehavior setDamping:10.01];
+    [attachmentBehavior setFrequency:1];
     [_animator addBehavior:attachmentBehavior];
     
     return attachmentBehavior;
@@ -251,6 +251,9 @@ typedef enum {
                 for (UIDynamicBehavior *tempBehavior in _animator.behaviors) {
                     if (![tempBehavior isKindOfClass:[UIAttachmentBehavior class]]) {
                         [_animator removeBehavior:tempBehavior];
+                    }else{
+                        UIAttachmentBehavior *attachmentBehavior = (UIAttachmentBehavior *)tempBehavior;
+                        [attachmentBehavior setFrequency:5];
                     }
                 }
                 
