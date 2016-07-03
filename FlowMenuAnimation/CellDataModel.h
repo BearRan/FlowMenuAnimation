@@ -16,4 +16,8 @@
 @property (strong, nonatomic) NSString  *favoritesNum;
 @property (strong, nonatomic) NSString  *viewsNum;
 
+@property (strong, nonatomic) UIColor   *myColor_dark;
+@property (strong, nonatomic) UIColor   *myColor_normal;
+@property (strong, nonatomic) UIColor   *myColor_light;
+
 @end

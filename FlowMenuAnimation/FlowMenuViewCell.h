@@ -14,6 +14,6 @@
 
 @property (strong, nonatomic) FlowMenuView *flowMenuView;
 
-- (void)loadData:(CellDataModel *)dataModel;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withDataModel:(CellDataModel *)dataModel;
 
 @end

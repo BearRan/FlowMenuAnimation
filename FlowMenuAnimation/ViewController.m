@@ -107,9 +107,10 @@
 //        cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
 //    }
     
-    FlowMenuViewCell *cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    FlowMenuViewCell *cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                     reuseIdentifier:cellID
+                                                       withDataModel:_dataModelArray[indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell loadData:_dataModelArray[indexPath.row]];
     
     return cell;
 }

@@ -10,7 +10,7 @@
 
 @implementation FlowMenuViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withDataModel:(CellDataModel *)dataModel
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
@@ -19,7 +19,8 @@
         CGFloat width = WIDTH;
         CGFloat height = 220.0 / 372 * width;
         
-        _flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        _flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height) withDataModel:dataModel];
+        [self loadData:dataModel];
         [self.contentView addSubview:_flowMenuView];
     }
     

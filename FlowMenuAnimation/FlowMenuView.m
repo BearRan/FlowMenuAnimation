@@ -27,6 +27,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
     
     ButtonsView         *_buttonsView;
     AssignPointModel    *_assignPointModel;
+    CellDataModel       *_dataModel;
 }
 
 @property (strong, nonatomic) StartBtn    *startBtn;
@@ -36,7 +37,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
 
 @implementation FlowMenuView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame withDataModel:(CellDataModel *)dataModel
 {
     self = [super initWithFrame:frame];
     
@@ -48,6 +49,7 @@ static CGFloat moveInfoView_AnimationDuring = 0.3;
         
         self.backgroundColor = redLight;
         _showGrooveLayer = NO;
+        _dataModel = dataModel;
         
         [self createInfoView];
         [self createUI];
