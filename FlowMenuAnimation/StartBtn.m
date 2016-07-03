@@ -51,4 +51,9 @@
     return self;
 }
 
+- (void)setSelected:(BOOL)selected
+{
+    _arrowAnimationView.open = !selected;
+}
+
 @end

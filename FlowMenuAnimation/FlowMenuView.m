@@ -258,6 +258,7 @@
 - (void)startBtn_Event
 {
     _showGrooveLayer = !_showGrooveLayer;
+    _startBtn.selected = _showGrooveLayer;
     _startBtn.enabled = NO;
     
     if (_showGrooveLayer) {

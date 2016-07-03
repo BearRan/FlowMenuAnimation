@@ -108,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09B3C21D1D292D7900BA0211 /* StartBtn */ = {
+			isa = PBXGroup;
+			children = (
+				09B3C2171D2925DC00BA0211 /* StartBtn.h */,
+				09B3C2181D2925DC00BA0211 /* StartBtn.m */,
+				09B3C21A1D2929EF00BA0211 /* ArrowAnimationView.h */,
+				09B3C21B1D2929EF00BA0211 /* ArrowAnimationView.m */,
+			);
+			name = StartBtn;
+			sourceTree = "<group>";
+		};
 		09D2F1A41D1AD2A100093946 = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +150,7 @@
 				09D2F1B71D1AD2A100093946 /* ViewController.m */,
 				09D2F1E31D1AD48100093946 /* FlowMenuView.h */,
 				09D2F1E41D1AD48100093946 /* FlowMenuView.m */,
-				09B3C2171D2925DC00BA0211 /* StartBtn.h */,
-				09B3C2181D2925DC00BA0211 /* StartBtn.m */,
-				09B3C21A1D2929EF00BA0211 /* ArrowAnimationView.h */,
-				09B3C21B1D2929EF00BA0211 /* ArrowAnimationView.m */,
+				09B3C21D1D292D7900BA0211 /* StartBtn */,
 				09B3C2111D256A7200BA0211 /* AssignPointModel.h */,
 				09B3C2121D256A7200BA0211 /* AssignPointModel.m */,
 				09D2F1EA1D1B622F00093946 /* ButtonsView.h */,
