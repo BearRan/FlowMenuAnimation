@@ -9,12 +9,19 @@
 #import "ButtonsView.h"
 #import "SpecialBtn.h"
 
+typedef enum {
+    kAnimatorStatus_null,
+    kAnimatorStatus_open,
+    kAnimatorStatus_close,
+}AnimatorStatus;
+
 @interface ButtonsView () <UIDynamicAnimatorDelegate, UICollisionBehaviorDelegate>
 {
-    NSArray         *_btnArray;
-    CAShapeLayer    *_pathLayer;
-    UIDynamicAnimator *_animator;
+    NSArray                 *_btnArray;
+    CAShapeLayer            *_pathLayer;
+    UIDynamicAnimator       *_animator;
     UIAttachmentBehavior    *_firstBtnDragBehavior;
+    AnimatorStatus          _animatorStatus;
     
     UITapGestureRecognizer  *_tapGesture;
     UIPanGestureRecognizer  *_panGesture;
@@ -38,10 +45,9 @@
             self.backgroundColor = [UIColor clearColor];
         }
         
-        _btnArray = btnArray;
-        _aniamtionDuring = 2.0;
-        
-        _pathLayer = [CAShapeLayer layer];
+        _btnArray       = btnArray;
+        _animatorStatus = kAnimatorStatus_null;
+        _pathLayer      = [CAShapeLayer layer];
         
         if (!_animator) {
             _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
@@ -88,6 +94,7 @@
 
 - (void)showBtnsAnimation
 {
+    _animatorStatus = kAnimatorStatus_open;
     [_animator removeAllBehaviors];
     
     if (showPath) {
@@ -253,7 +260,39 @@
 
 - (void)closeBtnsAniamtion
 {
+    NSLog(@"-- closeBtnsAniamtion");
     
+    _animatorStatus = kAnimatorStatus_close;
+    SpecialBtn *lastBtn = (SpecialBtn *)[_btnArray lastObject];
+    
+    //  移除所有的行为
+    [_animator removeAllBehaviors];
+    
+    for (int i = 0; i < [_btnArray count]; i++) {
+        
+        //  重新添加球与球之间的附着行为
+        if (i > 0) {
+            
+            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
+            [attachmentBehavior setLength:lastBtn.width + 10];
+            [_animator addBehavior:attachmentBehavior];
+        }
+        
+        //  重力行为
+        [self addGravityBehavior:_btnArray[i]];
+        
+        //  碰撞行为
+        [self addCollisionBehavior:_btnArray[i]];
+        
+        //  动力元素行为
+        [self addDynamicItemBehavior:_btnArray[i]];
+    }
+    
+    //  最后一个球向左push
+    UIPushBehavior *pushBehavior = [[UIPushBehavior alloc] initWithItems:@[lastBtn] mode:UIPushBehaviorModeContinuous];
+    pushBehavior.pushDirection = CGVectorMake(-1, -0.5);
+    pushBehavior.magnitude = 4.9;
+    [_animator addBehavior:pushBehavior];
 }
 
 
@@ -278,6 +317,12 @@
 - (void)dynamicAnimatorDidPause:(UIDynamicAnimator *)animator
 {
     NSLog(@"--dynamicAnimatorDidPause");
+    
+    if (_animatorStatus == kAnimatorStatus_close) {
+        if (self.dynamicAnimaionFinsh) {
+            self.dynamicAnimaionFinsh();
+        }
+    }
 }
 
 

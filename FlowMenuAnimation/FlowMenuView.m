@@ -98,7 +98,6 @@
     
     
     //  开始按钮
-    
     _startBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, self.height - 50, 50, 50)];
     [_startBtn setTitle:@"click" forState:UIControlStateNormal];
     _startBtn.backgroundColor = [UIColor orangeColor];
@@ -145,7 +144,13 @@
     btn_3.backgroundColor = [UIColor whiteColor];
     [btnsArray addObject:btn_3];
     
+    __weak __typeof__(self) weakSelf = self;
     _buttonsView = [[ButtonsView alloc] initWithFrame:self.bounds btnsArray:btnsArray];
+    _buttonsView.hidden = YES;
+    _buttonsView.dynamicAnimaionFinsh = ^(){
+        NSLog(@"--_buttonsView.dynamicAnimaionFinsh");
+        [weakSelf closeGrooveAniamtion];
+    };
     [self addSubview:_buttonsView];
 }
 
@@ -174,6 +179,8 @@
         _displayLink.paused = YES;
         
         [self bringSubviewToFront:_buttonsView];
+        [self bringSubviewToFront:_startBtn];
+        _buttonsView.hidden = NO;
         _buttonsView.beizerPath = _bezierPath_downGroove;
         [_buttonsView showBtnsAnimation];
     }];
@@ -198,6 +205,7 @@
 
     }completion:^(BOOL finished) {
         _displayLink.paused = YES;
+        _buttonsView.hidden = YES;
     }];
 }
 
@@ -254,9 +262,11 @@
     _showGrooveLayer = !_showGrooveLayer;
     
     if (_showGrooveLayer) {
+        NSLog(@"--1");
         [self showGrooveAniamtion];
     }else{
-        [self closeGrooveAniamtion];
+        NSLog(@"--2");
+        [_buttonsView closeBtnsAniamtion];
     }
 }
 
