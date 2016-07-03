@@ -13,9 +13,9 @@
 #define redLight    UIColorFromHEX(0xd7637e)
 
 static BOOL showAssistantPoint  = NO;   //显示辅助点
-static BOOL showPath            = YES;   //显示路径
+static BOOL showPath            = NO;   //显示路径
 static BOOL showPathBgViewColor = NO;   //显示路径层的背景色
-static BOOL flowViewClipBounds  = NO;  //主viewclipBounds
+static BOOL flowViewClipBounds  = YES;  //主view clipBounds
 static BOOL needDragGesture     = NO;   //是否需要拖动手势
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
