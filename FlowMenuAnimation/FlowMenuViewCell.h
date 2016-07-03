@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FlowMenuView.h"
+#import "CellDataModel.h"
 
 @interface FlowMenuViewCell : UITableViewCell
 
 @property (strong, nonatomic) FlowMenuView *flowMenuView;
+
+- (void)loadData:(CellDataModel *)dataModel;
 
 @end

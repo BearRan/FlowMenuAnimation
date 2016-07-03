@@ -1,5 +1,5 @@
 //
-//  FlowMenuViewCell.m
+//  FlowMenuViewself.m
 //  FlowMenuAnimation
 //
 //  Created by Bear on 16/7/3.
@@ -20,20 +20,22 @@
         CGFloat height = 220.0 / 372 * width;
         
         _flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-        
-        _flowMenuView.mainInfoView.label.text = @"Night life";
-        _flowMenuView.mainInfoView.imageView.image = [UIImage imageNamed:@"wine"];
-        _flowMenuView.assignInfoView.assignCellView_1.numLabel.text = @"517";
-        _flowMenuView.assignInfoView.assignCellView_2.numLabel.text = @"315";
-        _flowMenuView.assignInfoView.assignCellView_3.numLabel.text = @"7815";
-        _flowMenuView.assignInfoView.assignCellView_1.titleLabel.text = @"FOLLOWERS";
-        _flowMenuView.assignInfoView.assignCellView_2.titleLabel.text = @"FAVORITES";
-        _flowMenuView.assignInfoView.assignCellView_3.titleLabel.text = @"VIEWS";
-
         [self.contentView addSubview:_flowMenuView];
     }
     
     return self;
+}
+
+- (void)loadData:(CellDataModel *)dataModel
+{
+    self.flowMenuView.mainInfoView.label.text = dataModel.nameStr;
+    self.flowMenuView.mainInfoView.imageView.image = [UIImage imageNamed:dataModel.imageNameStr];
+    self.flowMenuView.assignInfoView.assignCellView_1.numLabel.text = dataModel.followersNum;
+    self.flowMenuView.assignInfoView.assignCellView_2.numLabel.text = dataModel.favoritesNum;
+    self.flowMenuView.assignInfoView.assignCellView_3.numLabel.text = dataModel.viewsNum;
+    self.flowMenuView.assignInfoView.assignCellView_1.titleLabel.text = @"FOLLOWERS";
+    self.flowMenuView.assignInfoView.assignCellView_2.titleLabel.text = @"FAVORITES";
+    self.flowMenuView.assignInfoView.assignCellView_3.titleLabel.text = @"VIEWS";
 }
 
 - (void)layoutSubviews

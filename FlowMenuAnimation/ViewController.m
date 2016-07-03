@@ -9,10 +9,12 @@
 #import "ViewController.h"
 #import "FlowMenuView.h"
 #import "FlowMenuViewCell.h"
+#import "CellDataModel.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
-    UITableView *_mainTableView;
+    UITableView     *_mainTableView;
+    NSMutableArray  *_dataModelArray;
 }
 
 @end
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initSetDataArray];
     [self createUI];
 }
 
@@ -35,12 +38,58 @@
     [self.view addSubview:_mainTableView];
 }
 
+- (void)initSetDataArray
+{
+    _dataModelArray = [NSMutableArray new];
+    
+    [self addModel_NightLife];
+    [self addModel_ArtCulture];
+    [self addModel_FoodFestivals];
+    [self addModel_NightLife];
+    [self addModel_ArtCulture];
+    [self addModel_FoodFestivals];
+}
+
+- (void)addModel_NightLife
+{
+    CellDataModel *tempModel = [CellDataModel new];
+    tempModel.nameStr = @"Night life";
+    tempModel.imageNameStr = @"wine";
+    tempModel.followersNum = @"517";
+    tempModel.favoritesNum = @"315";
+    tempModel.viewsNum = @"7815";
+    [_dataModelArray addObject:tempModel];
+}
+
+- (void)addModel_ArtCulture
+{
+    CellDataModel *tempModel = [CellDataModel new];
+    tempModel.nameStr = @"Art & Culture";
+    tempModel.imageNameStr = @"art";
+    tempModel.followersNum = @"437";
+    tempModel.favoritesNum = @"526";
+    tempModel.viewsNum = @"8361";
+    [_dataModelArray addObject:tempModel];
+}
+
+- (void)addModel_FoodFestivals
+{
+    CellDataModel *tempModel = [CellDataModel new];
+    tempModel.nameStr = @"Foot festivals";
+    tempModel.imageNameStr = @"food";
+    tempModel.followersNum = @"472";
+    tempModel.favoritesNum = @"214";
+    tempModel.viewsNum = @"2741";
+    [_dataModelArray addObject:tempModel];
+}
+
+
 
 #pragma mark - tableView delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [_dataModelArray count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -60,6 +109,7 @@
     
     FlowMenuViewCell *cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell loadData:_dataModelArray[indexPath.row]];
     
     return cell;
 }

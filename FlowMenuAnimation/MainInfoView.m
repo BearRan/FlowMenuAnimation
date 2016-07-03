@@ -33,7 +33,7 @@
     [_imageView sizeToFit];
     [_label sizeToFit];
     
-    [UIView BearAutoLayViewArray:(NSMutableArray *)self.subviews layoutAxis:kLAYOUT_AXIS_X center:YES gapDistance:5];
+    [UIView BearAutoLayViewArray:(NSMutableArray *)self.subviews layoutAxis:kLAYOUT_AXIS_X center:YES gapDistance:10];
 }
 
 @end
