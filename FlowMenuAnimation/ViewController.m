@@ -8,8 +8,12 @@
 
 #import "ViewController.h"
 #import "FlowMenuView.h"
+#import "FlowMenuViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+{
+    UITableView *_mainTableView;
+}
 
 @end
 
@@ -23,24 +27,41 @@
 
 - (void)createUI
 {
-    CGFloat width = WIDTH;
-    CGFloat height = 220.0 / 372 * width;
+    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT)];
+    _mainTableView.delegate = self;
+    _mainTableView.dataSource = self;
+    _mainTableView.tableFooterView = [UIView new];
+    _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_mainTableView];
+}
+
+
+#pragma mark - tableView delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 220.0 / 372 * WIDTH;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellID = @"cellID";
     
-    FlowMenuView *flowMenuView = [[FlowMenuView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    //  此处暂时不用复用机制
+//    FlowMenuViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+//    if (!cell) {
+//        cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+//    }
     
-    flowMenuView.mainInfoView.label.text = @"Night life";
-    flowMenuView.mainInfoView.imageView.image = [UIImage imageNamed:@"wine"];
-    flowMenuView.assignInfoView.assignCellView_1.numLabel.text = @"517";
-    flowMenuView.assignInfoView.assignCellView_2.numLabel.text = @"315";
-    flowMenuView.assignInfoView.assignCellView_3.numLabel.text = @"7815";
-    flowMenuView.assignInfoView.assignCellView_1.titleLabel.text = @"FOLLOWERS";
-    flowMenuView.assignInfoView.assignCellView_2.titleLabel.text = @"FAVORITES";
-    flowMenuView.assignInfoView.assignCellView_3.titleLabel.text = @"VIEWS";
+    FlowMenuViewCell *cell = [[FlowMenuViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    [self.view addSubview:flowMenuView];
-    
-    [flowMenuView BearSetCenterToParentViewWithAxis:kAXIS_Y];
-    [flowMenuView setY:flowMenuView.y + 200];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
