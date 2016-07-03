@@ -48,12 +48,12 @@
             _animator.delegate = self;
         }
         
-        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
-        _tapGesture.numberOfTapsRequired = 1;
-        [self addGestureRecognizer:_tapGesture];
-        
-        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
-        [self addGestureRecognizer:_panGesture];
+//        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+//        _tapGesture.numberOfTapsRequired = 1;
+//        [self addGestureRecognizer:_tapGesture];
+//        
+//        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureEvent:)];
+//        [self addGestureRecognizer:_panGesture];
     }
     
     return self;
@@ -111,45 +111,79 @@
         
         //  添加球与球之间的附着行为
         if (i > 0) {
-            UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:_btnArray[i] attachedToItem:_btnArray[i - 1]];
-            [attachmentBehavior setLength:tempBtn.width + 10];
-            [attachmentBehavior setDamping:10.01];
-            [attachmentBehavior setFrequency:1];
-            [_animator addBehavior:attachmentBehavior];
-            
+            [self addAttachmentBehavior_item:_btnArray[i] attachToItem:_btnArray[i - 1]];
         }
         
         //  重力行为
-        UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] init];
-        [gravityBehavior addItem:tempBtn];
+        UIGravityBehavior *gravityBehavior = [self addGravityBehavior:tempBtn];
         
-        //  最后一个球处理
+        //  最后一个球处理重力行为
         if (i == [_btnArray count] - 1) {
             [self dealLastBtnGravityBehavior:gravityBehavior tempBtn:tempBtn];
             
         }
 
         //  碰撞行为
-        UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] init];
-        [collisionBehavior addItem:tempBtn];
-        [collisionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
+        [self addCollisionBehavior:tempBtn];
         
         //  动力元素行为
-        UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[tempBtn]];
-        itemBehavior.resistance = 0.2;
-        itemBehavior.allowsRotation = YES;
-        itemBehavior.angularResistance = 5.0;
-        itemBehavior.friction = 0.8;
+        [self addDynamicItemBehavior:tempBtn];
         
-        
-        [_animator addBehavior:gravityBehavior];
-        [_animator addBehavior:collisionBehavior];
-        [_animator addBehavior:itemBehavior];
     }
     
     [self pushBehavior];
-    
 }
+
+#pragma mark - 添加各种行为
+
+#pragma mark  重力行为
+- (UIGravityBehavior *)addGravityBehavior:(id <UIDynamicItem>)item
+{
+    UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] init];
+    [gravityBehavior addItem:item];
+    [_animator addBehavior:gravityBehavior];
+    
+    return gravityBehavior;
+}
+
+#pragma mark  添加球与球之间的附着行为
+- (UIAttachmentBehavior *)addAttachmentBehavior_item:(id <UIDynamicItem>)item attachToItem:(id <UIDynamicItem>)attachToItem
+{
+    SpecialBtn *tempBtn = (SpecialBtn *)item;
+    
+    UIAttachmentBehavior *attachmentBehavior = [[UIAttachmentBehavior alloc] initWithItem:item attachedToItem:attachToItem];
+    [attachmentBehavior setLength:tempBtn.width + 10];
+    [attachmentBehavior setDamping:10.01];
+    [attachmentBehavior setFrequency:1];
+    [_animator addBehavior:attachmentBehavior];
+    
+    return attachmentBehavior;
+}
+
+#pragma mark  碰撞行为
+- (UICollisionBehavior *)addCollisionBehavior:(id <UIDynamicItem>)item
+{
+    UICollisionBehavior *collisionBehavior = [[UICollisionBehavior alloc] init];
+    [collisionBehavior addItem:item];
+    [collisionBehavior addBoundaryWithIdentifier:@"path" forPath:_beizerPath];
+    [_animator addBehavior:collisionBehavior];
+    
+    return collisionBehavior;
+}
+
+#pragma mark  动力元素行为
+- (UIDynamicItemBehavior *)addDynamicItemBehavior:(id <UIDynamicItem>)item
+{
+    UIDynamicItemBehavior *itemBehavior = [[UIDynamicItemBehavior alloc] initWithItems:@[item]];
+    itemBehavior.resistance = 0.2;
+    itemBehavior.allowsRotation = YES;
+    itemBehavior.angularResistance = 5.0;
+    itemBehavior.friction = 0.8;
+    [_animator addBehavior:itemBehavior];
+    
+    return itemBehavior;
+}
+
 
 
 //  对最后一个球回滚时的立即响应
@@ -215,7 +249,7 @@
 
 - (void)closeBtnsAniamtion
 {
-
+    
 }
 
 
