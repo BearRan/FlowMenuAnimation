@@ -317,7 +317,6 @@
 				TargetAttributes = {
 					09D2F1AC1D1AD2A100093946 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = DF449Q9538;
 					};
 					09D2F1C51D1AD2A100093946 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -594,7 +593,7 @@
 				INFOPLIST_FILE = FlowMenuAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.arcticwind.AW;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lx.jqm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -611,7 +610,7 @@
 				INFOPLIST_FILE = FlowMenuAnimation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.arcticwind.AW;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lx.jqm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
