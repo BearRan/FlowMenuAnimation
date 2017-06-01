@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '316127D4E6CE8ADCABB53AC5'
+               BlueprintIdentifier = 'C7CAE86F127B0490BCF9E7A51BC62374'
                BlueprintName = 'Pods-FlowMenuAnimation'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-FlowMenuAnimation.a'>

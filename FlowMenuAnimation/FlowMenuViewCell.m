@@ -43,7 +43,12 @@
 {
     [super layoutSubviews];
     
-    [_flowMenuView.assignInfoView layoutSubviews];
+    [self relayUI];
+}
+
+- (void)relayUI
+{
+    [_flowMenuView.assignInfoView relayUI];
 }
 
 @end

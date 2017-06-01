@@ -15,4 +15,6 @@
 @property (strong, nonatomic) AssignInfoSingleCellView *assignCellView_2;
 @property (strong, nonatomic) AssignInfoSingleCellView *assignCellView_3;
 
+- (void)relayUI;
+
 @end

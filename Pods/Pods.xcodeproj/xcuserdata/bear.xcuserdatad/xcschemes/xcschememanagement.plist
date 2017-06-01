@@ -19,20 +19,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FlowMenuAnimationTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-FlowMenuAnimationUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6650DCC340B90AEA241B0997839E75BA</key>
+		<key>59FB52C2A98E8BDAD4727DC057DF8E37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>92DAC08E856F55428CA1CA7602143E60</key>
+		<key>C1682A754E7552860207A09114683CC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0472A3880C970B118CBE52FAA883EB8</key>
+		<key>C4FF83225E0F2BB9E235D49F3CF434B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7CAE86F127B0490BCF9E7A51BC62374</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3A73757CDC17ED9BB88E92578025B37</key>
 		<dict>
 			<key>primary</key>
 			<true/>

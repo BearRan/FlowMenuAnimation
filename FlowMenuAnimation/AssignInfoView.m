@@ -36,6 +36,14 @@
 {
     [super layoutSubviews];
     
+    [self relayUI];
+}
+
+- (void)relayUI
+{
+    for (AssignInfoSingleCellView *subView in self.subviews) {
+        [subView layoutSubviews];
+    }
     [UIView BearAutoLayViewArray:(NSMutableArray *)self.subviews layoutAxis:kLAYOUT_AXIS_X center:YES gapDistance:30];
 }
 

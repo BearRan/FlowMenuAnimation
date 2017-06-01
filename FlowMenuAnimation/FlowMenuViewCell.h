@@ -16,4 +16,6 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier withDataModel:(CellDataModel *)dataModel;
 
+- (void)relayUI;
+
 @end

@@ -1,1626 +1,891 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>02B276043FA6331E91D0CCFC0D75A6C4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E1E769F009CB2669022DBADFFCE98EF0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>02E5426BD2CDC4ACEAF90AAED615B302</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>26A07FA1ACCBA2605B9F7460CC58B1E4</string>
-				<string>32FB357D88A25FAA61E5920C9B718F2C</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>0381062B8468E675738BC48C55B9D716</key>
-		<dict>
-			<key>fileRef</key>
-			<string>21BE8A7E6E129831ED53B87005A7318B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>052A17875CB827423D627183396CEB60</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>RELEASE=1</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>09051904B32E816F10D3811CD415EA8C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation-frameworks.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>0C1E2E4E93C73AE15090BCA26FE4AB39</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23737A78CD77199B1BAAA1F87C548B5E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>0CC18E27CBB7EA960A588B7EC9DEBE4F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BearAlertView.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>117A4441C4DBCAC50EC2B152CFEF1074</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>13A5FB3731B822AF0BE78FC1D332760A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F400A4C651A2FC6231B29E2E1F64C097</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>BearSkill</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>13FA0664B6A6FF1E63305C3358A74707</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7BAE8C2E24269552B2AA6CE5752B5B5D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>1739B5FBAF3C02788EC95499A74150F3</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>62A420F2D945EB3C4C621DC7C9DCD84B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>18D857221807A5013B1920DBE90E75D1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>7C2F49229EE05CF6F18CDFC299FA099A</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1B4CA09F07E33F59BAA0718463D48D90</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>BearSkill</string>
-			<key>target</key>
-			<string>6650DCC340B90AEA241B0997839E75BA</string>
-			<key>targetProxy</key>
-			<string>A65A14359CAFC0FB163428CBF3B58BFE</string>
-		</dict>
-		<key>1DE10EB40D4ACD1783B246809C20CBDB</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D3F6E6C3356FE3C39F32F88B58091264</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1F9DAA113423E56E897A78ED27309D04</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F400A4C651A2FC6231B29E2E1F64C097</string>
-				<string>5490D64914C7C2D7B7334515ACA439BB</string>
-				<string>46FAB3A8D2FF063149B4062947B39B6B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/BearSkill</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2124987443A09FC79CC9E790A1643111</key>
-		<dict>
-			<key>fileRef</key>
-			<string>ECA400B33EABBFCB3B24E71D1FF5EDA4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>21BE8A7E6E129831ED53B87005A7318B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23737A78CD77199B1BAAA1F87C548B5E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BearConstants.m</string>
-			<key>path</key>
-			<string>Pod/Classes/Constants/BearConstants.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>26A07FA1ACCBA2605B9F7460CC58B1E4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F400A4C651A2FC6231B29E2E1F64C097</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/BearSkill/BearSkill-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>292A550FCD6ED138E16D3B74014C69E1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>EFA454EE34CB2D760139DD8412E5B2A2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>2A3B8E9F4D9038BCBEF23A2FECBF8F9A</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6B5341B3CDBF6D7B580BD4FAF78B304D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2CA7371255FDAA3A30D3D36556132E17</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>689F282FE63B2C029690B0BCF41CD791</string>
-				<string>2A3B8E9F4D9038BCBEF23A2FECBF8F9A</string>
-				<string>32763665B19060C3A5C6914CA4E0A2A1</string>
-				<string>0C1E2E4E93C73AE15090BCA26FE4AB39</string>
-				<string>18D857221807A5013B1920DBE90E75D1</string>
-				<string>52CFA913ED832E30E70003D289DF832C</string>
-				<string>F554B6FAF530A7CB4AC62DFE463F3FF7</string>
-				<string>1DE10EB40D4ACD1783B246809C20CBDB</string>
-				<string>3D3563345B64D483950076F729D535B2</string>
-				<string>6A853FC3FA7D52F30F70EF6FB88D588F</string>
-				<string>60E43A896D823F49680FDB4852990337</string>
-				<string>E16FC9447296B4BEB7FED8452D3CCFA0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>2D4C373D40F822C09B9D83580F336948</key>
-		<dict>
-			<key>fileRef</key>
-			<string>55DEEB7F033D6A09A7E8D10B449723C8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>B37F0F91F85060E28F1DAAB522DC7EC1</string>
-				<string>052A17875CB827423D627183396CEB60</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>30866A45FB5C12C1801F3E2AF120FD59</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation-acknowledgements.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>32763665B19060C3A5C6914CA4E0A2A1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D3E47000B7ADF736E4EB42E7AA77A16E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>32FB357D88A25FAA61E5920C9B718F2C</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F400A4C651A2FC6231B29E2E1F64C097</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/BearSkill/BearSkill-prefix.pch</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PRIVATE_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PUBLIC_HEADERS_FOLDER_PATH</key>
-				<string></string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3D3563345B64D483950076F729D535B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>97119862B1EB6D6E7AE58D700FD80A66</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3E4E89230EF59BC255123B67864ACF77</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>46FAB3A8D2FF063149B4062947B39B6B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BearSkill-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>4921108054357E0AA5B2ACC56766798B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>NSMutableAttributedString+BearSet.m</string>
-			<key>path</key>
-			<string>Pod/Classes/AttributeString/NSMutableAttributedString+BearSet.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>52CFA913ED832E30E70003D289DF832C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5490D64914C7C2D7B7334515ACA439BB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5490D64914C7C2D7B7334515ACA439BB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BearSkill-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>55DEEB7F033D6A09A7E8D10B449723C8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>NSMutableAttributedString+BearSet.h</string>
-			<key>path</key>
-			<string>Pod/Classes/AttributeString/NSMutableAttributedString+BearSet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5600B23314413AA212A4ECEBE4F1ACBC</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UITableView+BearStoreCellHeight.h</string>
-			<key>path</key>
-			<string>Pod/Classes/Layout/UITableView+BearStoreCellHeight.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>5718C87A7E4B92FDD3AA833009A23F2B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9025936B0E4F7243653E6910D66B2A24</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>587A5A400BD7CBA45EB0D0C6A4691BE6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8146CC511D19C6E4A0BC12FA5A79BABB</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>59CEAD14AC050EC2F817CFECE923B128</key>
-		<dict>
-			<key>fileRef</key>
-			<string>906924082C68FB2F693E41A31491410F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>60E43A896D823F49680FDB4852990337</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D32D8E8D9FC4788518A32C269D29B611</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>617E10D76207E27F48D16A6DFF6BE1D6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>0381062B8468E675738BC48C55B9D716</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>62A420F2D945EB3C4C621DC7C9DCD84B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6445954CC13E6E60981F8E75E4CD1EB6</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UITextField+BearSet.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UITextField+BearSet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6591B4543E2E3B60E4FA847619B27D03</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F29E9A35535062E80E646F432DE0DADE</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Targets Support Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6650DCC340B90AEA241B0997839E75BA</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>02E5426BD2CDC4ACEAF90AAED615B302</string>
-			<key>buildPhases</key>
-			<array>
-				<string>2CA7371255FDAA3A30D3D36556132E17</string>
-				<string>7BF5B52C95C634FABD413748F07946DA</string>
-				<string>B90909DE42D48AF053A0A1F4FA598BE4</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>7C3EECE4F1091183A346E76F15A9CCFD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>BearSkill</string>
-			<key>productName</key>
-			<string>BearSkill</string>
-			<key>productReference</key>
-			<string>982BA6019DB0228B2B44A8C4024CD495</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>689F282FE63B2C029690B0BCF41CD791</key>
-		<dict>
-			<key>fileRef</key>
-			<string>71C3FC6A1F05935A23A0C0088C101359</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6A853FC3FA7D52F30F70EF6FB88D588F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D0E80FBC0E7A3399F42ADBE534EA09E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6B5341B3CDBF6D7B580BD4FAF78B304D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BearAlertContentView.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertContentView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>71C3FC6A1F05935A23A0C0088C101359</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BearAlertBtnsView.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertBtnsView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7236880130177FDD69EF0FAA419E715E</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>92DAC08E856F55428CA1CA7602143E60</string>
-			<key>remoteInfo</key>
-			<string>BearSkill-BearSkill</string>
-		</dict>
-		<key>73D3915F3583A56C303348242B8E73FC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3E4E89230EF59BC255123B67864ACF77</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>743B73C424B9243555FDB59174E5E3A2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libPods-FlowMenuAnimation.a</string>
-			<key>path</key>
-			<string>libPods-FlowMenuAnimation.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>74B1677791AF41ED51C9DE3D6FBD4595</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation-acknowledgements.markdown</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7B74DC3953C0DAE4A79773ABB8B1319F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.script.sh</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation-resources.sh</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BAE8C2E24269552B2AA6CE5752B5B5D</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BearConstants.h</string>
-			<key>path</key>
-			<string>Pod/Classes/Constants/BearConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7BF5B52C95C634FABD413748F07946DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>73D3915F3583A56C303348242B8E73FC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>7C2F49229EE05CF6F18CDFC299FA099A</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BearCutOutView.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearCutOutView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7C3EECE4F1091183A346E76F15A9CCFD</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>name</key>
-			<string>BearSkill-BearSkill</string>
-			<key>target</key>
-			<string>92DAC08E856F55428CA1CA7602143E60</string>
-			<key>targetProxy</key>
-			<string>7236880130177FDD69EF0FAA419E715E</string>
-		</dict>
-		<key>7DB346D0F39D3F0E887471402A8071AB</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
-				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>5718C87A7E4B92FDD3AA833009A23F2B</string>
-				<string>87F4F50A95915952B133E97F35DC5BDA</string>
-				<string>6591B4543E2E3B60E4FA847619B27D03</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>7E819EF5201453DB5E7BA78E92C35511</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>8146CC511D19C6E4A0BC12FA5A79BABB</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UITextField+BearLimitLength.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UITextField+BearLimitLength.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>826287A62D01AC0289F6554253A8EED9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BearAlertBtnsView.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertBtnsView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>87F4F50A95915952B133E97F35DC5BDA</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>F1856A7BEC5445AC6194D3EDBBD79B22</string>
-				<string>982BA6019DB0228B2B44A8C4024CD495</string>
-				<string>743B73C424B9243555FDB59174E5E3A2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8E1AB3C014D4DFF6655A206AB9A1FA4A</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B570509999F2F335E9193E985E770AA7</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>9025936B0E4F7243653E6910D66B2A24</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>826287A62D01AC0289F6554253A8EED9</string>
-				<string>71C3FC6A1F05935A23A0C0088C101359</string>
-				<string>ECA400B33EABBFCB3B24E71D1FF5EDA4</string>
-				<string>6B5341B3CDBF6D7B580BD4FAF78B304D</string>
-				<string>0CC18E27CBB7EA960A588B7EC9DEBE4F</string>
-				<string>D3E47000B7ADF736E4EB42E7AA77A16E</string>
-				<string>7BAE8C2E24269552B2AA6CE5752B5B5D</string>
-				<string>23737A78CD77199B1BAAA1F87C548B5E</string>
-				<string>EFA454EE34CB2D760139DD8412E5B2A2</string>
-				<string>7C2F49229EE05CF6F18CDFC299FA099A</string>
-				<string>55DEEB7F033D6A09A7E8D10B449723C8</string>
-				<string>4921108054357E0AA5B2ACC56766798B</string>
-				<string>E1E769F009CB2669022DBADFFCE98EF0</string>
-				<string>D3F6E6C3356FE3C39F32F88B58091264</string>
-				<string>5600B23314413AA212A4ECEBE4F1ACBC</string>
-				<string>97119862B1EB6D6E7AE58D700FD80A66</string>
-				<string>8146CC511D19C6E4A0BC12FA5A79BABB</string>
-				<string>D0E80FBC0E7A3399F42ADBE534EA09E9</string>
-				<string>6445954CC13E6E60981F8E75E4CD1EB6</string>
-				<string>D32D8E8D9FC4788518A32C269D29B611</string>
-				<string>906924082C68FB2F693E41A31491410F</string>
-				<string>F987C1351A32598FC6C5AE8CB6BF978F</string>
-				<string>1F9DAA113423E56E897A78ED27309D04</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BearSkill</string>
-			<key>path</key>
-			<string>BearSkill</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>906924082C68FB2F693E41A31491410F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UIView+BearSet.h</string>
-			<key>path</key>
-			<string>Pod/Classes/Layout/UIView+BearSet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92DAC08E856F55428CA1CA7602143E60</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AC9311BE9D442CC8C4FA02A5275B1547</string>
-			<key>buildPhases</key>
-			<array>
-				<string>7E819EF5201453DB5E7BA78E92C35511</string>
-				<string>117A4441C4DBCAC50EC2B152CFEF1074</string>
-				<string>A9102F63E0BE8B24374BEA7C17BB19F6</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>BearSkill-BearSkill</string>
-			<key>productName</key>
-			<string>BearSkill-BearSkill</string>
-			<key>productReference</key>
-			<string>F1856A7BEC5445AC6194D3EDBBD79B22</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>97119862B1EB6D6E7AE58D700FD80A66</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UITableView+BearStoreCellHeight.m</string>
-			<key>path</key>
-			<string>Pod/Classes/Layout/UITableView+BearStoreCellHeight.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>982BA6019DB0228B2B44A8C4024CD495</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>libBearSkill.a</string>
-			<key>path</key>
-			<string>libBearSkill.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>A65A14359CAFC0FB163428CBF3B58BFE</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D41D8CD98F00B204E9800998ECF8427E</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>6650DCC340B90AEA241B0997839E75BA</string>
-			<key>remoteInfo</key>
-			<string>BearSkill</string>
-		</dict>
-		<key>A9102F63E0BE8B24374BEA7C17BB19F6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AC9311BE9D442CC8C4FA02A5275B1547</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>EFD29674E70C55DA7A90FABDF58D8E17</string>
-				<string>13A5FB3731B822AF0BE78FC1D332760A</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>B37F0F91F85060E28F1DAAB522DC7EC1</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>STRIP_INSTALLED_PRODUCT</key>
-				<string>NO</string>
-				<key>SYMROOT</key>
-				<string>${SRCROOT}/../build</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>B3DE2B7AB0B207C7B4F9E408392D1731</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B570509999F2F335E9193E985E770AA7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>Pods-FlowMenuAnimation.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B90909DE42D48AF053A0A1F4FA598BE4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D448F14D87097939E028FD1C4CD62237</string>
-				<string>2124987443A09FC79CC9E790A1643111</string>
-				<string>C8D8B4B3FB5A3546496C547DC0FC32B0</string>
-				<string>13FA0664B6A6FF1E63305C3358A74707</string>
-				<string>292A550FCD6ED138E16D3B74014C69E1</string>
-				<string>2D4C373D40F822C09B9D83580F336948</string>
-				<string>02B276043FA6331E91D0CCFC0D75A6C4</string>
-				<string>C386AA11C923FFF4F70AC7DDB2949155</string>
-				<string>587A5A400BD7CBA45EB0D0C6A4691BE6</string>
-				<string>CFB649A1EA1D952F23AE54CB49D37BCD</string>
-				<string>59CEAD14AC050EC2F817CFECE923B128</string>
-			</array>
-			<key>isa</key>
-			<string>PBXHeadersBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>name</key>
-			<string>Podfile</string>
-			<key>path</key>
-			<string>../Podfile</string>
-			<key>sourceTree</key>
-			<string>SOURCE_ROOT</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.ruby</string>
-		</dict>
-		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>BC62DA62708466437ADC3FE890C9E609</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B3DE2B7AB0B207C7B4F9E408392D1731</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>MACH_O_TYPE</key>
-				<string>staticlib</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>OTHER_LDFLAGS</key>
-				<string></string>
-				<key>OTHER_LIBTOOLFLAGS</key>
-				<string></string>
-				<key>PODS_ROOT</key>
-				<string>$(SRCROOT)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3E4E89230EF59BC255123B67864ACF77</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>iOS</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C386AA11C923FFF4F70AC7DDB2949155</key>
-		<dict>
-			<key>fileRef</key>
-			<string>5600B23314413AA212A4ECEBE4F1ACBC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>C8D8B4B3FB5A3546496C547DC0FC32B0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>0CC18E27CBB7EA960A588B7EC9DEBE4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>CFB649A1EA1D952F23AE54CB49D37BCD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6445954CC13E6E60981F8E75E4CD1EB6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>D0E80FBC0E7A3399F42ADBE534EA09E9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UITextField+BearLimitLength.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UITextField+BearLimitLength.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D32D8E8D9FC4788518A32C269D29B611</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UITextField+BearSet.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UITextField+BearSet.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3E47000B7ADF736E4EB42E7AA77A16E</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>BearAlertView.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D3F6E6C3356FE3C39F32F88B58091264</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UILabel+BearSet.m</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UILabel+BearSet.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D41D8CD98F00B204E9800998ECF8427E</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0700</string>
-				<key>LastUpgradeCheck</key>
-				<string>0700</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>7DB346D0F39D3F0E887471402A8071AB</string>
-			<key>productRefGroup</key>
-			<string>87F4F50A95915952B133E97F35DC5BDA</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>6650DCC340B90AEA241B0997839E75BA</string>
-				<string>92DAC08E856F55428CA1CA7602143E60</string>
-				<string>E0472A3880C970B118CBE52FAA883EB8</string>
-			</array>
-		</dict>
-		<key>D448F14D87097939E028FD1C4CD62237</key>
-		<dict>
-			<key>fileRef</key>
-			<string>826287A62D01AC0289F6554253A8EED9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>ATTRIBUTES</key>
-				<array>
-					<string>Public</string>
-				</array>
-			</dict>
-		</dict>
-		<key>DCCB8B1C4E2D87F9B9B33AD2E021208D</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>8E1AB3C014D4DFF6655A206AB9A1FA4A</string>
-				<string>BC62DA62708466437ADC3FE890C9E609</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>E0472A3880C970B118CBE52FAA883EB8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>DCCB8B1C4E2D87F9B9B33AD2E021208D</string>
-			<key>buildPhases</key>
-			<array>
-				<string>617E10D76207E27F48D16A6DFF6BE1D6</string>
-				<string>1739B5FBAF3C02788EC95499A74150F3</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>1B4CA09F07E33F59BAA0718463D48D90</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Pods-FlowMenuAnimation</string>
-			<key>productName</key>
-			<string>Pods-FlowMenuAnimation</string>
-			<key>productReference</key>
-			<string>743B73C424B9243555FDB59174E5E3A2</string>
-			<key>productType</key>
-			<string>com.apple.product-type.library.static</string>
-		</dict>
-		<key>E16FC9447296B4BEB7FED8452D3CCFA0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>F987C1351A32598FC6C5AE8CB6BF978F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>E1E769F009CB2669022DBADFFCE98EF0</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>UILabel+BearSet.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/UILabel+BearSet.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ECA400B33EABBFCB3B24E71D1FF5EDA4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BearAlertContentView.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearAlertView/BearAlertContentView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EFA454EE34CB2D760139DD8412E5B2A2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>BearCutOutView.h</string>
-			<key>path</key>
-			<string>Pod/Classes/UI&amp;Extend/BearCutOutView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>EFD29674E70C55DA7A90FABDF58D8E17</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>F400A4C651A2FC6231B29E2E1F64C097</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>PRODUCT_NAME</key>
-				<string>BearSkill</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SKIP_INSTALL</key>
-				<string>YES</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>bundle</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>F1856A7BEC5445AC6194D3EDBBD79B22</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>name</key>
-			<string>BearSkill.bundle</string>
-			<key>path</key>
-			<string>BearSkill.bundle</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>F29E9A35535062E80E646F432DE0DADE</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>74B1677791AF41ED51C9DE3D6FBD4595</string>
-				<string>30866A45FB5C12C1801F3E2AF120FD59</string>
-				<string>21BE8A7E6E129831ED53B87005A7318B</string>
-				<string>09051904B32E816F10D3811CD415EA8C</string>
-				<string>7B74DC3953C0DAE4A79773ABB8B1319F</string>
-				<string>B570509999F2F335E9193E985E770AA7</string>
-				<string>B3DE2B7AB0B207C7B4F9E408392D1731</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods-FlowMenuAnimation</string>
-			<key>path</key>
-			<string>Target Support Files/Pods-FlowMenuAnimation</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F400A4C651A2FC6231B29E2E1F64C097</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>BearSkill.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F554B6FAF530A7CB4AC62DFE463F3FF7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>4921108054357E0AA5B2ACC56766798B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>F987C1351A32598FC6C5AE8CB6BF978F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>UIView+BearSet.m</string>
-			<key>path</key>
-			<string>Pod/Classes/Layout/UIView+BearSet.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D41D8CD98F00B204E9800998ECF8427E</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06BD885D88ACF32FD4851FC33115E82F /* BearAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F19343A8658C9023D53F6D870CF7A97 /* BearAlertView.m */; };
+		0A86C5A03B1BD2D2A587FA1B943396C8 /* UILabel+BearSet.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB617861E2532FEE2A7D1FDCF16712D /* UILabel+BearSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B74ACF4B153C5BB737D8783C089976E /* UITableView+BearStoreCellHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = AE01ED26F01D3BA67B35228DA5691122 /* UITableView+BearStoreCellHeight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD5AD11A5ADC7AD6DC51C86A2E0E726 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		212E17008E1C7B57F0BDCE49C84B0828 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		22694101B2BD68A589D6446F8EE17EBA /* Pods-FlowMenuAnimationTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14313549996C2828B8D7018E25864062 /* Pods-FlowMenuAnimationTests-dummy.m */; };
+		2492ACCF3C10CFDB29FFE481F293AF75 /* BearConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E400DD47F3BC681C95B22FAF7D598A /* BearConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28D038AF1170FF7006DF2B6E5D2B5675 /* NSMutableAttributedString+BearSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 236B029BB5700277B03723FAD9476428 /* NSMutableAttributedString+BearSet.m */; };
+		2D7D86081DE6D35C75C0710E7499AACE /* UITableView+BearStoreCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 7774BCE36EB8B5CECBA6B593E32B8BD0 /* UITableView+BearStoreCellHeight.m */; };
+		32D80B2F1A6719248D53042273CB49C3 /* Pods-FlowMenuAnimation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D316F40E3B96B9C881C9C46A5F9A35A /* Pods-FlowMenuAnimation-dummy.m */; };
+		348108EE5C2F031AEFBEC1382EE91EF9 /* UITextField+BearLimitLength.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA45C2C2D9C90FCFD7EF7769249CBAA /* UITextField+BearLimitLength.m */; };
+		38BCE46BD8C08C6F6DB7F48036CBEDD6 /* BearCutOutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C503D75854825D756F68DC305E53779 /* BearCutOutView.m */; };
+		3E7F98089F5BE6D6C5E8E84DD27D0187 /* BearConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE57FBF8329A5AB4D051F3E30A85A73 /* BearConstants.m */; };
+		3F0075C0872E498E7693AEBAC870FFAD /* BearAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DFFFE025A302E7BBD3D5BE017D91877 /* BearAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BCFBD0DF0D81C267AE2217C6D1CD79 /* UITextField+BearSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E89C897D65202C2D6A48A6B1E501BC83 /* UITextField+BearSet.m */; };
+		4C05DA9507A7B328F48903ED8EA80D7D /* UITextField+BearLimitLength.h in Headers */ = {isa = PBXBuildFile; fileRef = F5D30EC7BFC644C701D4246C6377C3A3 /* UITextField+BearLimitLength.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EECF3D8026064E2FC67CD8AF2161DF1 /* BearSkill-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D767765B9EFC6F4EEC69766F7D36762 /* BearSkill-dummy.m */; };
+		52A2397845F147F403157406A6539E7A /* UIView+BearSet.h in Headers */ = {isa = PBXBuildFile; fileRef = A43FEA022866CADE5379B5B086830374 /* UIView+BearSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		590DA6C0E53406672E42E5F1DD38BDF1 /* UITextField+BearSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 4556AAC139B5E029A878E7E10858F4A8 /* UITextField+BearSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FC015683647CE6433689E2E6E6A8020 /* UILabel+BearSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F40CF5BB4079DBAA4B985616859BDAD /* UILabel+BearSet.m */; };
+		635E9ECA95DF17D9184FB8CA7197422E /* BearCutOutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2952C261664EBABCCA6090DBF8C9699A /* BearCutOutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7011FE089230F73525C6E362AAC71577 /* BearAlertBtnsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0CC00575A3ADC379F03ED1877180C /* BearAlertBtnsView.m */; };
+		7637CFD34D6AACD0279B7BB5FBF0E8C6 /* BearAlertContentView.h in Headers */ = {isa = PBXBuildFile; fileRef = ADC83B261998EACFF77FD0A0CF7A691A /* BearAlertContentView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		920449E5A12DA97BFDA387D649572804 /* UIView+BearSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D26E901DDE461541BF49B08D3B72FB /* UIView+BearSet.m */; };
+		92FFDFFC1B50FA75F3CA8143B212E3A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AF0A7F49ED087C4475FA9A23F14FC869 /* NSMutableAttributedString+BearSet.h in Headers */ = {isa = PBXBuildFile; fileRef = FE728706536727E394B4C9EDE3D616A0 /* NSMutableAttributedString+BearSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC17DA10C4AAF79E07FECE8C4B7D94BC /* BearAlertBtnsView.h in Headers */ = {isa = PBXBuildFile; fileRef = DA122C36CBC342F9496960BEFFD87581 /* BearAlertBtnsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D81424CEFCFAACD49B6394AB01F9712F /* BearAlertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB666EF07B964BA3BA118372A931C2F /* BearAlertContentView.m */; };
+		DD93ECAAF44AE09E48F1D16819C62981 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		E65A715D80D62658DA786CD934C3F708 /* Pods-FlowMenuAnimationUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DEB6229506D38A775745034D1E3B05 /* Pods-FlowMenuAnimationUITests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		969DD299E5FF4D343DA7F9D99DFC5448 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59FB52C2A98E8BDAD4727DC057DF8E37;
+			remoteInfo = BearSkill;
+		};
+		E35495AAF7021A2B2D0A59FD1CCC2986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3A73757CDC17ED9BB88E92578025B37;
+			remoteInfo = "BearSkill-BearSkill";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02E400DD47F3BC681C95B22FAF7D598A /* BearConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearConstants.h; path = Pod/Classes/Constants/BearConstants.h; sourceTree = "<group>"; };
+		05DC4181B56231964F0D188B8AB1A9A9 /* Pods-FlowMenuAnimationTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlowMenuAnimationTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0FD78B8786B0B8FCB48264008A295147 /* Pods-FlowMenuAnimationUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimationUITests-resources.sh"; sourceTree = "<group>"; };
+		1337930502DBBC0EB2BD0A250465F614 /* libPods-FlowMenuAnimationUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FlowMenuAnimationUITests.a"; path = "libPods-FlowMenuAnimationUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14313549996C2828B8D7018E25864062 /* Pods-FlowMenuAnimationTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlowMenuAnimationTests-dummy.m"; sourceTree = "<group>"; };
+		1CF0CC00575A3ADC379F03ED1877180C /* BearAlertBtnsView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearAlertBtnsView.m; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertBtnsView.m"; sourceTree = "<group>"; };
+		231188E31C4E878ECCB07C61A1AFC9CC /* Pods-FlowMenuAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimation.debug.xcconfig"; sourceTree = "<group>"; };
+		236B029BB5700277B03723FAD9476428 /* NSMutableAttributedString+BearSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+BearSet.m"; path = "Pod/Classes/AttributeString/NSMutableAttributedString+BearSet.m"; sourceTree = "<group>"; };
+		2952C261664EBABCCA6090DBF8C9699A /* BearCutOutView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearCutOutView.h; path = "Pod/Classes/UI&Extend/BearCutOutView.h"; sourceTree = "<group>"; };
+		2971B82FDFE0AB44A86DE028F48B3BF8 /* Pods-FlowMenuAnimation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlowMenuAnimation-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2A232D4F38D6110D37C26749369CB9C6 /* Pods-FlowMenuAnimationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimationTests.release.xcconfig"; sourceTree = "<group>"; };
+		2C503D75854825D756F68DC305E53779 /* BearCutOutView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearCutOutView.m; path = "Pod/Classes/UI&Extend/BearCutOutView.m"; sourceTree = "<group>"; };
+		3D316F40E3B96B9C881C9C46A5F9A35A /* Pods-FlowMenuAnimation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlowMenuAnimation-dummy.m"; sourceTree = "<group>"; };
+		3E9434E1C0F8D39D132860148D405768 /* BearSkill.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = BearSkill.bundle; path = BearSkill.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		40184489D02D9F16E303A1F05FB294BA /* Pods-FlowMenuAnimationTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimationTests-frameworks.sh"; sourceTree = "<group>"; };
+		4556AAC139B5E029A878E7E10858F4A8 /* UITextField+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+BearSet.h"; path = "Pod/Classes/UI&Extend/UITextField+BearSet.h"; sourceTree = "<group>"; };
+		46D26E901DDE461541BF49B08D3B72FB /* UIView+BearSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BearSet.m"; path = "Pod/Classes/Layout/UIView+BearSet.m"; sourceTree = "<group>"; };
+		4F19343A8658C9023D53F6D870CF7A97 /* BearAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearAlertView.m; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertView.m"; sourceTree = "<group>"; };
+		4F40CF5BB4079DBAA4B985616859BDAD /* UILabel+BearSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+BearSet.m"; path = "Pod/Classes/UI&Extend/UILabel+BearSet.m"; sourceTree = "<group>"; };
+		5D43DB29AE698BFC8F69C53518118F72 /* Pods-FlowMenuAnimation-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimation-resources.sh"; sourceTree = "<group>"; };
+		5E9B2887CD1D4350C2FC67CCA3562E28 /* Pods-FlowMenuAnimationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		659F7FCC9F73F5E723F45665E743D659 /* Pods-FlowMenuAnimationUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimationUITests-frameworks.sh"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6D767765B9EFC6F4EEC69766F7D36762 /* BearSkill-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BearSkill-dummy.m"; sourceTree = "<group>"; };
+		7774BCE36EB8B5CECBA6B593E32B8BD0 /* UITableView+BearStoreCellHeight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+BearStoreCellHeight.m"; path = "Pod/Classes/Layout/UITableView+BearStoreCellHeight.m"; sourceTree = "<group>"; };
+		7ABAF7D69E2F52A9CF3D50C7062D970A /* libPods-FlowMenuAnimationTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FlowMenuAnimationTests.a"; path = "libPods-FlowMenuAnimationTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BB666EF07B964BA3BA118372A931C2F /* BearAlertContentView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearAlertContentView.m; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertContentView.m"; sourceTree = "<group>"; };
+		7FE57FBF8329A5AB4D051F3E30A85A73 /* BearConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BearConstants.m; path = Pod/Classes/Constants/BearConstants.m; sourceTree = "<group>"; };
+		8087C3EF0D09E0473A5473B031E7CDC6 /* Pods-FlowMenuAnimationTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimationTests-resources.sh"; sourceTree = "<group>"; };
+		8DFFFE025A302E7BBD3D5BE017D91877 /* BearAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearAlertView.h; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertView.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96FA5F83D51AC39652AFDF5A1482CBC1 /* Pods-FlowMenuAnimationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		990C605C8B5606C665D2D668198F4C1E /* BearSkill-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BearSkill-prefix.pch"; sourceTree = "<group>"; };
+		A43FEA022866CADE5379B5B086830374 /* UIView+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BearSet.h"; path = "Pod/Classes/Layout/UIView+BearSet.h"; sourceTree = "<group>"; };
+		ADC83B261998EACFF77FD0A0CF7A691A /* BearAlertContentView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearAlertContentView.h; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertContentView.h"; sourceTree = "<group>"; };
+		AE01ED26F01D3BA67B35228DA5691122 /* UITableView+BearStoreCellHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+BearStoreCellHeight.h"; path = "Pod/Classes/Layout/UITableView+BearStoreCellHeight.h"; sourceTree = "<group>"; };
+		BAA45C2C2D9C90FCFD7EF7769249CBAA /* UITextField+BearLimitLength.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+BearLimitLength.m"; path = "Pod/Classes/UI&Extend/UITextField+BearLimitLength.m"; sourceTree = "<group>"; };
+		BAB617861E2532FEE2A7D1FDCF16712D /* UILabel+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+BearSet.h"; path = "Pod/Classes/UI&Extend/UILabel+BearSet.h"; sourceTree = "<group>"; };
+		C15F32D93217273BC6300F41F76B7809 /* Pods-FlowMenuAnimation-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlowMenuAnimation-frameworks.sh"; sourceTree = "<group>"; };
+		C3DEB6229506D38A775745034D1E3B05 /* Pods-FlowMenuAnimationUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlowMenuAnimationUITests-dummy.m"; sourceTree = "<group>"; };
+		CE2E4A69DB5C6A0C709DA516B9358724 /* ResourceBundle-BearSkill-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-BearSkill-Info.plist"; sourceTree = "<group>"; };
+		D18E1214BE459F9F4E9D6F4333637098 /* Pods-FlowMenuAnimation-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlowMenuAnimation-acknowledgements.plist"; sourceTree = "<group>"; };
+		D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BearSkill.xcconfig; sourceTree = "<group>"; };
+		D58F50DFDFDA686B42507DEAE65130D1 /* libPods-FlowMenuAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FlowMenuAnimation.a"; path = "libPods-FlowMenuAnimation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CD5D8F12A792B54F7ED8ED221141AB /* Pods-FlowMenuAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		DA122C36CBC342F9496960BEFFD87581 /* BearAlertBtnsView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BearAlertBtnsView.h; path = "Pod/Classes/UI&Extend/BearAlertView/BearAlertBtnsView.h"; sourceTree = "<group>"; };
+		E653A8FE074DEDF2108F443CB80FB69F /* Pods-FlowMenuAnimationUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlowMenuAnimationUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E89C897D65202C2D6A48A6B1E501BC83 /* UITextField+BearSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+BearSet.m"; path = "Pod/Classes/UI&Extend/UITextField+BearSet.m"; sourceTree = "<group>"; };
+		EC128B30D90F59ED3D2572F5D804F901 /* Pods-FlowMenuAnimationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlowMenuAnimationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED9DB4E7C27A6FE8F13C8D93355D5DA1 /* libBearSkill.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBearSkill.a; path = libBearSkill.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB61E97A9B649781ADC1A2C49A5D62A /* Pods-FlowMenuAnimationUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlowMenuAnimationUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F5D30EC7BFC644C701D4246C6377C3A3 /* UITextField+BearLimitLength.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+BearLimitLength.h"; path = "Pod/Classes/UI&Extend/UITextField+BearLimitLength.h"; sourceTree = "<group>"; };
+		F7AC723A07A1340EC14854D50F7C79F1 /* Pods-FlowMenuAnimationTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlowMenuAnimationTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		FE728706536727E394B4C9EDE3D616A0 /* NSMutableAttributedString+BearSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+BearSet.h"; path = "Pod/Classes/AttributeString/NSMutableAttributedString+BearSet.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		160BE5BFB181024473BB587F5D95697F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92FFDFFC1B50FA75F3CA8143B212E3A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB3EFADD70DC8D142379CD2158633 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD93ECAAF44AE09E48F1D16819C62981 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		421075ADB0CE558305AC1AF73C3868F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DD5AD11A5ADC7AD6DC51C86A2E0E726 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD3481F102780ABD39A821449C1B69C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED1B7D2B65E1846B94B8B11536BBCEAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				212E17008E1C7B57F0BDCE49C84B0828 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49C306E189895630C5A38F9DC2B1209C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E9434E1C0F8D39D132860148D405768 /* BearSkill.bundle */,
+				ED9DB4E7C27A6FE8F13C8D93355D5DA1 /* libBearSkill.a */,
+				D58F50DFDFDA686B42507DEAE65130D1 /* libPods-FlowMenuAnimation.a */,
+				7ABAF7D69E2F52A9CF3D50C7062D970A /* libPods-FlowMenuAnimationTests.a */,
+				1337930502DBBC0EB2BD0A250465F614 /* libPods-FlowMenuAnimationUITests.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5718C87A7E4B92FDD3AA833009A23F2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB07052DF9FDAF32707C844B396F35C8 /* BearSkill */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5718C87A7E4B92FDD3AA833009A23F2B /* Pods */,
+				49C306E189895630C5A38F9DC2B1209C /* Products */,
+				D29D37A77D00BE0F77F895E33F3A76D2 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		86ADA35D4A1969C5AD3B8C71E1B5FF73 /* Pods-FlowMenuAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				05DC4181B56231964F0D188B8AB1A9A9 /* Pods-FlowMenuAnimationTests-acknowledgements.markdown */,
+				F7AC723A07A1340EC14854D50F7C79F1 /* Pods-FlowMenuAnimationTests-acknowledgements.plist */,
+				14313549996C2828B8D7018E25864062 /* Pods-FlowMenuAnimationTests-dummy.m */,
+				40184489D02D9F16E303A1F05FB294BA /* Pods-FlowMenuAnimationTests-frameworks.sh */,
+				8087C3EF0D09E0473A5473B031E7CDC6 /* Pods-FlowMenuAnimationTests-resources.sh */,
+				5E9B2887CD1D4350C2FC67CCA3562E28 /* Pods-FlowMenuAnimationTests.debug.xcconfig */,
+				2A232D4F38D6110D37C26749369CB9C6 /* Pods-FlowMenuAnimationTests.release.xcconfig */,
+			);
+			name = "Pods-FlowMenuAnimationTests";
+			path = "Target Support Files/Pods-FlowMenuAnimationTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFD90DF4885303BC2131531B5C4607A9 /* Pods-FlowMenuAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2971B82FDFE0AB44A86DE028F48B3BF8 /* Pods-FlowMenuAnimation-acknowledgements.markdown */,
+				D18E1214BE459F9F4E9D6F4333637098 /* Pods-FlowMenuAnimation-acknowledgements.plist */,
+				3D316F40E3B96B9C881C9C46A5F9A35A /* Pods-FlowMenuAnimation-dummy.m */,
+				C15F32D93217273BC6300F41F76B7809 /* Pods-FlowMenuAnimation-frameworks.sh */,
+				5D43DB29AE698BFC8F69C53518118F72 /* Pods-FlowMenuAnimation-resources.sh */,
+				231188E31C4E878ECCB07C61A1AFC9CC /* Pods-FlowMenuAnimation.debug.xcconfig */,
+				D5CD5D8F12A792B54F7ED8ED221141AB /* Pods-FlowMenuAnimation.release.xcconfig */,
+			);
+			name = "Pods-FlowMenuAnimation";
+			path = "Target Support Files/Pods-FlowMenuAnimation";
+			sourceTree = "<group>";
+		};
+		CB07052DF9FDAF32707C844B396F35C8 /* BearSkill */ = {
+			isa = PBXGroup;
+			children = (
+				DA122C36CBC342F9496960BEFFD87581 /* BearAlertBtnsView.h */,
+				1CF0CC00575A3ADC379F03ED1877180C /* BearAlertBtnsView.m */,
+				ADC83B261998EACFF77FD0A0CF7A691A /* BearAlertContentView.h */,
+				7BB666EF07B964BA3BA118372A931C2F /* BearAlertContentView.m */,
+				8DFFFE025A302E7BBD3D5BE017D91877 /* BearAlertView.h */,
+				4F19343A8658C9023D53F6D870CF7A97 /* BearAlertView.m */,
+				02E400DD47F3BC681C95B22FAF7D598A /* BearConstants.h */,
+				7FE57FBF8329A5AB4D051F3E30A85A73 /* BearConstants.m */,
+				2952C261664EBABCCA6090DBF8C9699A /* BearCutOutView.h */,
+				2C503D75854825D756F68DC305E53779 /* BearCutOutView.m */,
+				FE728706536727E394B4C9EDE3D616A0 /* NSMutableAttributedString+BearSet.h */,
+				236B029BB5700277B03723FAD9476428 /* NSMutableAttributedString+BearSet.m */,
+				BAB617861E2532FEE2A7D1FDCF16712D /* UILabel+BearSet.h */,
+				4F40CF5BB4079DBAA4B985616859BDAD /* UILabel+BearSet.m */,
+				AE01ED26F01D3BA67B35228DA5691122 /* UITableView+BearStoreCellHeight.h */,
+				7774BCE36EB8B5CECBA6B593E32B8BD0 /* UITableView+BearStoreCellHeight.m */,
+				F5D30EC7BFC644C701D4246C6377C3A3 /* UITextField+BearLimitLength.h */,
+				BAA45C2C2D9C90FCFD7EF7769249CBAA /* UITextField+BearLimitLength.m */,
+				4556AAC139B5E029A878E7E10858F4A8 /* UITextField+BearSet.h */,
+				E89C897D65202C2D6A48A6B1E501BC83 /* UITextField+BearSet.m */,
+				A43FEA022866CADE5379B5B086830374 /* UIView+BearSet.h */,
+				46D26E901DDE461541BF49B08D3B72FB /* UIView+BearSet.m */,
+				EDD924F1C46346BA40B6F123AA007470 /* Support Files */,
+			);
+			name = BearSkill;
+			path = BearSkill;
+			sourceTree = "<group>";
+		};
+		D29D37A77D00BE0F77F895E33F3A76D2 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFD90DF4885303BC2131531B5C4607A9 /* Pods-FlowMenuAnimation */,
+				86ADA35D4A1969C5AD3B8C71E1B5FF73 /* Pods-FlowMenuAnimationTests */,
+				EB4C4BFAF350CDFF69F9BC4D20C17262 /* Pods-FlowMenuAnimationUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		EB4C4BFAF350CDFF69F9BC4D20C17262 /* Pods-FlowMenuAnimationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDB61E97A9B649781ADC1A2C49A5D62A /* Pods-FlowMenuAnimationUITests-acknowledgements.markdown */,
+				E653A8FE074DEDF2108F443CB80FB69F /* Pods-FlowMenuAnimationUITests-acknowledgements.plist */,
+				C3DEB6229506D38A775745034D1E3B05 /* Pods-FlowMenuAnimationUITests-dummy.m */,
+				659F7FCC9F73F5E723F45665E743D659 /* Pods-FlowMenuAnimationUITests-frameworks.sh */,
+				0FD78B8786B0B8FCB48264008A295147 /* Pods-FlowMenuAnimationUITests-resources.sh */,
+				EC128B30D90F59ED3D2572F5D804F901 /* Pods-FlowMenuAnimationUITests.debug.xcconfig */,
+				96FA5F83D51AC39652AFDF5A1482CBC1 /* Pods-FlowMenuAnimationUITests.release.xcconfig */,
+			);
+			name = "Pods-FlowMenuAnimationUITests";
+			path = "Target Support Files/Pods-FlowMenuAnimationUITests";
+			sourceTree = "<group>";
+		};
+		EDD924F1C46346BA40B6F123AA007470 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */,
+				6D767765B9EFC6F4EEC69766F7D36762 /* BearSkill-dummy.m */,
+				990C605C8B5606C665D2D668198F4C1E /* BearSkill-prefix.pch */,
+				CE2E4A69DB5C6A0C709DA516B9358724 /* ResourceBundle-BearSkill-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BearSkill";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		506CE2E7D9B413F7C7B8F759FA792877 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC17DA10C4AAF79E07FECE8C4B7D94BC /* BearAlertBtnsView.h in Headers */,
+				7637CFD34D6AACD0279B7BB5FBF0E8C6 /* BearAlertContentView.h in Headers */,
+				3F0075C0872E498E7693AEBAC870FFAD /* BearAlertView.h in Headers */,
+				2492ACCF3C10CFDB29FFE481F293AF75 /* BearConstants.h in Headers */,
+				635E9ECA95DF17D9184FB8CA7197422E /* BearCutOutView.h in Headers */,
+				AF0A7F49ED087C4475FA9A23F14FC869 /* NSMutableAttributedString+BearSet.h in Headers */,
+				0A86C5A03B1BD2D2A587FA1B943396C8 /* UILabel+BearSet.h in Headers */,
+				0B74ACF4B153C5BB737D8783C089976E /* UITableView+BearStoreCellHeight.h in Headers */,
+				4C05DA9507A7B328F48903ED8EA80D7D /* UITextField+BearLimitLength.h in Headers */,
+				590DA6C0E53406672E42E5F1DD38BDF1 /* UITextField+BearSet.h in Headers */,
+				52A2397845F147F403157406A6539E7A /* UIView+BearSet.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		59FB52C2A98E8BDAD4727DC057DF8E37 /* BearSkill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03F76695984A48A58996A57DC011EBAA /* Build configuration list for PBXNativeTarget "BearSkill" */;
+			buildPhases = (
+				CF05DFC06A95AF78F9536464461572A8 /* Sources */,
+				ED1B7D2B65E1846B94B8B11536BBCEAD /* Frameworks */,
+				506CE2E7D9B413F7C7B8F759FA792877 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57EE9A593787793F8BAB7CC0C892D6A0 /* PBXTargetDependency */,
+			);
+			name = BearSkill;
+			productName = BearSkill;
+			productReference = ED9DB4E7C27A6FE8F13C8D93355D5DA1 /* libBearSkill.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C1682A754E7552860207A09114683CC5 /* Pods-FlowMenuAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1932C85B32D1F7ED2667B07C46346488 /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimationTests" */;
+			buildPhases = (
+				EE744AE3A0FD59E11D46D78C7DBE2633 /* Sources */,
+				23BEB3EFADD70DC8D142379CD2158633 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlowMenuAnimationTests";
+			productName = "Pods-FlowMenuAnimationTests";
+			productReference = 7ABAF7D69E2F52A9CF3D50C7062D970A /* libPods-FlowMenuAnimationTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C4FF83225E0F2BB9E235D49F3CF434B9 /* Pods-FlowMenuAnimationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 384565D08142D4A29E0EB5787DF8D7C7 /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimationUITests" */;
+			buildPhases = (
+				AD86FECA4F6382D76A95F17F920F7F7B /* Sources */,
+				421075ADB0CE558305AC1AF73C3868F4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlowMenuAnimationUITests";
+			productName = "Pods-FlowMenuAnimationUITests";
+			productReference = 1337930502DBBC0EB2BD0A250465F614 /* libPods-FlowMenuAnimationUITests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C7CAE86F127B0490BCF9E7A51BC62374 /* Pods-FlowMenuAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EA894E9703253B23DBA470AA4C58E8C /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimation" */;
+			buildPhases = (
+				67BA678BAC773C65B4FBAEDADB7900BA /* Sources */,
+				160BE5BFB181024473BB587F5D95697F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3A7C19F719E2B88FB409D1353DFE0B2 /* PBXTargetDependency */,
+			);
+			name = "Pods-FlowMenuAnimation";
+			productName = "Pods-FlowMenuAnimation";
+			productReference = D58F50DFDFDA686B42507DEAE65130D1 /* libPods-FlowMenuAnimation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F3A73757CDC17ED9BB88E92578025B37 /* BearSkill-BearSkill */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B412DC1AAC80B2EE2100A58E008AB622 /* Build configuration list for PBXNativeTarget "BearSkill-BearSkill" */;
+			buildPhases = (
+				0FDE2ADB89A43CF2F7B1100596136150 /* Sources */,
+				AD3481F102780ABD39A821449C1B69C8 /* Frameworks */,
+				345EC8880CE61C3D3DE2D5DC78B7B682 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BearSkill-BearSkill";
+			productName = "BearSkill-BearSkill";
+			productReference = 3E9434E1C0F8D39D132860148D405768 /* BearSkill.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 49C306E189895630C5A38F9DC2B1209C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59FB52C2A98E8BDAD4727DC057DF8E37 /* BearSkill */,
+				F3A73757CDC17ED9BB88E92578025B37 /* BearSkill-BearSkill */,
+				C7CAE86F127B0490BCF9E7A51BC62374 /* Pods-FlowMenuAnimation */,
+				C1682A754E7552860207A09114683CC5 /* Pods-FlowMenuAnimationTests */,
+				C4FF83225E0F2BB9E235D49F3CF434B9 /* Pods-FlowMenuAnimationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		345EC8880CE61C3D3DE2D5DC78B7B682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FDE2ADB89A43CF2F7B1100596136150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67BA678BAC773C65B4FBAEDADB7900BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32D80B2F1A6719248D53042273CB49C3 /* Pods-FlowMenuAnimation-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD86FECA4F6382D76A95F17F920F7F7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E65A715D80D62658DA786CD934C3F708 /* Pods-FlowMenuAnimationUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF05DFC06A95AF78F9536464461572A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7011FE089230F73525C6E362AAC71577 /* BearAlertBtnsView.m in Sources */,
+				D81424CEFCFAACD49B6394AB01F9712F /* BearAlertContentView.m in Sources */,
+				06BD885D88ACF32FD4851FC33115E82F /* BearAlertView.m in Sources */,
+				3E7F98089F5BE6D6C5E8E84DD27D0187 /* BearConstants.m in Sources */,
+				38BCE46BD8C08C6F6DB7F48036CBEDD6 /* BearCutOutView.m in Sources */,
+				4EECF3D8026064E2FC67CD8AF2161DF1 /* BearSkill-dummy.m in Sources */,
+				28D038AF1170FF7006DF2B6E5D2B5675 /* NSMutableAttributedString+BearSet.m in Sources */,
+				5FC015683647CE6433689E2E6E6A8020 /* UILabel+BearSet.m in Sources */,
+				2D7D86081DE6D35C75C0710E7499AACE /* UITableView+BearStoreCellHeight.m in Sources */,
+				348108EE5C2F031AEFBEC1382EE91EF9 /* UITextField+BearLimitLength.m in Sources */,
+				45BCFBD0DF0D81C267AE2217C6D1CD79 /* UITextField+BearSet.m in Sources */,
+				920449E5A12DA97BFDA387D649572804 /* UIView+BearSet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE744AE3A0FD59E11D46D78C7DBE2633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22694101B2BD68A589D6446F8EE17EBA /* Pods-FlowMenuAnimationTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57EE9A593787793F8BAB7CC0C892D6A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "BearSkill-BearSkill";
+			target = F3A73757CDC17ED9BB88E92578025B37 /* BearSkill-BearSkill */;
+			targetProxy = E35495AAF7021A2B2D0A59FD1CCC2986 /* PBXContainerItemProxy */;
+		};
+		C3A7C19F719E2B88FB409D1353DFE0B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BearSkill;
+			target = 59FB52C2A98E8BDAD4727DC057DF8E37 /* BearSkill */;
+			targetProxy = 969DD299E5FF4D343DA7F9D99DFC5448 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		228FF62A73F3491591B461F146F9D3E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231188E31C4E878ECCB07C61A1AFC9CC /* Pods-FlowMenuAnimation.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2A3AFB2A2CBDE28DEF4FB8FBF65C58DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BearSkill";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/BearSkill/ResourceBundle-BearSkill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = BearSkill;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3890D7C92DE120C2BA762135796CFA80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		475F5DD3A143D1903E1E6A756D576843 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BearSkill/BearSkill-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		530F27786984CCEA31E1B5DB19A50676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96FA5F83D51AC39652AFDF5A1482CBC1 /* Pods-FlowMenuAnimationUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		587B8ECC28E3A9FF4796C121925DC113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		739F884486A5946B87E30C4EAA909AEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BearSkill/BearSkill-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BE2ABFB204D16541B7AE0345286A9296 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A232D4F38D6110D37C26749369CB9C6 /* Pods-FlowMenuAnimationTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C468AB3B25AC6B4A3C96E850F0463414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5CD5D8F12A792B54F7ED8ED221141AB /* Pods-FlowMenuAnimation.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CEB4B3776E6CD9A82F66F01514552582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC128B30D90F59ED3D2572F5D804F901 /* Pods-FlowMenuAnimationUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E6DAAAAF5BA100C4423EC0B32EC2DFDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42E63CD63F1A00BEA70D9179FB7A4A1 /* BearSkill.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/BearSkill";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/BearSkill/ResourceBundle-BearSkill-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = BearSkill;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FF3F8FA4EF03FC859788F331CBA27BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9B2887CD1D4350C2FC67CCA3562E28 /* Pods-FlowMenuAnimationTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03F76695984A48A58996A57DC011EBAA /* Build configuration list for PBXNativeTarget "BearSkill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				475F5DD3A143D1903E1E6A756D576843 /* Debug */,
+				739F884486A5946B87E30C4EAA909AEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1932C85B32D1F7ED2667B07C46346488 /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF3F8FA4EF03FC859788F331CBA27BF2 /* Debug */,
+				BE2ABFB204D16541B7AE0345286A9296 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				587B8ECC28E3A9FF4796C121925DC113 /* Debug */,
+				3890D7C92DE120C2BA762135796CFA80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		384565D08142D4A29E0EB5787DF8D7C7 /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB4B3776E6CD9A82F66F01514552582 /* Debug */,
+				530F27786984CCEA31E1B5DB19A50676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EA894E9703253B23DBA470AA4C58E8C /* Build configuration list for PBXNativeTarget "Pods-FlowMenuAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				228FF62A73F3491591B461F146F9D3E1 /* Debug */,
+				C468AB3B25AC6B4A3C96E850F0463414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B412DC1AAC80B2EE2100A58E008AB622 /* Build configuration list for PBXNativeTarget "BearSkill-BearSkill" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A3AFB2A2CBDE28DEF4FB8FBF65C58DC /* Debug */,
+				E6DAAAAF5BA100C4423EC0B32EC2DFDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

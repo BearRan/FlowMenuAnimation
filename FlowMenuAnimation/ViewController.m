@@ -150,6 +150,7 @@
                                                      reuseIdentifier:cellID
                                                        withDataModel:_dataModelArray[indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell relayUI];
     
     return cell;
 }
